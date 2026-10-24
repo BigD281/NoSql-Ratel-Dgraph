@@ -1,0 +1,2356 @@
+<_:dept1> <dgraph.type> "Department" .
+<_:dept1> <dept_code> "DEPT01" .
+<_:dept1> <dept_name> "Ban Giám Đốc Điều Hành" .
+<_:dept1> <location> "Tầng 15 - Hà Nội" .
+<_:dept1> <budget> "15000000000.0" .
+<_:dept1> <established_year> "2016" .
+<_:dept1> <managed_by> <_:emp1> .
+<_:dept2> <dgraph.type> "Department" .
+<_:dept2> <dept_code> "DEPT02" .
+<_:dept2> <dept_name> "Phòng Kỹ Thuật Phần Mềm" .
+<_:dept2> <location> "Tầng 12 - TP.HCM" .
+<_:dept2> <budget> "8500000000.0" .
+<_:dept2> <established_year> "2017" .
+<_:dept2> <managed_by> <_:emp2> .
+<_:dept3> <dgraph.type> "Department" .
+<_:dept3> <dept_code> "DEPT03" .
+<_:dept3> <dept_name> "Phòng Khoa Học Dữ Liệu & AI" .
+<_:dept3> <location> "Tầng 14 - TP.HCM" .
+<_:dept3> <budget> "9200000000.0" .
+<_:dept3> <established_year> "2018" .
+<_:dept3> <managed_by> <_:emp3> .
+<_:dept4> <dgraph.type> "Department" .
+<_:dept4> <dept_code> "DEPT04" .
+<_:dept4> <dept_name> "Phòng Hạ Tầng & Điện Toán Đám Mây" .
+<_:dept4> <location> "Tầng 10 - Hà Nội" .
+<_:dept4> <budget> "7800000000.0" .
+<_:dept4> <established_year> "2017" .
+<_:dept4> <managed_by> <_:emp4> .
+<_:dept5> <dgraph.type> "Department" .
+<_:dept5> <dept_code> "DEPT05" .
+<_:dept5> <dept_name> "Phòng An Ninh Mạng (SecOps)" .
+<_:dept5> <location> "Tầng 11 - Hà Nội" .
+<_:dept5> <budget> "6400000000.0" .
+<_:dept5> <established_year> "2019" .
+<_:dept5> <managed_by> <_:emp5> .
+<_:dept6> <dgraph.type> "Department" .
+<_:dept6> <dept_code> "DEPT06" .
+<_:dept6> <dept_name> "Phòng Thiết Kế Sản Phẩm & UI/UX" .
+<_:dept6> <location> "Tầng 9 - TP.HCM" .
+<_:dept6> <budget> "4500000000.0" .
+<_:dept6> <established_year> "2018" .
+<_:dept6> <managed_by> <_:emp6> .
+<_:dept7> <dgraph.type> "Department" .
+<_:dept7> <dept_code> "DEPT07" .
+<_:dept7> <dept_name> "Phòng Phát Triển Kinh Doanh & Giải Pháp" .
+<_:dept7> <location> "Tầng 8 - Đà Nẵng" .
+<_:dept7> <budget> "5600000000.0" .
+<_:dept7> <established_year> "2019" .
+<_:dept7> <managed_by> <_:emp7> .
+<_:dept8> <dgraph.type> "Department" .
+<_:dept8> <dept_code> "DEPT08" .
+<_:dept8> <dept_name> "Phòng Quản Trị Nguồn Nhân Lực" .
+<_:dept8> <location> "Tầng 7 - TP.HCM" .
+<_:dept8> <budget> "3800000000.0" .
+<_:dept8> <established_year> "2016" .
+<_:dept8> <managed_by> <_:emp8> .
+<_:skill1> <dgraph.type> "Skill" .
+<_:skill1> <skill_code> "SK01" .
+<_:skill1> <skill_name> "Dgraph & GraphQL" .
+<_:skill1> <skill_category> "Database" .
+<_:skill2> <dgraph.type> "Skill" .
+<_:skill2> <skill_code> "SK02" .
+<_:skill2> <skill_name> "Python Backend" .
+<_:skill2> <skill_category> "Backend" .
+<_:skill3> <dgraph.type> "Skill" .
+<_:skill3> <skill_code> "SK03" .
+<_:skill3> <skill_name> "Golang Microservices" .
+<_:skill3> <skill_category> "Backend" .
+<_:skill4> <dgraph.type> "Skill" .
+<_:skill4> <skill_code> "SK04" .
+<_:skill4> <skill_name> "React & TypeScript" .
+<_:skill4> <skill_category> "Frontend" .
+<_:skill5> <dgraph.type> "Skill" .
+<_:skill5> <skill_code> "SK05" .
+<_:skill5> <skill_name> "Machine Learning & NLP" .
+<_:skill5> <skill_category> "Data & AI" .
+<_:skill6> <dgraph.type> "Skill" .
+<_:skill6> <skill_code> "SK06" .
+<_:skill6> <skill_name> "Big Data & Spark" .
+<_:skill6> <skill_category> "Data & AI" .
+<_:skill7> <dgraph.type> "Skill" .
+<_:skill7> <skill_code> "SK07" .
+<_:skill7> <skill_name> "Kubernetes & Cloud Architecture" .
+<_:skill7> <skill_category> "Infrastructure" .
+<_:skill8> <dgraph.type> "Skill" .
+<_:skill8> <skill_code> "SK08" .
+<_:skill8> <skill_name> "CI/CD & DevOps Automation" .
+<_:skill8> <skill_category> "Infrastructure" .
+<_:skill9> <dgraph.type> "Skill" .
+<_:skill9> <skill_code> "SK09" .
+<_:skill9> <skill_name> "Application Security & Pentest" .
+<_:skill9> <skill_category> "Security" .
+<_:skill10> <dgraph.type> "Skill" .
+<_:skill10> <skill_code> "SK10" .
+<_:skill10> <skill_name> "Zero Trust Network Security" .
+<_:skill10> <skill_category> "Security" .
+<_:skill11> <dgraph.type> "Skill" .
+<_:skill11> <skill_code> "SK11" .
+<_:skill11> <skill_name> "UI/UX Design System" .
+<_:skill11> <skill_category> "Product" .
+<_:skill12> <dgraph.type> "Skill" .
+<_:skill12> <skill_code> "SK12" .
+<_:skill12> <skill_name> "Product Management & Agile" .
+<_:skill12> <skill_category> "Product" .
+<_:skill13> <dgraph.type> "Skill" .
+<_:skill13> <skill_code> "SK13" .
+<_:skill13> <skill_name> "Enterprise Solution Consulting" .
+<_:skill13> <skill_category> "Business" .
+<_:skill14> <dgraph.type> "Skill" .
+<_:skill14> <skill_code> "SK14" .
+<_:skill14> <skill_name> "Data Visualization & BI" .
+<_:skill14> <skill_category> "Data & AI" .
+<_:skill15> <dgraph.type> "Skill" .
+<_:skill15> <skill_code> "SK15" .
+<_:skill15> <skill_name> "Distributed Systems Architecture" .
+<_:skill15> <skill_category> "Backend" .
+<_:skill16> <dgraph.type> "Skill" .
+<_:skill16> <skill_code> "SK16" .
+<_:skill16> <skill_name> "HR Analytics & Talent Ops" .
+<_:skill16> <skill_category> "Operations" .
+<_:role1> <dgraph.type> "Role" .
+<_:role1> <role_code> "ROLE_EXEC" .
+<_:role1> <role_name> "Ban Điều Hành Cấp Cao (C-Level)" .
+<_:role1> <permissions> "all" .
+<_:role1> <permissions> "approve_budget" .
+<_:role1> <permissions> "manage_org" .
+<_:role1> <permissions> "export_backup" .
+<_:role2> <dgraph.type> "Role" .
+<_:role2> <role_code> "ROLE_MGR" .
+<_:role2> <role_name> "Trưởng Phòng Ban (Department Head)" .
+<_:role2> <permissions> "manage_dept" .
+<_:role2> <permissions> "assign_project" .
+<_:role2> <permissions> "view_salary" .
+<_:role2> <permissions> "run_analytics" .
+<_:role3> <dgraph.type> "Role" .
+<_:role3> <role_code> "ROLE_LEAD" .
+<_:role3> <role_name> "Trưởng Nhóm Kỹ Thuật (Tech Lead)" .
+<_:role3> <permissions> "lead_project" .
+<_:role3> <permissions> "assign_task" .
+<_:role3> <permissions> "run_analytics" .
+<_:role4> <dgraph.type> "Role" .
+<_:role4> <role_code> "ROLE_SR" .
+<_:role4> <role_name> "Chuyên Gia Cao Cấp (Senior Specialist)" .
+<_:role4> <permissions> "contribute_project" .
+<_:role4> <permissions> "mentor_staff" .
+<_:role4> <permissions> "view_graph" .
+<_:role5> <dgraph.type> "Role" .
+<_:role5> <role_code> "ROLE_SPEC" .
+<_:role5> <role_name> "Chuyên Viên Phát Triển (Specialist)" .
+<_:role5> <permissions> "contribute_project" .
+<_:role5> <permissions> "view_graph" .
+<_:proj1> <dgraph.type> "Project" .
+<_:proj1> <proj_code> "PRJ01" .
+<_:proj1> <proj_name> "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)" .
+<_:proj1> <proj_status> "Active" .
+<_:proj1> <priority> "Critical" .
+<_:proj1> <proj_budget> "4200000000.0" .
+<_:proj1> <start_date> "2025-01-15T00:00:00Z" .
+<_:proj1> <end_date> "2026-12-31T00:00:00Z" .
+<_:proj1> <owned_by_dept> <_:dept2> .
+<_:proj1> <led_by> <_:emp2> .
+<_:proj1> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj1> <requires_skill> <_:skill2> (mandatory=true) .
+<_:proj1> <requires_skill> <_:skill3> (mandatory=true) .
+<_:proj1> <requires_skill> <_:skill15> (mandatory=true) .
+<_:proj2> <dgraph.type> "Project" .
+<_:proj2> <proj_code> "PRJ02" .
+<_:proj2> <proj_name> "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)" .
+<_:proj2> <proj_status> "Active" .
+<_:proj2> <priority> "Critical" .
+<_:proj2> <proj_budget> "5100000000.0" .
+<_:proj2> <start_date> "2025-02-01T00:00:00Z" .
+<_:proj2> <end_date> "2026-11-30T00:00:00Z" .
+<_:proj2> <owned_by_dept> <_:dept3> .
+<_:proj2> <led_by> <_:emp3> .
+<_:proj2> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj2> <requires_skill> <_:skill5> (mandatory=true) .
+<_:proj2> <requires_skill> <_:skill6> (mandatory=true) .
+<_:proj2> <requires_skill> <_:skill9> (mandatory=true) .
+<_:proj2> <depends_on_project> <_:proj1> .
+<_:proj3> <dgraph.type> "Project" .
+<_:proj3> <proj_code> "PRJ03" .
+<_:proj3> <proj_name> "Trợ Lý AI Phân Tích Nghiệp vụ Nội Bộ (Enterprise Copilot)" .
+<_:proj3> <proj_status> "Active" .
+<_:proj3> <priority> "High" .
+<_:proj3> <proj_budget> "3600000000.0" .
+<_:proj3> <start_date> "2025-03-10T00:00:00Z" .
+<_:proj3> <end_date> "2026-10-15T00:00:00Z" .
+<_:proj3> <owned_by_dept> <_:dept3> .
+<_:proj3> <led_by> <_:emp10> .
+<_:proj3> <requires_skill> <_:skill2> (mandatory=true) .
+<_:proj3> <requires_skill> <_:skill5> (mandatory=true) .
+<_:proj3> <requires_skill> <_:skill4> (mandatory=true) .
+<_:proj3> <depends_on_project> <_:proj1> .
+<_:proj4> <dgraph.type> "Project" .
+<_:proj4> <proj_code> "PRJ04" .
+<_:proj4> <proj_name> "Hạ Tầng Đám Mây Đa Vùng Tự Động Hóa (Multi-Cloud Mesh)" .
+<_:proj4> <proj_status> "Active" .
+<_:proj4> <priority> "High" .
+<_:proj4> <proj_budget> "4800000000.0" .
+<_:proj4> <start_date> "2025-01-20T00:00:00Z" .
+<_:proj4> <end_date> "2026-09-30T00:00:00Z" .
+<_:proj4> <owned_by_dept> <_:dept4> .
+<_:proj4> <led_by> <_:emp4> .
+<_:proj4> <requires_skill> <_:skill7> (mandatory=true) .
+<_:proj4> <requires_skill> <_:skill8> (mandatory=true) .
+<_:proj4> <requires_skill> <_:skill10> (mandatory=true) .
+<_:proj5> <dgraph.type> "Project" .
+<_:proj5> <proj_code> "PRJ05" .
+<_:proj5> <proj_name> "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)" .
+<_:proj5> <proj_status> "Active" .
+<_:proj5> <priority> "Critical" .
+<_:proj5> <proj_budget> "3900000000.0" .
+<_:proj5> <start_date> "2025-04-01T00:00:00Z" .
+<_:proj5> <end_date> "2026-12-15T00:00:00Z" .
+<_:proj5> <owned_by_dept> <_:dept5> .
+<_:proj5> <led_by> <_:emp5> .
+<_:proj5> <requires_skill> <_:skill9> (mandatory=true) .
+<_:proj5> <requires_skill> <_:skill10> (mandatory=true) .
+<_:proj5> <requires_skill> <_:skill7> (mandatory=true) .
+<_:proj5> <depends_on_project> <_:proj4> .
+<_:proj6> <dgraph.type> "Project" .
+<_:proj6> <proj_code> "PRJ06" .
+<_:proj6> <proj_name> "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)" .
+<_:proj6> <proj_status> "Active" .
+<_:proj6> <priority> "High" .
+<_:proj6> <proj_budget> "2400000000.0" .
+<_:proj6> <start_date> "2025-05-01T00:00:00Z" .
+<_:proj6> <end_date> "2026-08-30T00:00:00Z" .
+<_:proj6> <owned_by_dept> <_:dept8> .
+<_:proj6> <led_by> <_:emp8> .
+<_:proj6> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj6> <requires_skill> <_:skill4> (mandatory=true) .
+<_:proj6> <requires_skill> <_:skill11> (mandatory=true) .
+<_:proj6> <requires_skill> <_:skill16> (mandatory=true) .
+<_:proj6> <depends_on_project> <_:proj1> .
+<_:proj7> <dgraph.type> "Project" .
+<_:proj7> <proj_code> "PRJ07" .
+<_:proj7> <proj_name> "Hệ Thống Gợi Ý Sản Phẩm Cá Nhân Hóa Đa Kênh (Graph Recommender)" .
+<_:proj7> <proj_status> "Active" .
+<_:proj7> <priority> "High" .
+<_:proj7> <proj_budget> "3300000000.0" .
+<_:proj7> <start_date> "2025-03-15T00:00:00Z" .
+<_:proj7> <end_date> "2026-10-30T00:00:00Z" .
+<_:proj7> <owned_by_dept> <_:dept2> .
+<_:proj7> <led_by> <_:emp9> .
+<_:proj7> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj7> <requires_skill> <_:skill3> (mandatory=true) .
+<_:proj7> <requires_skill> <_:skill5> (mandatory=true) .
+<_:proj7> <requires_skill> <_:skill14> (mandatory=true) .
+<_:proj7> <depends_on_project> <_:proj1> .
+<_:proj8> <dgraph.type> "Project" .
+<_:proj8> <proj_code> "PRJ08" .
+<_:proj8> <proj_name> "Bộ Khung Giao Diện Thiết Kế Thống Nhất (Unified Design System)" .
+<_:proj8> <proj_status> "Completed" .
+<_:proj8> <priority> "Medium" .
+<_:proj8> <proj_budget> "1500000000.0" .
+<_:proj8> <start_date> "2024-06-01T00:00:00Z" .
+<_:proj8> <end_date> "2025-06-30T00:00:00Z" .
+<_:proj8> <owned_by_dept> <_:dept6> .
+<_:proj8> <led_by> <_:emp6> .
+<_:proj8> <requires_skill> <_:skill4> (mandatory=true) .
+<_:proj8> <requires_skill> <_:skill11> (mandatory=true) .
+<_:proj8> <requires_skill> <_:skill12> (mandatory=true) .
+<_:proj9> <dgraph.type> "Project" .
+<_:proj9> <proj_code> "PRJ09" .
+<_:proj9> <proj_name> "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)" .
+<_:proj9> <proj_status> "Active" .
+<_:proj9> <priority> "High" .
+<_:proj9> <proj_budget> "4100000000.0" .
+<_:proj9> <start_date> "2025-02-10T00:00:00Z" .
+<_:proj9> <end_date> "2026-11-15T00:00:00Z" .
+<_:proj9> <owned_by_dept> <_:dept3> .
+<_:proj9> <led_by> <_:emp11> .
+<_:proj9> <requires_skill> <_:skill6> (mandatory=true) .
+<_:proj9> <requires_skill> <_:skill2> (mandatory=true) .
+<_:proj9> <requires_skill> <_:skill14> (mandatory=true) .
+<_:proj9> <depends_on_project> <_:proj4> .
+<_:proj10> <dgraph.type> "Project" .
+<_:proj10> <proj_code> "PRJ10" .
+<_:proj10> <proj_name> "Cổng Giao Tiếp Khách Hàng Doanh Nghiệp B2B (B2B Solution Hub)" .
+<_:proj10> <proj_status> "Active" .
+<_:proj10> <priority> "Medium" .
+<_:proj10> <proj_budget> "2700000000.0" .
+<_:proj10> <start_date> "2025-04-15T00:00:00Z" .
+<_:proj10> <end_date> "2026-09-01T00:00:00Z" .
+<_:proj10> <owned_by_dept> <_:dept7> .
+<_:proj10> <led_by> <_:emp7> .
+<_:proj10> <requires_skill> <_:skill4> (mandatory=true) .
+<_:proj10> <requires_skill> <_:skill12> (mandatory=true) .
+<_:proj10> <requires_skill> <_:skill13> (mandatory=true) .
+<_:proj10> <depends_on_project> <_:proj8> .
+<_:proj11> <dgraph.type> "Project" .
+<_:proj11> <proj_code> "PRJ11" .
+<_:proj11> <proj_name> "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)" .
+<_:proj11> <proj_status> "Completed" .
+<_:proj11> <priority> "Medium" .
+<_:proj11> <proj_budget> "1900000000.0" .
+<_:proj11> <start_date> "2024-08-01T00:00:00Z" .
+<_:proj11> <end_date> "2025-07-31T00:00:00Z" .
+<_:proj11> <owned_by_dept> <_:dept4> .
+<_:proj11> <led_by> <_:emp12> .
+<_:proj11> <requires_skill> <_:skill7> (mandatory=true) .
+<_:proj11> <requires_skill> <_:skill8> (mandatory=true) .
+<_:proj11> <requires_skill> <_:skill3> (mandatory=true) .
+<_:proj12> <dgraph.type> "Project" .
+<_:proj12> <proj_code> "PRJ12" .
+<_:proj12> <proj_name> "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)" .
+<_:proj12> <proj_status> "Active" .
+<_:proj12> <priority> "Critical" .
+<_:proj12> <proj_budget> "4600000000.0" .
+<_:proj12> <start_date> "2025-01-10T00:00:00Z" .
+<_:proj12> <end_date> "2026-12-20T00:00:00Z" .
+<_:proj12> <owned_by_dept> <_:dept2> .
+<_:proj12> <led_by> <_:emp9> .
+<_:proj12> <requires_skill> <_:skill3> (mandatory=true) .
+<_:proj12> <requires_skill> <_:skill15> (mandatory=true) .
+<_:proj12> <requires_skill> <_:skill7> (mandatory=true) .
+<_:proj12> <depends_on_project> <_:proj11> .
+<_:proj13> <dgraph.type> "Project" .
+<_:proj13> <proj_code> "PRJ13" .
+<_:proj13> <proj_name> "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)" .
+<_:proj13> <proj_status> "Planning" .
+<_:proj13> <priority> "High" .
+<_:proj13> <proj_budget> "2900000000.0" .
+<_:proj13> <start_date> "2026-01-01T00:00:00Z" .
+<_:proj13> <end_date> "2026-12-31T00:00:00Z" .
+<_:proj13> <owned_by_dept> <_:dept5> .
+<_:proj13> <led_by> <_:emp13> .
+<_:proj13> <requires_skill> <_:skill9> (mandatory=true) .
+<_:proj13> <requires_skill> <_:skill10> (mandatory=true) .
+<_:proj13> <requires_skill> <_:skill3> (mandatory=true) .
+<_:proj13> <depends_on_project> <_:proj5> .
+<_:proj14> <dgraph.type> "Project" .
+<_:proj14> <proj_code> "PRJ14" .
+<_:proj14> <proj_name> "Bảng Điều Khiển Phân Tích Chiến Lược CEO (Executive BI Graph)" .
+<_:proj14> <proj_status> "Active" .
+<_:proj14> <priority> "Medium" .
+<_:proj14> <proj_budget> "2100000000.0" .
+<_:proj14> <start_date> "2025-06-01T00:00:00Z" .
+<_:proj14> <end_date> "2026-07-30T00:00:00Z" .
+<_:proj14> <owned_by_dept> <_:dept1> .
+<_:proj14> <led_by> <_:emp14> .
+<_:proj14> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj14> <requires_skill> <_:skill14> (mandatory=true) .
+<_:proj14> <requires_skill> <_:skill13> (mandatory=true) .
+<_:proj14> <depends_on_project> <_:proj1> .
+<_:proj14> <depends_on_project> <_:proj9> .
+<_:proj15> <dgraph.type> "Project" .
+<_:proj15> <proj_code> "PRJ15" .
+<_:proj15> <proj_name> "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)" .
+<_:proj15> <proj_status> "Active" .
+<_:proj15> <priority> "Critical" .
+<_:proj15> <proj_budget> "1800000000.0" .
+<_:proj15> <start_date> "2025-07-01T00:00:00Z" .
+<_:proj15> <end_date> "2026-10-01T00:00:00Z" .
+<_:proj15> <owned_by_dept> <_:dept2> .
+<_:proj15> <led_by> <_:emp2> .
+<_:proj15> <requires_skill> <_:skill1> (mandatory=true) .
+<_:proj15> <requires_skill> <_:skill15> (mandatory=true) .
+<_:proj15> <depends_on_project> <_:proj1> .
+<_:emp1> <dgraph.type> "Employee" .
+<_:emp1> <emp_code> "EMP001" .
+<_:emp1> <full_name> "Trần Quang Khải" .
+<_:emp1> <email> "emp001@enterprise-graph.vn" .
+<_:emp1> <phone> "0901100137" .
+<_:emp1> <title> "Tổng Giám Đốc (CEO)" .
+<_:emp1> <level> "1" .
+<_:emp1> <hire_date> "2016-01-10T00:00:00Z" .
+<_:emp1> <salary> "95000000.0" .
+<_:emp1> <status> "Active" .
+<_:emp1> <belongs_to_dept> <_:dept1> .
+<_:emp1> <has_role> <_:role1> .
+<_:emp1> <has_skill> <_:skill12> (proficiency=5, years=6) .
+<_:emp1> <has_skill> <_:skill13> (proficiency=5, years=6) .
+<_:emp1> <has_skill> <_:skill15> (proficiency=5, years=6) .
+<_:emp1> <works_on> <_:proj14> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp2> <dgraph.type> "Employee" .
+<_:emp2> <emp_code> "EMP002" .
+<_:emp2> <full_name> "Nguyễn Phạm Duy Luân" .
+<_:emp2> <email> "emp002@enterprise-graph.vn" .
+<_:emp2> <phone> "0902100274" .
+<_:emp2> <title> "Giám Đốc Kỹ Thuật Phần Mềm" .
+<_:emp2> <level> "2" .
+<_:emp2> <hire_date> "2017-03-15T00:00:00Z" .
+<_:emp2> <salary> "68000000.0" .
+<_:emp2> <status> "Active" .
+<_:emp2> <belongs_to_dept> <_:dept2> .
+<_:emp2> <has_role> <_:role2> .
+<_:emp2> <reports_to> <_:emp1> .
+<_:emp2> <has_skill> <_:skill1> (proficiency=5, years=5) .
+<_:emp2> <has_skill> <_:skill2> (proficiency=5, years=5) .
+<_:emp2> <has_skill> <_:skill3> (proficiency=5, years=5) .
+<_:emp2> <has_skill> <_:skill15> (proficiency=5, years=5) .
+<_:emp2> <works_on> <_:proj1> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp2> <works_on> <_:proj15> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp2> <works_on> <_:proj2> (role_in_project="Graph Architect", hours_per_week=15) .
+<_:emp3> <dgraph.type> "Employee" .
+<_:emp3> <emp_code> "EMP003" .
+<_:emp3> <full_name> "Đỗ Văn Minh" .
+<_:emp3> <email> "emp003@enterprise-graph.vn" .
+<_:emp3> <phone> "0903100411" .
+<_:emp3> <title> "Giám Đốc Khoa Học Dữ Liệu & AI" .
+<_:emp3> <level> "2" .
+<_:emp3> <hire_date> "2018-02-01T00:00:00Z" .
+<_:emp3> <salary> "68000000.0" .
+<_:emp3> <status> "Active" .
+<_:emp3> <belongs_to_dept> <_:dept3> .
+<_:emp3> <has_role> <_:role2> .
+<_:emp3> <reports_to> <_:emp1> .
+<_:emp3> <has_skill> <_:skill1> (proficiency=5, years=5) .
+<_:emp3> <has_skill> <_:skill2> (proficiency=5, years=5) .
+<_:emp3> <has_skill> <_:skill5> (proficiency=5, years=5) .
+<_:emp3> <has_skill> <_:skill6> (proficiency=5, years=5) .
+<_:emp3> <has_skill> <_:skill14> (proficiency=5, years=5) .
+<_:emp3> <works_on> <_:proj2> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp3> <works_on> <_:proj1> (role_in_project="AI Co-Lead", hours_per_week=15) .
+<_:emp3> <works_on> <_:proj9> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp4> <dgraph.type> "Employee" .
+<_:emp4> <emp_code> "EMP004" .
+<_:emp4> <full_name> "Lê Hoàng Nam" .
+<_:emp4> <email> "emp004@enterprise-graph.vn" .
+<_:emp4> <phone> "0904100548" .
+<_:emp4> <title> "Trưởng Phòng Hạ Tầng & Cloud" .
+<_:emp4> <level> "2" .
+<_:emp4> <hire_date> "2017-06-20T00:00:00Z" .
+<_:emp4> <salary> "62000000.0" .
+<_:emp4> <status> "Active" .
+<_:emp4> <belongs_to_dept> <_:dept4> .
+<_:emp4> <has_role> <_:role2> .
+<_:emp4> <reports_to> <_:emp1> .
+<_:emp4> <has_skill> <_:skill7> (proficiency=5, years=5) .
+<_:emp4> <has_skill> <_:skill8> (proficiency=5, years=5) .
+<_:emp4> <has_skill> <_:skill15> (proficiency=5, years=5) .
+<_:emp4> <works_on> <_:proj4> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp4> <works_on> <_:proj11> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp5> <dgraph.type> "Employee" .
+<_:emp5> <emp_code> "EMP005" .
+<_:emp5> <full_name> "Phạm Thu Hà" .
+<_:emp5> <email> "emp005@enterprise-graph.vn" .
+<_:emp5> <phone> "0905100685" .
+<_:emp5> <title> "Trưởng Phòng An Ninh Mạng" .
+<_:emp5> <level> "2" .
+<_:emp5> <hire_date> "2019-01-15T00:00:00Z" .
+<_:emp5> <salary> "64000000.0" .
+<_:emp5> <status> "Active" .
+<_:emp5> <belongs_to_dept> <_:dept5> .
+<_:emp5> <has_role> <_:role2> .
+<_:emp5> <reports_to> <_:emp1> .
+<_:emp5> <has_skill> <_:skill9> (proficiency=5, years=5) .
+<_:emp5> <has_skill> <_:skill10> (proficiency=5, years=5) .
+<_:emp5> <has_skill> <_:skill7> (proficiency=5, years=5) .
+<_:emp5> <works_on> <_:proj5> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp5> <works_on> <_:proj13> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp6> <dgraph.type> "Employee" .
+<_:emp6> <emp_code> "EMP006" .
+<_:emp6> <full_name> "Võ Ngọc Ánh" .
+<_:emp6> <email> "emp006@enterprise-graph.vn" .
+<_:emp6> <phone> "0906100822" .
+<_:emp6> <title> "Trưởng Phòng Sản Phẩm & UI/UX" .
+<_:emp6> <level> "2" .
+<_:emp6> <hire_date> "2018-05-12T00:00:00Z" .
+<_:emp6> <salary> "55000000.0" .
+<_:emp6> <status> "Active" .
+<_:emp6> <belongs_to_dept> <_:dept6> .
+<_:emp6> <has_role> <_:role2> .
+<_:emp6> <reports_to> <_:emp1> .
+<_:emp6> <has_skill> <_:skill11> (proficiency=5, years=5) .
+<_:emp6> <has_skill> <_:skill12> (proficiency=5, years=5) .
+<_:emp6> <has_skill> <_:skill4> (proficiency=5, years=5) .
+<_:emp6> <works_on> <_:proj8> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp6> <works_on> <_:proj11> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp6> <works_on> <_:proj13> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp7> <dgraph.type> "Employee" .
+<_:emp7> <emp_code> "EMP007" .
+<_:emp7> <full_name> "Đặng Quốc Tuấn" .
+<_:emp7> <email> "emp007@enterprise-graph.vn" .
+<_:emp7> <phone> "0907100959" .
+<_:emp7> <title> "Trưởng Phòng Kinh Doanh Giải Pháp" .
+<_:emp7> <level> "2" .
+<_:emp7> <hire_date> "2019-03-01T00:00:00Z" .
+<_:emp7> <salary> "58000000.0" .
+<_:emp7> <status> "Active" .
+<_:emp7> <belongs_to_dept> <_:dept7> .
+<_:emp7> <has_role> <_:role2> .
+<_:emp7> <reports_to> <_:emp1> .
+<_:emp7> <has_skill> <_:skill13> (proficiency=5, years=5) .
+<_:emp7> <has_skill> <_:skill12> (proficiency=5, years=5) .
+<_:emp7> <has_skill> <_:skill14> (proficiency=5, years=5) .
+<_:emp7> <works_on> <_:proj10> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp8> <dgraph.type> "Employee" .
+<_:emp8> <emp_code> "EMP008" .
+<_:emp8> <full_name> "Bùi Thanh Trúc" .
+<_:emp8> <email> "emp008@enterprise-graph.vn" .
+<_:emp8> <phone> "0908101096" .
+<_:emp8> <title> "Trưởng Phòng Quản Trị Nhân Sự" .
+<_:emp8> <level> "2" .
+<_:emp8> <hire_date> "2016-09-01T00:00:00Z" .
+<_:emp8> <salary> "52000000.0" .
+<_:emp8> <status> "Active" .
+<_:emp8> <belongs_to_dept> <_:dept8> .
+<_:emp8> <has_role> <_:role2> .
+<_:emp8> <reports_to> <_:emp1> .
+<_:emp8> <has_skill> <_:skill16> (proficiency=5, years=5) .
+<_:emp8> <has_skill> <_:skill12> (proficiency=5, years=5) .
+<_:emp8> <has_skill> <_:skill14> (proficiency=5, years=5) .
+<_:emp8> <works_on> <_:proj6> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp8> <works_on> <_:proj13> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp9> <dgraph.type> "Employee" .
+<_:emp9> <emp_code> "EMP009" .
+<_:emp9> <full_name> "Hoàng Minh Đức" .
+<_:emp9> <email> "emp009@enterprise-graph.vn" .
+<_:emp9> <phone> "0909101233" .
+<_:emp9> <title> "Tech Lead Backend & Graph" .
+<_:emp9> <level> "3" .
+<_:emp9> <hire_date> "2019-01-15T00:00:00Z" .
+<_:emp9> <salary> "48000000.0" .
+<_:emp9> <status> "Active" .
+<_:emp9> <belongs_to_dept> <_:dept2> .
+<_:emp9> <has_role> <_:role3> .
+<_:emp9> <reports_to> <_:emp2> .
+<_:emp9> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp9> <has_skill> <_:skill3> (proficiency=5, years=4) .
+<_:emp9> <has_skill> <_:skill15> (proficiency=5, years=4) .
+<_:emp9> <works_on> <_:proj7> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp9> <works_on> <_:proj12> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp9> <works_on> <_:proj15> (role_in_project="Core Architect", hours_per_week=20) .
+<_:emp10> <dgraph.type> "Employee" .
+<_:emp10> <emp_code> "EMP010" .
+<_:emp10> <full_name> "Ngô Bảo Châu" .
+<_:emp10> <email> "emp010@enterprise-graph.vn" .
+<_:emp10> <phone> "0910101370" .
+<_:emp10> <title> "Tech Lead Trí Tuệ Nhân Tạo" .
+<_:emp10> <level> "3" .
+<_:emp10> <hire_date> "2020-04-15T00:00:00Z" .
+<_:emp10> <salary> "42000000.0" .
+<_:emp10> <status> "Active" .
+<_:emp10> <belongs_to_dept> <_:dept3> .
+<_:emp10> <has_role> <_:role3> .
+<_:emp10> <reports_to> <_:emp3> .
+<_:emp10> <has_skill> <_:skill2> (proficiency=5, years=4) .
+<_:emp10> <has_skill> <_:skill5> (proficiency=5, years=4) .
+<_:emp10> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp10> <works_on> <_:proj3> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp11> <dgraph.type> "Employee" .
+<_:emp11> <emp_code> "EMP011" .
+<_:emp11> <full_name> "Trịnh Đình Trọng" .
+<_:emp11> <email> "emp011@enterprise-graph.vn" .
+<_:emp11> <phone> "0911101507" .
+<_:emp11> <title> "Tech Lead Kỹ Thuật Dữ Liệu Lớn" .
+<_:emp11> <level> "3" .
+<_:emp11> <hire_date> "2019-09-15T00:00:00Z" .
+<_:emp11> <salary> "40000000.0" .
+<_:emp11> <status> "Active" .
+<_:emp11> <belongs_to_dept> <_:dept3> .
+<_:emp11> <has_role> <_:role3> .
+<_:emp11> <reports_to> <_:emp3> .
+<_:emp11> <has_skill> <_:skill6> (proficiency=5, years=4) .
+<_:emp11> <has_skill> <_:skill2> (proficiency=5, years=4) .
+<_:emp11> <has_skill> <_:skill14> (proficiency=5, years=4) .
+<_:emp11> <works_on> <_:proj9> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp11> <works_on> <_:proj1> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp12> <dgraph.type> "Employee" .
+<_:emp12> <emp_code> "EMP012" .
+<_:emp12> <full_name> "Lý Công Uẩn" .
+<_:emp12> <email> "emp012@enterprise-graph.vn" .
+<_:emp12> <phone> "0912101644" .
+<_:emp12> <title> "Tech Lead DevOps & Kubernetes" .
+<_:emp12> <level> "3" .
+<_:emp12> <hire_date> "2022-01-15T00:00:00Z" .
+<_:emp12> <salary> "39000000.0" .
+<_:emp12> <status> "Active" .
+<_:emp12> <belongs_to_dept> <_:dept4> .
+<_:emp12> <has_role> <_:role3> .
+<_:emp12> <reports_to> <_:emp4> .
+<_:emp12> <has_skill> <_:skill7> (proficiency=5, years=4) .
+<_:emp12> <has_skill> <_:skill8> (proficiency=5, years=4) .
+<_:emp12> <has_skill> <_:skill3> (proficiency=5, years=4) .
+<_:emp12> <works_on> <_:proj11> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp13> <dgraph.type> "Employee" .
+<_:emp13> <emp_code> "EMP013" .
+<_:emp13> <full_name> "Phan Đình Phùng" .
+<_:emp13> <email> "emp013@enterprise-graph.vn" .
+<_:emp13> <phone> "0913101781" .
+<_:emp13> <title> "Tech Lead Bảo Mật Ứng Dụng" .
+<_:emp13> <level> "3" .
+<_:emp13> <hire_date> "2019-04-15T00:00:00Z" .
+<_:emp13> <salary> "38000000.0" .
+<_:emp13> <status> "Active" .
+<_:emp13> <belongs_to_dept> <_:dept5> .
+<_:emp13> <has_role> <_:role3> .
+<_:emp13> <reports_to> <_:emp5> .
+<_:emp13> <has_skill> <_:skill9> (proficiency=5, years=4) .
+<_:emp13> <has_skill> <_:skill10> (proficiency=5, years=4) .
+<_:emp13> <has_skill> <_:skill2> (proficiency=5, years=4) .
+<_:emp13> <works_on> <_:proj13> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp14> <dgraph.type> "Employee" .
+<_:emp14> <emp_code> "EMP014" .
+<_:emp14> <full_name> "Vũ Trọng Phụng" .
+<_:emp14> <email> "emp014@enterprise-graph.vn" .
+<_:emp14> <phone> "0914101918" .
+<_:emp14> <title> "Trưởng Nhóm Phân Tích Chiến Lược" .
+<_:emp14> <level> "3" .
+<_:emp14> <hire_date> "2019-09-15T00:00:00Z" .
+<_:emp14> <salary> "41000000.0" .
+<_:emp14> <status> "Active" .
+<_:emp14> <belongs_to_dept> <_:dept1> .
+<_:emp14> <has_role> <_:role3> .
+<_:emp14> <reports_to> <_:emp1> .
+<_:emp14> <has_skill> <_:skill13> (proficiency=5, years=4) .
+<_:emp14> <has_skill> <_:skill14> (proficiency=5, years=4) .
+<_:emp14> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp14> <works_on> <_:proj14> (role_in_project="Project Lead", hours_per_week=25) .
+<_:emp14> <works_on> <_:proj11> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp15> <dgraph.type> "Employee" .
+<_:emp15> <emp_code> "EMP015" .
+<_:emp15> <full_name> "Nguyễn Thị Minh Khai" .
+<_:emp15> <email> "emp015@enterprise-graph.vn" .
+<_:emp15> <phone> "0915102055" .
+<_:emp15> <title> "Tech Lead Frontend & Web Graph" .
+<_:emp15> <level> "3" .
+<_:emp15> <hire_date> "2022-04-15T00:00:00Z" .
+<_:emp15> <salary> "41000000.0" .
+<_:emp15> <status> "Active" .
+<_:emp15> <belongs_to_dept> <_:dept2> .
+<_:emp15> <has_role> <_:role3> .
+<_:emp15> <reports_to> <_:emp2> .
+<_:emp15> <has_skill> <_:skill4> (proficiency=5, years=4) .
+<_:emp15> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp15> <has_skill> <_:skill11> (proficiency=5, years=4) .
+<_:emp15> <works_on> <_:proj10> (role_in_project="Member", hours_per_week=15) .
+<_:emp16> <dgraph.type> "Employee" .
+<_:emp16> <emp_code> "EMP016" .
+<_:emp16> <full_name> "Hồ Xuân Hương" .
+<_:emp16> <email> "emp016@enterprise-graph.vn" .
+<_:emp16> <phone> "0916102192" .
+<_:emp16> <title> "Trưởng Nhóm Thiết Kế Trải Nghiệm" .
+<_:emp16> <level> "3" .
+<_:emp16> <hire_date> "2021-01-15T00:00:00Z" .
+<_:emp16> <salary> "45000000.0" .
+<_:emp16> <status> "Active" .
+<_:emp16> <belongs_to_dept> <_:dept6> .
+<_:emp16> <has_role> <_:role3> .
+<_:emp16> <reports_to> <_:emp6> .
+<_:emp16> <has_skill> <_:skill11> (proficiency=5, years=4) .
+<_:emp16> <has_skill> <_:skill12> (proficiency=5, years=4) .
+<_:emp16> <has_skill> <_:skill4> (proficiency=5, years=4) .
+<_:emp16> <works_on> <_:proj8> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp17> <dgraph.type> "Employee" .
+<_:emp17> <emp_code> "EMP017" .
+<_:emp17> <full_name> "Đoàn Thị Điểm" .
+<_:emp17> <email> "emp017@enterprise-graph.vn" .
+<_:emp17> <phone> "0917102329" .
+<_:emp17> <title> "Trưởng Nhóm Tư Vấn Giải Pháp B2B" .
+<_:emp17> <level> "3" .
+<_:emp17> <hire_date> "2022-06-15T00:00:00Z" .
+<_:emp17> <salary> "40000000.0" .
+<_:emp17> <status> "Active" .
+<_:emp17> <belongs_to_dept> <_:dept7> .
+<_:emp17> <has_role> <_:role3> .
+<_:emp17> <reports_to> <_:emp7> .
+<_:emp17> <has_skill> <_:skill13> (proficiency=5, years=4) .
+<_:emp17> <has_skill> <_:skill12> (proficiency=5, years=4) .
+<_:emp17> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp17> <works_on> <_:proj11> (role_in_project="Member", hours_per_week=15) .
+<_:emp18> <dgraph.type> "Employee" .
+<_:emp18> <emp_code> "EMP018" .
+<_:emp18> <full_name> "Lương Thế Vinh" .
+<_:emp18> <email> "emp018@enterprise-graph.vn" .
+<_:emp18> <phone> "0918102466" .
+<_:emp18> <title> "Trưởng Nhóm Phân Tích Nhân Sự" .
+<_:emp18> <level> "3" .
+<_:emp18> <hire_date> "2020-04-15T00:00:00Z" .
+<_:emp18> <salary> "42000000.0" .
+<_:emp18> <status> "Active" .
+<_:emp18> <belongs_to_dept> <_:dept8> .
+<_:emp18> <has_role> <_:role3> .
+<_:emp18> <reports_to> <_:emp8> .
+<_:emp18> <has_skill> <_:skill16> (proficiency=5, years=4) .
+<_:emp18> <has_skill> <_:skill14> (proficiency=5, years=4) .
+<_:emp18> <has_skill> <_:skill2> (proficiency=5, years=4) .
+<_:emp18> <works_on> <_:proj6> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp19> <dgraph.type> "Employee" .
+<_:emp19> <emp_code> "EMP019" .
+<_:emp19> <full_name> "Trần Hưng Đạo" .
+<_:emp19> <email> "emp019@enterprise-graph.vn" .
+<_:emp19> <phone> "0919102603" .
+<_:emp19> <title> "Tech Lead Hệ Thống Phân Tán" .
+<_:emp19> <level> "3" .
+<_:emp19> <hire_date> "2019-02-15T00:00:00Z" .
+<_:emp19> <salary> "43000000.0" .
+<_:emp19> <status> "Active" .
+<_:emp19> <belongs_to_dept> <_:dept2> .
+<_:emp19> <has_role> <_:role3> .
+<_:emp19> <reports_to> <_:emp2> .
+<_:emp19> <has_skill> <_:skill3> (proficiency=5, years=4) .
+<_:emp19> <has_skill> <_:skill15> (proficiency=5, years=4) .
+<_:emp19> <has_skill> <_:skill7> (proficiency=5, years=4) .
+<_:emp19> <works_on> <_:proj1> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp19> <works_on> <_:proj6> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp20> <dgraph.type> "Employee" .
+<_:emp20> <emp_code> "EMP020" .
+<_:emp20> <full_name> "Nguyễn Bỉnh Khiêm" .
+<_:emp20> <email> "emp020@enterprise-graph.vn" .
+<_:emp20> <phone> "0920102740" .
+<_:emp20> <title> "Tech Lead Hạ Tầng Đám Mây" .
+<_:emp20> <level> "3" .
+<_:emp20> <hire_date> "2019-06-15T00:00:00Z" .
+<_:emp20> <salary> "44000000.0" .
+<_:emp20> <status> "Active" .
+<_:emp20> <belongs_to_dept> <_:dept4> .
+<_:emp20> <has_role> <_:role3> .
+<_:emp20> <reports_to> <_:emp4> .
+<_:emp20> <has_skill> <_:skill7> (proficiency=5, years=4) .
+<_:emp20> <has_skill> <_:skill8> (proficiency=5, years=4) .
+<_:emp20> <has_skill> <_:skill10> (proficiency=5, years=4) .
+<_:emp20> <works_on> <_:proj4> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp21> <dgraph.type> "Employee" .
+<_:emp21> <emp_code> "EMP021" .
+<_:emp21> <full_name> "Chu Văn An" .
+<_:emp21> <email> "emp021@enterprise-graph.vn" .
+<_:emp21> <phone> "0921102877" .
+<_:emp21> <title> "Tech Lead Điều Tra An Ninh Số" .
+<_:emp21> <level> "3" .
+<_:emp21> <hire_date> "2021-01-15T00:00:00Z" .
+<_:emp21> <salary> "43000000.0" .
+<_:emp21> <status> "Active" .
+<_:emp21> <belongs_to_dept> <_:dept5> .
+<_:emp21> <has_role> <_:role3> .
+<_:emp21> <reports_to> <_:emp5> .
+<_:emp21> <has_skill> <_:skill9> (proficiency=5, years=4) .
+<_:emp21> <has_skill> <_:skill10> (proficiency=5, years=4) .
+<_:emp21> <has_skill> <_:skill6> (proficiency=5, years=4) .
+<_:emp21> <works_on> <_:proj6> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp21> <works_on> <_:proj13> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp22> <dgraph.type> "Employee" .
+<_:emp22> <emp_code> "EMP022" .
+<_:emp22> <full_name> "Lê Quý Đôn" .
+<_:emp22> <email> "emp022@enterprise-graph.vn" .
+<_:emp22> <phone> "0922103014" .
+<_:emp22> <title> "Tech Lead Khai Phá Đồ Thị" .
+<_:emp22> <level> "3" .
+<_:emp22> <hire_date> "2019-07-15T00:00:00Z" .
+<_:emp22> <salary> "45000000.0" .
+<_:emp22> <status> "Active" .
+<_:emp22> <belongs_to_dept> <_:dept3> .
+<_:emp22> <has_role> <_:role3> .
+<_:emp22> <reports_to> <_:emp3> .
+<_:emp22> <has_skill> <_:skill1> (proficiency=5, years=4) .
+<_:emp22> <has_skill> <_:skill5> (proficiency=5, years=4) .
+<_:emp22> <has_skill> <_:skill14> (proficiency=5, years=4) .
+<_:emp22> <works_on> <_:proj7> (role_in_project="Member", hours_per_week=15) .
+<_:emp23> <dgraph.type> "Employee" .
+<_:emp23> <emp_code> "EMP023" .
+<_:emp23> <full_name> "Vũ Thu My" .
+<_:emp23> <email> "emp023@enterprise-graph.vn" .
+<_:emp23> <phone> "0923103151" .
+<_:emp23> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp23> <level> "5" .
+<_:emp23> <hire_date> "2022-04-12T00:00:00Z" .
+<_:emp23> <salary> "24000000.0" .
+<_:emp23> <status> "Active" .
+<_:emp23> <belongs_to_dept> <_:dept2> .
+<_:emp23> <has_role> <_:role5> .
+<_:emp23> <reports_to> <_:emp9> .
+<_:emp23> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp23> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp23> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp23> <works_on> <_:proj8> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp24> <dgraph.type> "Employee" .
+<_:emp24> <emp_code> "EMP024" .
+<_:emp24> <full_name> "Võ Bảo Quân" .
+<_:emp24> <email> "emp024@enterprise-graph.vn" .
+<_:emp24> <phone> "0924103288" .
+<_:emp24> <title> "Senior Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp24> <level> "4" .
+<_:emp24> <hire_date> "2021-02-22T00:00:00Z" .
+<_:emp24> <salary> "26000000.0" .
+<_:emp24> <status> "Active" .
+<_:emp24> <belongs_to_dept> <_:dept2> .
+<_:emp24> <has_role> <_:role4> .
+<_:emp24> <reports_to> <_:emp15> .
+<_:emp24> <has_skill> <_:skill1> (proficiency=4, years=3) .
+<_:emp24> <has_skill> <_:skill4> (proficiency=3, years=3) .
+<_:emp24> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp24> <works_on> <_:proj14> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp25> <dgraph.type> "Employee" .
+<_:emp25> <emp_code> "EMP025" .
+<_:emp25> <full_name> "Đặng Văn Trang" .
+<_:emp25> <email> "emp025@enterprise-graph.vn" .
+<_:emp25> <phone> "0925103425" .
+<_:emp25> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp25> <level> "5" .
+<_:emp25> <hire_date> "2021-06-21T00:00:00Z" .
+<_:emp25> <salary> "20000000.0" .
+<_:emp25> <status> "Active" .
+<_:emp25> <belongs_to_dept> <_:dept2> .
+<_:emp25> <has_role> <_:role5> .
+<_:emp25> <reports_to> <_:emp19> .
+<_:emp25> <has_skill> <_:skill4> (proficiency=4, years=2) .
+<_:emp25> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp25> <has_skill> <_:skill15> (proficiency=3, years=2) .
+<_:emp25> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp25> <works_on> <_:proj7> (role_in_project="Member", hours_per_week=15) .
+<_:emp26> <dgraph.type> "Employee" .
+<_:emp26> <emp_code> "EMP026" .
+<_:emp26> <full_name> "Bùi Minh Vinh" .
+<_:emp26> <email> "emp026@enterprise-graph.vn" .
+<_:emp26> <phone> "0926103562" .
+<_:emp26> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp26> <level> "5" .
+<_:emp26> <hire_date> "2024-03-27T00:00:00Z" .
+<_:emp26> <salary> "16000000.0" .
+<_:emp26> <status> "Active" .
+<_:emp26> <belongs_to_dept> <_:dept2> .
+<_:emp26> <has_role> <_:role5> .
+<_:emp26> <reports_to> <_:emp9> .
+<_:emp26> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp26> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp26> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp26> <works_on> <_:proj3> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp26> <works_on> <_:proj12> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp27> <dgraph.type> "Employee" .
+<_:emp27> <emp_code> "EMP027" .
+<_:emp27> <full_name> "Đỗ Thanh Giang" .
+<_:emp27> <email> "emp027@enterprise-graph.vn" .
+<_:emp27> <phone> "0927103699" .
+<_:emp27> <title> "Senior Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp27> <level> "4" .
+<_:emp27> <hire_date> "2022-09-17T00:00:00Z" .
+<_:emp27> <salary> "31000000.0" .
+<_:emp27> <status> "Active" .
+<_:emp27> <belongs_to_dept> <_:dept2> .
+<_:emp27> <has_role> <_:role4> .
+<_:emp27> <reports_to> <_:emp15> .
+<_:emp27> <has_skill> <_:skill4> (proficiency=4, years=3) .
+<_:emp27> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp27> <has_skill> <_:skill15> (proficiency=3, years=3) .
+<_:emp27> <works_on> <_:proj7> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp28> <dgraph.type> "Employee" .
+<_:emp28> <emp_code> "EMP028" .
+<_:emp28> <full_name> "Hồ Thu Long" .
+<_:emp28> <email> "emp028@enterprise-graph.vn" .
+<_:emp28> <phone> "0928103836" .
+<_:emp28> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp28> <level> "5" .
+<_:emp28> <hire_date> "2022-07-18T00:00:00Z" .
+<_:emp28> <salary> "15000000.0" .
+<_:emp28> <status> "Active" .
+<_:emp28> <belongs_to_dept> <_:dept2> .
+<_:emp28> <has_role> <_:role5> .
+<_:emp28> <reports_to> <_:emp19> .
+<_:emp28> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp28> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp28> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp28> <works_on> <_:proj7> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp29> <dgraph.type> "Employee" .
+<_:emp29> <emp_code> "EMP029" .
+<_:emp29> <full_name> "Ngô Bảo Phúc" .
+<_:emp29> <email> "emp029@enterprise-graph.vn" .
+<_:emp29> <phone> "0929103973" .
+<_:emp29> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp29> <level> "5" .
+<_:emp29> <hire_date> "2021-08-22T00:00:00Z" .
+<_:emp29> <salary> "20000000.0" .
+<_:emp29> <status> "Active" .
+<_:emp29> <belongs_to_dept> <_:dept2> .
+<_:emp29> <has_role> <_:role5> .
+<_:emp29> <reports_to> <_:emp9> .
+<_:emp29> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp29> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp29> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp29> <works_on> <_:proj5> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp30> <dgraph.type> "Employee" .
+<_:emp30> <emp_code> "EMP030" .
+<_:emp30> <full_name> "Dương Văn Thắng" .
+<_:emp30> <email> "emp030@enterprise-graph.vn" .
+<_:emp30> <phone> "0930104110" .
+<_:emp30> <title> "Senior Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp30> <level> "4" .
+<_:emp30> <hire_date> "2021-09-27T00:00:00Z" .
+<_:emp30> <salary> "27000000.0" .
+<_:emp30> <status> "Active" .
+<_:emp30> <belongs_to_dept> <_:dept2> .
+<_:emp30> <has_role> <_:role4> .
+<_:emp30> <reports_to> <_:emp15> .
+<_:emp30> <has_skill> <_:skill4> (proficiency=4, years=3) .
+<_:emp30> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp30> <has_skill> <_:skill15> (proficiency=3, years=3) .
+<_:emp30> <works_on> <_:proj1> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp30> <works_on> <_:proj9> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp30> <works_on> <_:proj12> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp31> <dgraph.type> "Employee" .
+<_:emp31> <emp_code> "EMP031" .
+<_:emp31> <full_name> "Lý Minh Uyên" .
+<_:emp31> <email> "emp031@enterprise-graph.vn" .
+<_:emp31> <phone> "0931104247" .
+<_:emp31> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp31> <level> "5" .
+<_:emp31> <hire_date> "2022-04-14T00:00:00Z" .
+<_:emp31> <salary> "21000000.0" .
+<_:emp31> <status> "Active" .
+<_:emp31> <belongs_to_dept> <_:dept2> .
+<_:emp31> <has_role> <_:role5> .
+<_:emp31> <reports_to> <_:emp19> .
+<_:emp31> <has_skill> <_:skill4> (proficiency=4, years=2) .
+<_:emp31> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp31> <has_skill> <_:skill15> (proficiency=3, years=2) .
+<_:emp31> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp31> <works_on> <_:proj12> (role_in_project="Member", hours_per_week=15) .
+<_:emp32> <dgraph.type> "Employee" .
+<_:emp32> <emp_code> "EMP032" .
+<_:emp32> <full_name> "Nguyễn Thanh Cường" .
+<_:emp32> <email> "emp032@enterprise-graph.vn" .
+<_:emp32> <phone> "0932104384" .
+<_:emp32> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp32> <level> "5" .
+<_:emp32> <hire_date> "2020-03-15T00:00:00Z" .
+<_:emp32> <salary> "15000000.0" .
+<_:emp32> <status> "Active" .
+<_:emp32> <belongs_to_dept> <_:dept2> .
+<_:emp32> <has_role> <_:role5> .
+<_:emp32> <reports_to> <_:emp9> .
+<_:emp32> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp32> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp32> <has_skill> <_:skill15> (proficiency=3, years=2) .
+<_:emp32> <works_on> <_:proj10> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp33> <dgraph.type> "Employee" .
+<_:emp33> <emp_code> "EMP033" .
+<_:emp33> <full_name> "Trần Thu Khôi" .
+<_:emp33> <email> "emp033@enterprise-graph.vn" .
+<_:emp33> <phone> "0933104521" .
+<_:emp33> <title> "Senior Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp33> <level> "4" .
+<_:emp33> <hire_date> "2024-08-26T00:00:00Z" .
+<_:emp33> <salary> "31000000.0" .
+<_:emp33> <status> "Active" .
+<_:emp33> <belongs_to_dept> <_:dept2> .
+<_:emp33> <has_role> <_:role4> .
+<_:emp33> <reports_to> <_:emp15> .
+<_:emp33> <has_skill> <_:skill1> (proficiency=4, years=3) .
+<_:emp33> <has_skill> <_:skill4> (proficiency=3, years=3) .
+<_:emp33> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp33> <works_on> <_:proj1> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp33> <works_on> <_:proj4> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp33> <works_on> <_:proj8> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp34> <dgraph.type> "Employee" .
+<_:emp34> <emp_code> "EMP034" .
+<_:emp34> <full_name> "Lê Bảo Nhung" .
+<_:emp34> <email> "emp034@enterprise-graph.vn" .
+<_:emp34> <phone> "0934104658" .
+<_:emp34> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp34> <level> "5" .
+<_:emp34> <hire_date> "2025-09-18T00:00:00Z" .
+<_:emp34> <salary> "16000000.0" .
+<_:emp34> <status> "Active" .
+<_:emp34> <belongs_to_dept> <_:dept2> .
+<_:emp34> <has_role> <_:role5> .
+<_:emp34> <reports_to> <_:emp19> .
+<_:emp34> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp34> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp34> <has_skill> <_:skill15> (proficiency=3, years=2) .
+<_:emp34> <works_on> <_:proj7> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp34> <works_on> <_:proj12> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp35> <dgraph.type> "Employee" .
+<_:emp35> <emp_code> "EMP035" .
+<_:emp35> <full_name> "Phạm Văn Tâm" .
+<_:emp35> <email> "emp035@enterprise-graph.vn" .
+<_:emp35> <phone> "0935104795" .
+<_:emp35> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp35> <level> "5" .
+<_:emp35> <hire_date> "2021-08-10T00:00:00Z" .
+<_:emp35> <salary> "21000000.0" .
+<_:emp35> <status> "Active" .
+<_:emp35> <belongs_to_dept> <_:dept2> .
+<_:emp35> <has_role> <_:role5> .
+<_:emp35> <reports_to> <_:emp9> .
+<_:emp35> <has_skill> <_:skill2> (proficiency=4, years=2) .
+<_:emp35> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp35> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp35> <works_on> <_:proj3> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp35> <works_on> <_:proj4> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp35> <works_on> <_:proj14> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp36> <dgraph.type> "Employee" .
+<_:emp36> <emp_code> "EMP036" .
+<_:emp36> <full_name> "Hoàng Minh Tú" .
+<_:emp36> <email> "emp036@enterprise-graph.vn" .
+<_:emp36> <phone> "0936104932" .
+<_:emp36> <title> "Senior Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp36> <level> "4" .
+<_:emp36> <hire_date> "2025-05-26T00:00:00Z" .
+<_:emp36> <salary> "26000000.0" .
+<_:emp36> <status> "Active" .
+<_:emp36> <belongs_to_dept> <_:dept2> .
+<_:emp36> <has_role> <_:role4> .
+<_:emp36> <reports_to> <_:emp15> .
+<_:emp36> <has_skill> <_:skill2> (proficiency=4, years=3) .
+<_:emp36> <has_skill> <_:skill3> (proficiency=3, years=3) .
+<_:emp36> <has_skill> <_:skill15> (proficiency=3, years=3) .
+<_:emp36> <works_on> <_:proj1> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp36> <works_on> <_:proj12> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp36> <works_on> <_:proj13> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp37> <dgraph.type> "Employee" .
+<_:emp37> <emp_code> "EMP037" .
+<_:emp37> <full_name> "Huỳnh Thanh An" .
+<_:emp37> <email> "emp037@enterprise-graph.vn" .
+<_:emp37> <phone> "0937105069" .
+<_:emp37> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp37> <level> "5" .
+<_:emp37> <hire_date> "2021-09-26T00:00:00Z" .
+<_:emp37> <salary> "20000000.0" .
+<_:emp37> <status> "Active" .
+<_:emp37> <belongs_to_dept> <_:dept2> .
+<_:emp37> <has_role> <_:role5> .
+<_:emp37> <reports_to> <_:emp36> .
+<_:emp37> <has_skill> <_:skill2> (proficiency=4, years=2) .
+<_:emp37> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp37> <has_skill> <_:skill15> (proficiency=3, years=2) .
+<_:emp37> <works_on> <_:proj7> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp38> <dgraph.type> "Employee" .
+<_:emp38> <emp_code> "EMP038" .
+<_:emp38> <full_name> "Phan Thu Hùng" .
+<_:emp38> <email> "emp038@enterprise-graph.vn" .
+<_:emp38> <phone> "0938105206" .
+<_:emp38> <title> "Kỹ Sư Phần Mềm (Software Engineer)" .
+<_:emp38> <level> "5" .
+<_:emp38> <hire_date> "2020-06-19T00:00:00Z" .
+<_:emp38> <salary> "15000000.0" .
+<_:emp38> <status> "Active" .
+<_:emp38> <belongs_to_dept> <_:dept2> .
+<_:emp38> <has_role> <_:role5> .
+<_:emp38> <reports_to> <_:emp9> .
+<_:emp38> <has_skill> <_:skill2> (proficiency=4, years=2) .
+<_:emp38> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp38> <has_skill> <_:skill3> (proficiency=3, years=2) .
+<_:emp38> <works_on> <_:proj10> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp39> <dgraph.type> "Employee" .
+<_:emp39> <emp_code> "EMP039" .
+<_:emp39> <full_name> "Vũ Bảo Nam" .
+<_:emp39> <email> "emp039@enterprise-graph.vn" .
+<_:emp39> <phone> "0939105343" .
+<_:emp39> <title> "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp39> <level> "4" .
+<_:emp39> <hire_date> "2020-02-25T00:00:00Z" .
+<_:emp39> <salary> "34000000.0" .
+<_:emp39> <status> "Active" .
+<_:emp39> <belongs_to_dept> <_:dept3> .
+<_:emp39> <has_role> <_:role4> .
+<_:emp39> <reports_to> <_:emp11> .
+<_:emp39> <has_skill> <_:skill1> (proficiency=4, years=3) .
+<_:emp39> <has_skill> <_:skill6> (proficiency=3, years=3) .
+<_:emp39> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp39> <works_on> <_:proj2> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp39> <works_on> <_:proj9> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp40> <dgraph.type> "Employee" .
+<_:emp40> <emp_code> "EMP040" .
+<_:emp40> <full_name> "Võ Văn Quỳnh" .
+<_:emp40> <email> "emp040@enterprise-graph.vn" .
+<_:emp40> <phone> "0940105480" .
+<_:emp40> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp40> <level> "5" .
+<_:emp40> <hire_date> "2024-03-18T00:00:00Z" .
+<_:emp40> <salary> "22000000.0" .
+<_:emp40> <status> "Active" .
+<_:emp40> <belongs_to_dept> <_:dept3> .
+<_:emp40> <has_role> <_:role5> .
+<_:emp40> <reports_to> <_:emp39> .
+<_:emp40> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp40> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp40> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp40> <works_on> <_:proj4> (role_in_project="Member", hours_per_week=15) .
+<_:emp41> <dgraph.type> "Employee" .
+<_:emp41> <emp_code> "EMP041" .
+<_:emp41> <full_name> "Đặng Minh Trinh" .
+<_:emp41> <email> "emp041@enterprise-graph.vn" .
+<_:emp41> <phone> "0941105617" .
+<_:emp41> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp41> <level> "5" .
+<_:emp41> <hire_date> "2025-04-19T00:00:00Z" .
+<_:emp41> <salary> "23000000.0" .
+<_:emp41> <status> "Active" .
+<_:emp41> <belongs_to_dept> <_:dept3> .
+<_:emp41> <has_role> <_:role5> .
+<_:emp41> <reports_to> <_:emp10> .
+<_:emp41> <has_skill> <_:skill6> (proficiency=4, years=2) .
+<_:emp41> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp41> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp41> <works_on> <_:proj2> (role_in_project="Member", hours_per_week=15) .
+<_:emp42> <dgraph.type> "Employee" .
+<_:emp42> <emp_code> "EMP042" .
+<_:emp42> <full_name> "Bùi Thanh Vy" .
+<_:emp42> <email> "emp042@enterprise-graph.vn" .
+<_:emp42> <phone> "0942105754" .
+<_:emp42> <title> "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp42> <level> "4" .
+<_:emp42> <hire_date> "2023-02-17T00:00:00Z" .
+<_:emp42> <salary> "33000000.0" .
+<_:emp42> <status> "Active" .
+<_:emp42> <belongs_to_dept> <_:dept3> .
+<_:emp42> <has_role> <_:role4> .
+<_:emp42> <reports_to> <_:emp11> .
+<_:emp42> <has_skill> <_:skill5> (proficiency=4, years=3) .
+<_:emp42> <has_skill> <_:skill6> (proficiency=3, years=3) .
+<_:emp42> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp42> <has_skill> <_:skill1> (proficiency=3, years=3) .
+<_:emp42> <works_on> <_:proj2> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp42> <works_on> <_:proj3> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp42> <works_on> <_:proj9> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp43> <dgraph.type> "Employee" .
+<_:emp43> <emp_code> "EMP043" .
+<_:emp43> <full_name> "Đỗ Thu Hải" .
+<_:emp43> <email> "emp043@enterprise-graph.vn" .
+<_:emp43> <phone> "0943105891" .
+<_:emp43> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp43> <level> "5" .
+<_:emp43> <hire_date> "2024-09-17T00:00:00Z" .
+<_:emp43> <salary> "15000000.0" .
+<_:emp43> <status> "Active" .
+<_:emp43> <belongs_to_dept> <_:dept3> .
+<_:emp43> <has_role> <_:role5> .
+<_:emp43> <reports_to> <_:emp42> .
+<_:emp43> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp43> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp43> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp43> <works_on> <_:proj10> (role_in_project="Member", hours_per_week=15) .
+<_:emp44> <dgraph.type> "Employee" .
+<_:emp44> <emp_code> "EMP044" .
+<_:emp44> <full_name> "Hồ Bảo Mai" .
+<_:emp44> <email> "emp044@enterprise-graph.vn" .
+<_:emp44> <phone> "0944106028" .
+<_:emp44> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp44> <level> "5" .
+<_:emp44> <hire_date> "2025-01-17T00:00:00Z" .
+<_:emp44> <salary> "16000000.0" .
+<_:emp44> <status> "Active" .
+<_:emp44> <belongs_to_dept> <_:dept3> .
+<_:emp44> <has_role> <_:role5> .
+<_:emp44> <reports_to> <_:emp10> .
+<_:emp44> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp44> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp44> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp44> <works_on> <_:proj4> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp45> <dgraph.type> "Employee" .
+<_:emp45> <emp_code> "EMP045" .
+<_:emp45> <full_name> "Ngô Văn Phương" .
+<_:emp45> <email> "emp045@enterprise-graph.vn" .
+<_:emp45> <phone> "0945106165" .
+<_:emp45> <title> "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp45> <level> "4" .
+<_:emp45> <hire_date> "2024-04-18T00:00:00Z" .
+<_:emp45> <salary> "26000000.0" .
+<_:emp45> <status> "Active" .
+<_:emp45> <belongs_to_dept> <_:dept3> .
+<_:emp45> <has_role> <_:role4> .
+<_:emp45> <reports_to> <_:emp11> .
+<_:emp45> <has_skill> <_:skill1> (proficiency=4, years=3) .
+<_:emp45> <has_skill> <_:skill14> (proficiency=3, years=3) .
+<_:emp45> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp45> <works_on> <_:proj3> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp46> <dgraph.type> "Employee" .
+<_:emp46> <emp_code> "EMP046" .
+<_:emp46> <full_name> "Dương Minh Thịnh" .
+<_:emp46> <email> "emp046@enterprise-graph.vn" .
+<_:emp46> <phone> "0946106302" .
+<_:emp46> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp46> <level> "5" .
+<_:emp46> <hire_date> "2025-08-17T00:00:00Z" .
+<_:emp46> <salary> "17000000.0" .
+<_:emp46> <status> "Active" .
+<_:emp46> <belongs_to_dept> <_:dept3> .
+<_:emp46> <has_role> <_:role5> .
+<_:emp46> <reports_to> <_:emp45> .
+<_:emp46> <has_skill> <_:skill5> (proficiency=4, years=2) .
+<_:emp46> <has_skill> <_:skill6> (proficiency=3, years=2) .
+<_:emp46> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp46> <works_on> <_:proj2> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp46> <works_on> <_:proj12> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp47> <dgraph.type> "Employee" .
+<_:emp47> <emp_code> "EMP047" .
+<_:emp47> <full_name> "Lý Thanh Việt" .
+<_:emp47> <email> "emp047@enterprise-graph.vn" .
+<_:emp47> <phone> "0947106439" .
+<_:emp47> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp47> <level> "5" .
+<_:emp47> <hire_date> "2020-07-21T00:00:00Z" .
+<_:emp47> <salary> "16000000.0" .
+<_:emp47> <status> "Active" .
+<_:emp47> <belongs_to_dept> <_:dept3> .
+<_:emp47> <has_role> <_:role5> .
+<_:emp47> <reports_to> <_:emp10> .
+<_:emp47> <has_skill> <_:skill1> (proficiency=4, years=2) .
+<_:emp47> <has_skill> <_:skill6> (proficiency=3, years=2) .
+<_:emp47> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp47> <works_on> <_:proj12> (role_in_project="Member", hours_per_week=15) .
+<_:emp48> <dgraph.type> "Employee" .
+<_:emp48> <emp_code> "EMP048" .
+<_:emp48> <full_name> "Nguyễn Thu Dũng" .
+<_:emp48> <email> "emp048@enterprise-graph.vn" .
+<_:emp48> <phone> "0948106576" .
+<_:emp48> <title> "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp48> <level> "4" .
+<_:emp48> <hire_date> "2020-02-11T00:00:00Z" .
+<_:emp48> <salary> "36000000.0" .
+<_:emp48> <status> "Active" .
+<_:emp48> <belongs_to_dept> <_:dept3> .
+<_:emp48> <has_role> <_:role4> .
+<_:emp48> <reports_to> <_:emp11> .
+<_:emp48> <has_skill> <_:skill6> (proficiency=4, years=3) .
+<_:emp48> <has_skill> <_:skill2> (proficiency=3, years=3) .
+<_:emp48> <has_skill> <_:skill14> (proficiency=3, years=3) .
+<_:emp48> <works_on> <_:proj3> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp49> <dgraph.type> "Employee" .
+<_:emp49> <emp_code> "EMP049" .
+<_:emp49> <full_name> "Trần Bảo Linh" .
+<_:emp49> <email> "emp049@enterprise-graph.vn" .
+<_:emp49> <phone> "0949106713" .
+<_:emp49> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp49> <level> "5" .
+<_:emp49> <hire_date> "2021-04-27T00:00:00Z" .
+<_:emp49> <salary> "18000000.0" .
+<_:emp49> <status> "Active" .
+<_:emp49> <belongs_to_dept> <_:dept3> .
+<_:emp49> <has_role> <_:role5> .
+<_:emp49> <reports_to> <_:emp48> .
+<_:emp49> <has_skill> <_:skill5> (proficiency=4, years=2) .
+<_:emp49> <has_skill> <_:skill1> (proficiency=3, years=2) .
+<_:emp49> <has_skill> <_:skill6> (proficiency=3, years=2) .
+<_:emp49> <works_on> <_:proj2> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp49> <works_on> <_:proj3> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp50> <dgraph.type> "Employee" .
+<_:emp50> <emp_code> "EMP050" .
+<_:emp50> <full_name> "Lê Văn Oanh" .
+<_:emp50> <email> "emp050@enterprise-graph.vn" .
+<_:emp50> <phone> "0950106850" .
+<_:emp50> <title> "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)" .
+<_:emp50> <level> "5" .
+<_:emp50> <hire_date> "2022-08-17T00:00:00Z" .
+<_:emp50> <salary> "17000000.0" .
+<_:emp50> <status> "Active" .
+<_:emp50> <belongs_to_dept> <_:dept3> .
+<_:emp50> <has_role> <_:role5> .
+<_:emp50> <reports_to> <_:emp10> .
+<_:emp50> <has_skill> <_:skill6> (proficiency=4, years=2) .
+<_:emp50> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp50> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp50> <works_on> <_:proj9> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp50> <works_on> <_:proj14> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp51> <dgraph.type> "Employee" .
+<_:emp51> <emp_code> "EMP051" .
+<_:emp51> <full_name> "Phạm Minh Thảo" .
+<_:emp51> <email> "emp051@enterprise-graph.vn" .
+<_:emp51> <phone> "0951106987" .
+<_:emp51> <title> "Senior Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp51> <level> "4" .
+<_:emp51> <hire_date> "2025-09-10T00:00:00Z" .
+<_:emp51> <salary> "25000000.0" .
+<_:emp51> <status> "Active" .
+<_:emp51> <belongs_to_dept> <_:dept4> .
+<_:emp51> <has_role> <_:role4> .
+<_:emp51> <reports_to> <_:emp12> .
+<_:emp51> <has_skill> <_:skill8> (proficiency=4, years=3) .
+<_:emp51> <has_skill> <_:skill7> (proficiency=3, years=3) .
+<_:emp51> <has_skill> <_:skill10> (proficiency=3, years=3) .
+<_:emp51> <works_on> <_:proj11> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp52> <dgraph.type> "Employee" .
+<_:emp52> <emp_code> "EMP052" .
+<_:emp52> <full_name> "Hoàng Thanh Tùng" .
+<_:emp52> <email> "emp052@enterprise-graph.vn" .
+<_:emp52> <phone> "0952107124" .
+<_:emp52> <title> "Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp52> <level> "5" .
+<_:emp52> <hire_date> "2023-08-16T00:00:00Z" .
+<_:emp52> <salary> "21000000.0" .
+<_:emp52> <status> "Active" .
+<_:emp52> <belongs_to_dept> <_:dept4> .
+<_:emp52> <has_role> <_:role5> .
+<_:emp52> <reports_to> <_:emp51> .
+<_:emp52> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp52> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp52> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp52> <works_on> <_:proj11> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp53> <dgraph.type> "Employee" .
+<_:emp53> <emp_code> "EMP053" .
+<_:emp53> <full_name> "Huỳnh Thu Bình" .
+<_:emp53> <email> "emp053@enterprise-graph.vn" .
+<_:emp53> <phone> "0953107261" .
+<_:emp53> <title> "Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp53> <level> "5" .
+<_:emp53> <hire_date> "2020-07-18T00:00:00Z" .
+<_:emp53> <salary> "21000000.0" .
+<_:emp53> <status> "Active" .
+<_:emp53> <belongs_to_dept> <_:dept4> .
+<_:emp53> <has_role> <_:role5> .
+<_:emp53> <reports_to> <_:emp12> .
+<_:emp53> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp53> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp53> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp53> <works_on> <_:proj7> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp53> <works_on> <_:proj8> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp54> <dgraph.type> "Employee" .
+<_:emp54> <emp_code> "EMP054" .
+<_:emp54> <full_name> "Phan Bảo Huy" .
+<_:emp54> <email> "emp054@enterprise-graph.vn" .
+<_:emp54> <phone> "0954107398" .
+<_:emp54> <title> "Senior Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp54> <level> "4" .
+<_:emp54> <hire_date> "2025-09-25T00:00:00Z" .
+<_:emp54> <salary> "36000000.0" .
+<_:emp54> <status> "Active" .
+<_:emp54> <belongs_to_dept> <_:dept4> .
+<_:emp54> <has_role> <_:role4> .
+<_:emp54> <reports_to> <_:emp20> .
+<_:emp54> <has_skill> <_:skill8> (proficiency=4, years=3) .
+<_:emp54> <has_skill> <_:skill3> (proficiency=3, years=3) .
+<_:emp54> <has_skill> <_:skill10> (proficiency=3, years=3) .
+<_:emp54> <works_on> <_:proj4> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp54> <works_on> <_:proj5> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp55> <dgraph.type> "Employee" .
+<_:emp55> <emp_code> "EMP055" .
+<_:emp55> <full_name> "Vũ Văn Nga" .
+<_:emp55> <email> "emp055@enterprise-graph.vn" .
+<_:emp55> <phone> "0955107535" .
+<_:emp55> <title> "Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp55> <level> "5" .
+<_:emp55> <hire_date> "2020-09-11T00:00:00Z" .
+<_:emp55> <salary> "18000000.0" .
+<_:emp55> <status> "Active" .
+<_:emp55> <belongs_to_dept> <_:dept4> .
+<_:emp55> <has_role> <_:role5> .
+<_:emp55> <reports_to> <_:emp54> .
+<_:emp55> <has_skill> <_:skill8> (proficiency=4, years=2) .
+<_:emp55> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp55> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp55> <works_on> <_:proj4> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp55> <works_on> <_:proj7> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp56> <dgraph.type> "Employee" .
+<_:emp56> <emp_code> "EMP056" .
+<_:emp56> <full_name> "Võ Minh Sơn" .
+<_:emp56> <email> "emp056@enterprise-graph.vn" .
+<_:emp56> <phone> "0956107672" .
+<_:emp56> <title> "Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp56> <level> "5" .
+<_:emp56> <hire_date> "2023-09-26T00:00:00Z" .
+<_:emp56> <salary> "24000000.0" .
+<_:emp56> <status> "Active" .
+<_:emp56> <belongs_to_dept> <_:dept4> .
+<_:emp56> <has_role> <_:role5> .
+<_:emp56> <reports_to> <_:emp20> .
+<_:emp56> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp56> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp56> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp56> <works_on> <_:proj14> (role_in_project="Member", hours_per_week=15) .
+<_:emp57> <dgraph.type> "Employee" .
+<_:emp57> <emp_code> "EMP057" .
+<_:emp57> <full_name> "Đặng Thanh Trung" .
+<_:emp57> <email> "emp057@enterprise-graph.vn" .
+<_:emp57> <phone> "0957107809" .
+<_:emp57> <title> "Senior Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp57> <level> "4" .
+<_:emp57> <hire_date> "2020-02-17T00:00:00Z" .
+<_:emp57> <salary> "27000000.0" .
+<_:emp57> <status> "Active" .
+<_:emp57> <belongs_to_dept> <_:dept4> .
+<_:emp57> <has_role> <_:role4> .
+<_:emp57> <reports_to> <_:emp12> .
+<_:emp57> <has_skill> <_:skill8> (proficiency=4, years=3) .
+<_:emp57> <has_skill> <_:skill3> (proficiency=3, years=3) .
+<_:emp57> <has_skill> <_:skill7> (proficiency=3, years=3) .
+<_:emp57> <works_on> <_:proj4> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp57> <works_on> <_:proj11> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp58> <dgraph.type> "Employee" .
+<_:emp58> <emp_code> "EMP058" .
+<_:emp58> <full_name> "Bùi Thu Yến" .
+<_:emp58> <email> "emp058@enterprise-graph.vn" .
+<_:emp58> <phone> "0958107946" .
+<_:emp58> <title> "Kỹ Sư Hệ Thống Cloud & SRE" .
+<_:emp58> <level> "5" .
+<_:emp58> <hire_date> "2024-01-12T00:00:00Z" .
+<_:emp58> <salary> "24000000.0" .
+<_:emp58> <status> "Active" .
+<_:emp58> <belongs_to_dept> <_:dept4> .
+<_:emp58> <has_role> <_:role5> .
+<_:emp58> <reports_to> <_:emp57> .
+<_:emp58> <has_skill> <_:skill3> (proficiency=4, years=2) .
+<_:emp58> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp58> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp58> <works_on> <_:proj11> (role_in_project="Member", hours_per_week=15) .
+<_:emp59> <dgraph.type> "Employee" .
+<_:emp59> <emp_code> "EMP059" .
+<_:emp59> <full_name> "Đỗ Bảo Hiếu" .
+<_:emp59> <email> "emp059@enterprise-graph.vn" .
+<_:emp59> <phone> "0959108083" .
+<_:emp59> <title> "Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp59> <level> "5" .
+<_:emp59> <hire_date> "2021-06-17T00:00:00Z" .
+<_:emp59> <salary> "19000000.0" .
+<_:emp59> <status> "Active" .
+<_:emp59> <belongs_to_dept> <_:dept5> .
+<_:emp59> <has_role> <_:role5> .
+<_:emp59> <reports_to> <_:emp13> .
+<_:emp59> <has_skill> <_:skill2> (proficiency=4, years=2) .
+<_:emp59> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp59> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp59> <works_on> <_:proj3> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp59> <works_on> <_:proj10> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp60> <dgraph.type> "Employee" .
+<_:emp60> <emp_code> "EMP060" .
+<_:emp60> <full_name> "Hồ Văn My" .
+<_:emp60> <email> "emp060@enterprise-graph.vn" .
+<_:emp60> <phone> "0960108220" .
+<_:emp60> <title> "Senior Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp60> <level> "4" .
+<_:emp60> <hire_date> "2025-05-24T00:00:00Z" .
+<_:emp60> <salary> "35000000.0" .
+<_:emp60> <status> "Active" .
+<_:emp60> <belongs_to_dept> <_:dept5> .
+<_:emp60> <has_role> <_:role4> .
+<_:emp60> <reports_to> <_:emp21> .
+<_:emp60> <has_skill> <_:skill9> (proficiency=4, years=3) .
+<_:emp60> <has_skill> <_:skill7> (proficiency=3, years=3) .
+<_:emp60> <has_skill> <_:skill10> (proficiency=3, years=3) .
+<_:emp60> <works_on> <_:proj5> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp61> <dgraph.type> "Employee" .
+<_:emp61> <emp_code> "EMP061" .
+<_:emp61> <full_name> "Ngô Minh Quân" .
+<_:emp61> <email> "emp061@enterprise-graph.vn" .
+<_:emp61> <phone> "0961108357" .
+<_:emp61> <title> "Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp61> <level> "5" .
+<_:emp61> <hire_date> "2024-02-12T00:00:00Z" .
+<_:emp61> <salary> "22000000.0" .
+<_:emp61> <status> "Active" .
+<_:emp61> <belongs_to_dept> <_:dept5> .
+<_:emp61> <has_role> <_:role5> .
+<_:emp61> <reports_to> <_:emp60> .
+<_:emp61> <has_skill> <_:skill9> (proficiency=4, years=2) .
+<_:emp61> <has_skill> <_:skill2> (proficiency=3, years=2) .
+<_:emp61> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp61> <works_on> <_:proj2> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp61> <works_on> <_:proj5> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp62> <dgraph.type> "Employee" .
+<_:emp62> <emp_code> "EMP062" .
+<_:emp62> <full_name> "Dương Thanh Trang" .
+<_:emp62> <email> "emp062@enterprise-graph.vn" .
+<_:emp62> <phone> "0962108494" .
+<_:emp62> <title> "Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp62> <level> "5" .
+<_:emp62> <hire_date> "2022-02-17T00:00:00Z" .
+<_:emp62> <salary> "17000000.0" .
+<_:emp62> <status> "Active" .
+<_:emp62> <belongs_to_dept> <_:dept5> .
+<_:emp62> <has_role> <_:role5> .
+<_:emp62> <reports_to> <_:emp21> .
+<_:emp62> <has_skill> <_:skill2> (proficiency=4, years=2) .
+<_:emp62> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp62> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp62> <works_on> <_:proj5> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp62> <works_on> <_:proj6> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp62> <works_on> <_:proj13> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp63> <dgraph.type> "Employee" .
+<_:emp63> <emp_code> "EMP063" .
+<_:emp63> <full_name> "Lý Thu Vinh" .
+<_:emp63> <email> "emp063@enterprise-graph.vn" .
+<_:emp63> <phone> "0963108631" .
+<_:emp63> <title> "Senior Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp63> <level> "4" .
+<_:emp63> <hire_date> "2024-05-26T00:00:00Z" .
+<_:emp63> <salary> "32000000.0" .
+<_:emp63> <status> "Active" .
+<_:emp63> <belongs_to_dept> <_:dept5> .
+<_:emp63> <has_role> <_:role4> .
+<_:emp63> <reports_to> <_:emp13> .
+<_:emp63> <has_skill> <_:skill9> (proficiency=4, years=3) .
+<_:emp63> <has_skill> <_:skill7> (proficiency=3, years=3) .
+<_:emp63> <has_skill> <_:skill10> (proficiency=3, years=3) .
+<_:emp63> <works_on> <_:proj4> (role_in_project="Member", hours_per_week=15) .
+<_:emp64> <dgraph.type> "Employee" .
+<_:emp64> <emp_code> "EMP064" .
+<_:emp64> <full_name> "Nguyễn Bảo Giang" .
+<_:emp64> <email> "emp064@enterprise-graph.vn" .
+<_:emp64> <phone> "0964108768" .
+<_:emp64> <title> "Chuyên Viên An Ninh Mạng (Security Analyst)" .
+<_:emp64> <level> "5" .
+<_:emp64> <hire_date> "2021-05-13T00:00:00Z" .
+<_:emp64> <salary> "16000000.0" .
+<_:emp64> <status> "Active" .
+<_:emp64> <belongs_to_dept> <_:dept5> .
+<_:emp64> <has_role> <_:role5> .
+<_:emp64> <reports_to> <_:emp63> .
+<_:emp64> <has_skill> <_:skill9> (proficiency=4, years=2) .
+<_:emp64> <has_skill> <_:skill7> (proficiency=3, years=2) .
+<_:emp64> <has_skill> <_:skill10> (proficiency=3, years=2) .
+<_:emp64> <works_on> <_:proj1> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp64> <works_on> <_:proj5> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp64> <works_on> <_:proj13> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp65> <dgraph.type> "Employee" .
+<_:emp65> <emp_code> "EMP065" .
+<_:emp65> <full_name> "Trần Văn Long" .
+<_:emp65> <email> "emp065@enterprise-graph.vn" .
+<_:emp65> <phone> "0965108905" .
+<_:emp65> <title> "Chuyên Viên Thiết Kế Sản Phẩm UI/UX" .
+<_:emp65> <level> "5" .
+<_:emp65> <hire_date> "2024-04-20T00:00:00Z" .
+<_:emp65> <salary> "19000000.0" .
+<_:emp65> <status> "Active" .
+<_:emp65> <belongs_to_dept> <_:dept6> .
+<_:emp65> <has_role> <_:role5> .
+<_:emp65> <reports_to> <_:emp16> .
+<_:emp65> <has_skill> <_:skill11> (proficiency=4, years=2) .
+<_:emp65> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp65> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp65> <works_on> <_:proj2> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp66> <dgraph.type> "Employee" .
+<_:emp66> <emp_code> "EMP066" .
+<_:emp66> <full_name> "Lê Minh Phúc" .
+<_:emp66> <email> "emp066@enterprise-graph.vn" .
+<_:emp66> <phone> "0966109042" .
+<_:emp66> <title> "Senior Chuyên Viên Thiết Kế Sản Phẩm UI/UX" .
+<_:emp66> <level> "4" .
+<_:emp66> <hire_date> "2020-02-23T00:00:00Z" .
+<_:emp66> <salary> "29000000.0" .
+<_:emp66> <status> "Active" .
+<_:emp66> <belongs_to_dept> <_:dept6> .
+<_:emp66> <has_role> <_:role4> .
+<_:emp66> <reports_to> <_:emp16> .
+<_:emp66> <has_skill> <_:skill11> (proficiency=4, years=3) .
+<_:emp66> <has_skill> <_:skill4> (proficiency=3, years=3) .
+<_:emp66> <has_skill> <_:skill12> (proficiency=3, years=3) .
+<_:emp66> <works_on> <_:proj8> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp67> <dgraph.type> "Employee" .
+<_:emp67> <emp_code> "EMP067" .
+<_:emp67> <full_name> "Phạm Thanh Thắng" .
+<_:emp67> <email> "emp067@enterprise-graph.vn" .
+<_:emp67> <phone> "0967109179" .
+<_:emp67> <title> "Chuyên Viên Thiết Kế Sản Phẩm UI/UX" .
+<_:emp67> <level> "5" .
+<_:emp67> <hire_date> "2021-05-15T00:00:00Z" .
+<_:emp67> <salary> "20000000.0" .
+<_:emp67> <status> "Active" .
+<_:emp67> <belongs_to_dept> <_:dept6> .
+<_:emp67> <has_role> <_:role5> .
+<_:emp67> <reports_to> <_:emp66> .
+<_:emp67> <has_skill> <_:skill11> (proficiency=4, years=2) .
+<_:emp67> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp67> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp67> <works_on> <_:proj8> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp67> <works_on> <_:proj9> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp67> <works_on> <_:proj11> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp68> <dgraph.type> "Employee" .
+<_:emp68> <emp_code> "EMP068" .
+<_:emp68> <full_name> "Hoàng Thu Uyên" .
+<_:emp68> <email> "emp068@enterprise-graph.vn" .
+<_:emp68> <phone> "0968109316" .
+<_:emp68> <title> "Chuyên Viên Thiết Kế Sản Phẩm UI/UX" .
+<_:emp68> <level> "5" .
+<_:emp68> <hire_date> "2020-02-12T00:00:00Z" .
+<_:emp68> <salary> "23000000.0" .
+<_:emp68> <status> "Active" .
+<_:emp68> <belongs_to_dept> <_:dept6> .
+<_:emp68> <has_role> <_:role5> .
+<_:emp68> <reports_to> <_:emp16> .
+<_:emp68> <has_skill> <_:skill11> (proficiency=4, years=2) .
+<_:emp68> <has_skill> <_:skill4> (proficiency=3, years=2) .
+<_:emp68> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp68> <works_on> <_:proj2> (role_in_project="Member", hours_per_week=15) .
+<_:emp69> <dgraph.type> "Employee" .
+<_:emp69> <emp_code> "EMP069" .
+<_:emp69> <full_name> "Huỳnh Bảo Cường" .
+<_:emp69> <email> "emp069@enterprise-graph.vn" .
+<_:emp69> <phone> "0969109453" .
+<_:emp69> <title> "Senior Chuyên Viên Thiết Kế Sản Phẩm UI/UX" .
+<_:emp69> <level> "4" .
+<_:emp69> <hire_date> "2024-09-14T00:00:00Z" .
+<_:emp69> <salary> "30000000.0" .
+<_:emp69> <status> "Active" .
+<_:emp69> <belongs_to_dept> <_:dept6> .
+<_:emp69> <has_role> <_:role4> .
+<_:emp69> <reports_to> <_:emp16> .
+<_:emp69> <has_skill> <_:skill11> (proficiency=4, years=3) .
+<_:emp69> <has_skill> <_:skill4> (proficiency=3, years=3) .
+<_:emp69> <has_skill> <_:skill12> (proficiency=3, years=3) .
+<_:emp69> <works_on> <_:proj8> (role_in_project="Core Member", hours_per_week=15) .
+<_:emp70> <dgraph.type> "Employee" .
+<_:emp70> <emp_code> "EMP070" .
+<_:emp70> <full_name> "Phan Văn Khôi" .
+<_:emp70> <email> "emp070@enterprise-graph.vn" .
+<_:emp70> <phone> "0970109590" .
+<_:emp70> <title> "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp" .
+<_:emp70> <level> "5" .
+<_:emp70> <hire_date> "2022-01-21T00:00:00Z" .
+<_:emp70> <salary> "19000000.0" .
+<_:emp70> <status> "Active" .
+<_:emp70> <belongs_to_dept> <_:dept7> .
+<_:emp70> <has_role> <_:role5> .
+<_:emp70> <reports_to> <_:emp69> .
+<_:emp70> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp70> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp70> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp70> <works_on> <_:proj10> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp70> <works_on> <_:proj12> (role_in_project="Cross-Dept Specialist", hours_per_week=25) .
+<_:emp71> <dgraph.type> "Employee" .
+<_:emp71> <emp_code> "EMP071" .
+<_:emp71> <full_name> "Vũ Minh Nhung" .
+<_:emp71> <email> "emp071@enterprise-graph.vn" .
+<_:emp71> <phone> "0971109727" .
+<_:emp71> <title> "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp" .
+<_:emp71> <level> "5" .
+<_:emp71> <hire_date> "2024-07-14T00:00:00Z" .
+<_:emp71> <salary> "20000000.0" .
+<_:emp71> <status> "Active" .
+<_:emp71> <belongs_to_dept> <_:dept7> .
+<_:emp71> <has_role> <_:role5> .
+<_:emp71> <reports_to> <_:emp17> .
+<_:emp71> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp71> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp71> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp71> <works_on> <_:proj7> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp72> <dgraph.type> "Employee" .
+<_:emp72> <emp_code> "EMP072" .
+<_:emp72> <full_name> "Võ Thanh Tâm" .
+<_:emp72> <email> "emp072@enterprise-graph.vn" .
+<_:emp72> <phone> "0972109864" .
+<_:emp72> <title> "Senior Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp" .
+<_:emp72> <level> "4" .
+<_:emp72> <hire_date> "2020-03-20T00:00:00Z" .
+<_:emp72> <salary> "31000000.0" .
+<_:emp72> <status> "Active" .
+<_:emp72> <belongs_to_dept> <_:dept7> .
+<_:emp72> <has_role> <_:role4> .
+<_:emp72> <reports_to> <_:emp17> .
+<_:emp72> <has_skill> <_:skill13> (proficiency=4, years=3) .
+<_:emp72> <has_skill> <_:skill14> (proficiency=3, years=3) .
+<_:emp72> <has_skill> <_:skill12> (proficiency=3, years=3) .
+<_:emp72> <works_on> <_:proj10> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp73> <dgraph.type> "Employee" .
+<_:emp73> <emp_code> "EMP073" .
+<_:emp73> <full_name> "Đặng Thu Tú" .
+<_:emp73> <email> "emp073@enterprise-graph.vn" .
+<_:emp73> <phone> "0973110001" .
+<_:emp73> <title> "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp" .
+<_:emp73> <level> "5" .
+<_:emp73> <hire_date> "2025-02-22T00:00:00Z" .
+<_:emp73> <salary> "17000000.0" .
+<_:emp73> <status> "Active" .
+<_:emp73> <belongs_to_dept> <_:dept7> .
+<_:emp73> <has_role> <_:role5> .
+<_:emp73> <reports_to> <_:emp72> .
+<_:emp73> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp73> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp73> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp73> <works_on> <_:proj10> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp74> <dgraph.type> "Employee" .
+<_:emp74> <emp_code> "EMP074" .
+<_:emp74> <full_name> "Bùi Bảo An" .
+<_:emp74> <email> "emp074@enterprise-graph.vn" .
+<_:emp74> <phone> "0974110138" .
+<_:emp74> <title> "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp" .
+<_:emp74> <level> "5" .
+<_:emp74> <hire_date> "2023-06-19T00:00:00Z" .
+<_:emp74> <salary> "18000000.0" .
+<_:emp74> <status> "Active" .
+<_:emp74> <belongs_to_dept> <_:dept7> .
+<_:emp74> <has_role> <_:role5> .
+<_:emp74> <reports_to> <_:emp17> .
+<_:emp74> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp74> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp74> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp74> <works_on> <_:proj5> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp74> <works_on> <_:proj10> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp75> <dgraph.type> "Employee" .
+<_:emp75> <emp_code> "EMP075" .
+<_:emp75> <full_name> "Đỗ Văn Hùng" .
+<_:emp75> <email> "emp075@enterprise-graph.vn" .
+<_:emp75> <phone> "0975110275" .
+<_:emp75> <title> "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo" .
+<_:emp75> <level> "4" .
+<_:emp75> <hire_date> "2021-07-20T00:00:00Z" .
+<_:emp75> <salary> "35000000.0" .
+<_:emp75> <status> "Active" .
+<_:emp75> <belongs_to_dept> <_:dept8> .
+<_:emp75> <has_role> <_:role4> .
+<_:emp75> <reports_to> <_:emp18> .
+<_:emp75> <has_skill> <_:skill16> (proficiency=4, years=3) .
+<_:emp75> <has_skill> <_:skill14> (proficiency=3, years=3) .
+<_:emp75> <has_skill> <_:skill12> (proficiency=3, years=3) .
+<_:emp75> <works_on> <_:proj2> (role_in_project="Cross-Dept Specialist", hours_per_week=15) .
+<_:emp75> <works_on> <_:proj6> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp75> <works_on> <_:proj9> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp76> <dgraph.type> "Employee" .
+<_:emp76> <emp_code> "EMP076" .
+<_:emp76> <full_name> "Hồ Minh Nam" .
+<_:emp76> <email> "emp076@enterprise-graph.vn" .
+<_:emp76> <phone> "0976110412" .
+<_:emp76> <title> "Chuyên Viên Quản Trị Nhân Sự & Đào Tạo" .
+<_:emp76> <level> "5" .
+<_:emp76> <hire_date> "2025-09-22T00:00:00Z" .
+<_:emp76> <salary> "20000000.0" .
+<_:emp76> <status> "Active" .
+<_:emp76> <belongs_to_dept> <_:dept8> .
+<_:emp76> <has_role> <_:role5> .
+<_:emp76> <reports_to> <_:emp75> .
+<_:emp76> <has_skill> <_:skill16> (proficiency=4, years=2) .
+<_:emp76> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp76> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp76> <works_on> <_:proj1> (role_in_project="Cross-Dept Specialist", hours_per_week=20) .
+<_:emp76> <works_on> <_:proj6> (role_in_project="Core Member", hours_per_week=25) .
+<_:emp77> <dgraph.type> "Employee" .
+<_:emp77> <emp_code> "EMP077" .
+<_:emp77> <full_name> "Ngô Thanh Quỳnh" .
+<_:emp77> <email> "emp077@enterprise-graph.vn" .
+<_:emp77> <phone> "0977110549" .
+<_:emp77> <title> "Chuyên Viên Quản Trị Nhân Sự & Đào Tạo" .
+<_:emp77> <level> "5" .
+<_:emp77> <hire_date> "2022-03-28T00:00:00Z" .
+<_:emp77> <salary> "16000000.0" .
+<_:emp77> <status> "Active" .
+<_:emp77> <belongs_to_dept> <_:dept8> .
+<_:emp77> <has_role> <_:role5> .
+<_:emp77> <reports_to> <_:emp18> .
+<_:emp77> <has_skill> <_:skill16> (proficiency=4, years=2) .
+<_:emp77> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp77> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp77> <works_on> <_:proj6> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp78> <dgraph.type> "Employee" .
+<_:emp78> <emp_code> "EMP078" .
+<_:emp78> <full_name> "Dương Thu Trinh" .
+<_:emp78> <email> "emp078@enterprise-graph.vn" .
+<_:emp78> <phone> "0978110686" .
+<_:emp78> <title> "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo" .
+<_:emp78> <level> "4" .
+<_:emp78> <hire_date> "2023-06-20T00:00:00Z" .
+<_:emp78> <salary> "34000000.0" .
+<_:emp78> <status> "Active" .
+<_:emp78> <belongs_to_dept> <_:dept8> .
+<_:emp78> <has_role> <_:role4> .
+<_:emp78> <reports_to> <_:emp18> .
+<_:emp78> <has_skill> <_:skill16> (proficiency=4, years=3) .
+<_:emp78> <has_skill> <_:skill14> (proficiency=3, years=3) .
+<_:emp78> <has_skill> <_:skill12> (proficiency=3, years=3) .
+<_:emp78> <works_on> <_:proj12> (role_in_project="Cross-Dept Specialist", hours_per_week=10) .
+<_:emp79> <dgraph.type> "Employee" .
+<_:emp79> <emp_code> "EMP079" .
+<_:emp79> <full_name> "Lý Bảo Vy" .
+<_:emp79> <email> "emp079@enterprise-graph.vn" .
+<_:emp79> <phone> "0979110823" .
+<_:emp79> <title> "Chuyên Viên Phân Tích Chiến Lược" .
+<_:emp79> <level> "5" .
+<_:emp79> <hire_date> "2021-05-11T00:00:00Z" .
+<_:emp79> <salary> "24000000.0" .
+<_:emp79> <status> "Active" .
+<_:emp79> <belongs_to_dept> <_:dept1> .
+<_:emp79> <has_role> <_:role5> .
+<_:emp79> <reports_to> <_:emp78> .
+<_:emp79> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp79> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp79> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp79> <works_on> <_:proj14> (role_in_project="Core Member", hours_per_week=20) .
+<_:emp80> <dgraph.type> "Employee" .
+<_:emp80> <emp_code> "EMP080" .
+<_:emp80> <full_name> "Nguyễn Văn Hải" .
+<_:emp80> <email> "emp080@enterprise-graph.vn" .
+<_:emp80> <phone> "0980110960" .
+<_:emp80> <title> "Chuyên Viên Phân Tích Chiến Lược" .
+<_:emp80> <level> "5" .
+<_:emp80> <hire_date> "2024-04-21T00:00:00Z" .
+<_:emp80> <salary> "23000000.0" .
+<_:emp80> <status> "Active" .
+<_:emp80> <belongs_to_dept> <_:dept1> .
+<_:emp80> <has_role> <_:role5> .
+<_:emp80> <reports_to> <_:emp14> .
+<_:emp80> <has_skill> <_:skill13> (proficiency=4, years=2) .
+<_:emp80> <has_skill> <_:skill14> (proficiency=3, years=2) .
+<_:emp80> <has_skill> <_:skill12> (proficiency=3, years=2) .
+<_:emp80> <works_on> <_:proj14> (role_in_project="Core Member", hours_per_week=10) .
+<_:emp2> <collaborated_with> <_:emp3> (projects_together=2, trust_score=9) .
+<_:emp3> <collaborated_with> <_:emp2> (projects_together=2, trust_score=9) .
+<_:emp2> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:emp2> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp3> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp3> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp30> (projects_together=2, trust_score=9) .
+<_:emp30> <collaborated_with> <_:emp3> (projects_together=2, trust_score=9) .
+<_:emp19> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp36> (projects_together=2, trust_score=9) .
+<_:emp36> <collaborated_with> <_:emp30> (projects_together=2, trust_score=9) .
+<_:emp30> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp39> (projects_together=2, trust_score=9) .
+<_:emp39> <collaborated_with> <_:emp3> (projects_together=2, trust_score=9) .
+<_:emp3> <collaborated_with> <_:emp42> (projects_together=2, trust_score=9) .
+<_:emp42> <collaborated_with> <_:emp3> (projects_together=2, trust_score=9) .
+<_:emp2> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:emp2> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:emp2> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp42> (projects_together=2, trust_score=9) .
+<_:emp42> <collaborated_with> <_:emp39> (projects_together=2, trust_score=9) .
+<_:emp39> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp49> (projects_together=2, trust_score=9) .
+<_:emp49> <collaborated_with> <_:emp42> (projects_together=2, trust_score=9) .
+<_:emp42> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp41> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp41> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp41> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp41> (projects_together=1, trust_score=7) .
+<_:emp65> <collaborated_with> <_:emp68> (projects_together=1, trust_score=7) .
+<_:emp68> <collaborated_with> <_:emp65> (projects_together=1, trust_score=7) .
+<_:emp41> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp41> (projects_together=1, trust_score=7) .
+<_:emp68> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp68> (projects_together=1, trust_score=7) .
+<_:emp41> <collaborated_with> <_:emp68> (projects_together=1, trust_score=7) .
+<_:emp68> <collaborated_with> <_:emp41> (projects_together=1, trust_score=7) .
+<_:emp10> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp10> (projects_together=1, trust_score=7) .
+<_:emp10> <collaborated_with> <_:emp48> (projects_together=1, trust_score=7) .
+<_:emp48> <collaborated_with> <_:emp10> (projects_together=1, trust_score=7) .
+<_:emp10> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp10> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp48> (projects_together=1, trust_score=7) .
+<_:emp48> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp48> (projects_together=1, trust_score=7) .
+<_:emp48> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp48> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp48> (projects_together=1, trust_score=7) .
+<_:emp48> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp48> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp45> (projects_together=1, trust_score=7) .
+<_:emp45> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp49> (projects_together=1, trust_score=7) .
+<_:emp49> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp57> (projects_together=2, trust_score=9) .
+<_:emp57> <collaborated_with> <_:emp4> (projects_together=2, trust_score=9) .
+<_:emp4> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp20> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp20> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp40> (projects_together=1, trust_score=7) .
+<_:emp40> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp40> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp40> (projects_together=1, trust_score=7) .
+<_:emp44> <collaborated_with> <_:emp63> (projects_together=1, trust_score=7) .
+<_:emp63> <collaborated_with> <_:emp44> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp40> (projects_together=1, trust_score=7) .
+<_:emp40> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp63> (projects_together=1, trust_score=7) .
+<_:emp63> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp40> <collaborated_with> <_:emp63> (projects_together=1, trust_score=7) .
+<_:emp63> <collaborated_with> <_:emp40> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp64> (projects_together=2, trust_score=9) .
+<_:emp64> <collaborated_with> <_:emp5> (projects_together=2, trust_score=9) .
+<_:emp5> <collaborated_with> <_:emp60> (projects_together=1, trust_score=7) .
+<_:emp60> <collaborated_with> <_:emp5> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp62> (projects_together=2, trust_score=9) .
+<_:emp62> <collaborated_with> <_:emp5> (projects_together=2, trust_score=9) .
+<_:emp60> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp60> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp64> (projects_together=2, trust_score=9) .
+<_:emp64> <collaborated_with> <_:emp62> (projects_together=2, trust_score=9) .
+<_:emp61> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp60> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp60> (projects_together=1, trust_score=7) .
+<_:emp60> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp60> (projects_together=1, trust_score=7) .
+<_:emp29> <collaborated_with> <_:emp60> (projects_together=1, trust_score=7) .
+<_:emp60> <collaborated_with> <_:emp29> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp29> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp29> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp29> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp29> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp61> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp61> (projects_together=1, trust_score=7) .
+<_:emp29> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp29> (projects_together=1, trust_score=7) .
+<_:emp29> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp29> (projects_together=1, trust_score=7) .
+<_:emp54> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp54> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp77> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp77> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp77> (projects_together=1, trust_score=7) .
+<_:emp77> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp77> (projects_together=1, trust_score=7) .
+<_:emp77> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp77> (projects_together=1, trust_score=7) .
+<_:emp77> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp77> (projects_together=1, trust_score=7) .
+<_:emp77> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp18> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp18> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp76> (projects_together=1, trust_score=7) .
+<_:emp76> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp19> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp19> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp62> (projects_together=2, trust_score=9) .
+<_:emp62> <collaborated_with> <_:emp21> (projects_together=2, trust_score=9) .
+<_:emp34> <collaborated_with> <_:emp9> (projects_together=2, trust_score=9) .
+<_:emp9> <collaborated_with> <_:emp34> (projects_together=2, trust_score=9) .
+<_:emp28> <collaborated_with> <_:emp9> (projects_together=1, trust_score=7) .
+<_:emp9> <collaborated_with> <_:emp28> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp9> (projects_together=1, trust_score=7) .
+<_:emp9> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp28> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp28> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp28> (projects_together=1, trust_score=7) .
+<_:emp28> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp28> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp28> (projects_together=1, trust_score=7) .
+<_:emp28> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp28> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp27> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp27> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp37> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp37> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp22> <collaborated_with> <_:emp71> (projects_together=1, trust_score=7) .
+<_:emp71> <collaborated_with> <_:emp22> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp22> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp22> (projects_together=1, trust_score=7) .
+<_:emp25> <collaborated_with> <_:emp55> (projects_together=1, trust_score=7) .
+<_:emp55> <collaborated_with> <_:emp25> (projects_together=1, trust_score=7) .
+<_:emp22> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp22> (projects_together=1, trust_score=7) .
+<_:emp25> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp25> (projects_together=1, trust_score=7) .
+<_:emp22> <collaborated_with> <_:emp25> (projects_together=1, trust_score=7) .
+<_:emp25> <collaborated_with> <_:emp22> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp66> (projects_together=1, trust_score=7) .
+<_:emp66> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp69> (projects_together=1, trust_score=7) .
+<_:emp69> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp66> <collaborated_with> <_:emp69> (projects_together=1, trust_score=7) .
+<_:emp69> <collaborated_with> <_:emp66> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp66> (projects_together=1, trust_score=7) .
+<_:emp66> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp66> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp66> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp69> (projects_together=1, trust_score=7) .
+<_:emp69> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp69> (projects_together=1, trust_score=7) .
+<_:emp69> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp23> <collaborated_with> <_:emp69> (projects_together=1, trust_score=7) .
+<_:emp69> <collaborated_with> <_:emp23> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp23> (projects_together=1, trust_score=7) .
+<_:emp23> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp16> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp16> (projects_together=1, trust_score=7) .
+<_:emp23> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp23> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp23> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp23> (projects_together=1, trust_score=7) .
+<_:emp23> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp23> (projects_together=1, trust_score=7) .
+<_:emp33> <collaborated_with> <_:emp53> (projects_together=1, trust_score=7) .
+<_:emp53> <collaborated_with> <_:emp33> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp3> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp11> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp11> (projects_together=1, trust_score=7) .
+<_:emp42> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp42> (projects_together=1, trust_score=7) .
+<_:emp3> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp3> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp39> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp39> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp75> (projects_together=1, trust_score=7) .
+<_:emp75> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp7> <collaborated_with> <_:emp72> (projects_together=1, trust_score=7) .
+<_:emp72> <collaborated_with> <_:emp7> (projects_together=1, trust_score=7) .
+<_:emp7> <collaborated_with> <_:emp73> (projects_together=1, trust_score=7) .
+<_:emp73> <collaborated_with> <_:emp7> (projects_together=1, trust_score=7) .
+<_:emp7> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp7> (projects_together=1, trust_score=7) .
+<_:emp72> <collaborated_with> <_:emp73> (projects_together=1, trust_score=7) .
+<_:emp73> <collaborated_with> <_:emp72> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp72> (projects_together=1, trust_score=7) .
+<_:emp72> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp72> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp72> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp73> (projects_together=1, trust_score=7) .
+<_:emp73> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp73> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp73> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp73> (projects_together=1, trust_score=7) .
+<_:emp73> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp74> (projects_together=1, trust_score=7) .
+<_:emp74> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp15> <collaborated_with> <_:emp32> (projects_together=1, trust_score=7) .
+<_:emp32> <collaborated_with> <_:emp15> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp15> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp15> (projects_together=1, trust_score=7) .
+<_:emp38> <collaborated_with> <_:emp43> (projects_together=1, trust_score=7) .
+<_:emp43> <collaborated_with> <_:emp38> (projects_together=1, trust_score=7) .
+<_:emp15> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp15> (projects_together=1, trust_score=7) .
+<_:emp43> <collaborated_with> <_:emp59> (projects_together=1, trust_score=7) .
+<_:emp59> <collaborated_with> <_:emp43> (projects_together=1, trust_score=7) .
+<_:emp15> <collaborated_with> <_:emp43> (projects_together=1, trust_score=7) .
+<_:emp43> <collaborated_with> <_:emp15> (projects_together=1, trust_score=7) .
+<_:emp12> <collaborated_with> <_:emp51> (projects_together=1, trust_score=7) .
+<_:emp51> <collaborated_with> <_:emp12> (projects_together=1, trust_score=7) .
+<_:emp12> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp12> (projects_together=1, trust_score=7) .
+<_:emp12> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp12> (projects_together=1, trust_score=7) .
+<_:emp51> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp51> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp51> (projects_together=1, trust_score=7) .
+<_:emp51> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp51> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp51> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp57> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp57> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp4> (projects_together=1, trust_score=7) .
+<_:emp4> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp52> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp52> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp17> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp17> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp17> (projects_together=1, trust_score=7) .
+<_:emp17> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp58> (projects_together=1, trust_score=7) .
+<_:emp58> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp17> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp17> (projects_together=1, trust_score=7) .
+<_:emp58> <collaborated_with> <_:emp67> (projects_together=1, trust_score=7) .
+<_:emp67> <collaborated_with> <_:emp58> (projects_together=1, trust_score=7) .
+<_:emp17> <collaborated_with> <_:emp58> (projects_together=1, trust_score=7) .
+<_:emp58> <collaborated_with> <_:emp17> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp9> (projects_together=1, trust_score=7) .
+<_:emp9> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp9> (projects_together=1, trust_score=7) .
+<_:emp9> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp26> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp26> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp34> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp34> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp30> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp30> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp31> <collaborated_with> <_:emp70> (projects_together=1, trust_score=7) .
+<_:emp70> <collaborated_with> <_:emp31> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp31> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp31> (projects_together=1, trust_score=7) .
+<_:emp47> <collaborated_with> <_:emp78> (projects_together=1, trust_score=7) .
+<_:emp78> <collaborated_with> <_:emp47> (projects_together=1, trust_score=7) .
+<_:emp31> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp31> (projects_together=1, trust_score=7) .
+<_:emp46> <collaborated_with> <_:emp47> (projects_together=1, trust_score=7) .
+<_:emp47> <collaborated_with> <_:emp46> (projects_together=1, trust_score=7) .
+<_:emp31> <collaborated_with> <_:emp47> (projects_together=1, trust_score=7) .
+<_:emp47> <collaborated_with> <_:emp31> (projects_together=1, trust_score=7) .
+<_:emp13> <collaborated_with> <_:emp62> (projects_together=1, trust_score=7) .
+<_:emp62> <collaborated_with> <_:emp13> (projects_together=1, trust_score=7) .
+<_:emp13> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp13> (projects_together=1, trust_score=7) .
+<_:emp13> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp13> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp5> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp21> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp21> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp64> (projects_together=1, trust_score=7) .
+<_:emp64> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp5> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp5> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp5> (projects_together=1, trust_score=7) .
+<_:emp5> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp8> (projects_together=1, trust_score=7) .
+<_:emp8> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp36> <collaborated_with> <_:emp6> (projects_together=1, trust_score=7) .
+<_:emp6> <collaborated_with> <_:emp36> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp80> (projects_together=1, trust_score=7) .
+<_:emp80> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp1> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp1> (projects_together=1, trust_score=7) .
+<_:emp14> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp14> (projects_together=1, trust_score=7) .
+<_:emp1> <collaborated_with> <_:emp80> (projects_together=1, trust_score=7) .
+<_:emp80> <collaborated_with> <_:emp1> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp80> (projects_together=1, trust_score=7) .
+<_:emp80> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp80> (projects_together=1, trust_score=7) .
+<_:emp80> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp1> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp1> (projects_together=1, trust_score=7) .
+<_:emp1> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp1> (projects_together=1, trust_score=7) .
+<_:emp1> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp1> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp24> <collaborated_with> <_:emp79> (projects_together=1, trust_score=7) .
+<_:emp79> <collaborated_with> <_:emp24> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp24> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp24> (projects_together=1, trust_score=7) .
+<_:emp35> <collaborated_with> <_:emp56> (projects_together=1, trust_score=7) .
+<_:emp56> <collaborated_with> <_:emp35> (projects_together=1, trust_score=7) .
+<_:emp24> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp24> (projects_together=1, trust_score=7) .
+<_:emp50> <collaborated_with> <_:emp56> (projects_together=1, trust_score=7) .
+<_:emp56> <collaborated_with> <_:emp50> (projects_together=1, trust_score=7) .
+<_:emp24> <collaborated_with> <_:emp56> (projects_together=1, trust_score=7) .
+<_:emp56> <collaborated_with> <_:emp24> (projects_together=1, trust_score=7) .
+<_:emp2> <collaborated_with> <_:emp9> (projects_together=1, trust_score=7) .
+<_:emp9> <collaborated_with> <_:emp2> (projects_together=1, trust_score=7) .
+<_:user1> <dgraph.type> "AppUser" .
+<_:user1> <username> "admin" .
+<_:user1> <password_hash> "admin123" .
+<_:user1> <full_name> "Nguyễn Phạm Duy Luân (Admin)" .
+<_:user1> <user_role> "admin" .
+<_:user1> <linked_employee> <_:emp2> .
+<_:user2> <dgraph.type> "AppUser" .
+<_:user2> <username> "manager" .
+<_:user2> <password_hash> "manager123" .
+<_:user2> <full_name> "Đỗ Văn Minh (Manager)" .
+<_:user2> <user_role> "manager" .
+<_:user2> <linked_employee> <_:emp3> .
+<_:user3> <dgraph.type> "AppUser" .
+<_:user3> <username> "employee" .
+<_:user3> <password_hash> "emp123" .
+<_:user3> <full_name> "Nguyễn Thị Minh Khai (Employee)" .
+<_:user3> <user_role> "employee" .
+<_:user3> <linked_employee> <_:emp15> .

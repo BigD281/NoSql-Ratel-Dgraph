@@ -1,0 +1,202 @@
+# ============================================================================
+# BO 10 TRUY VAN CO BAN TREN DGRAPH RATEL (DQL)
+# De tai: Quan ly mang luoi quan he Nhan vien - Phong ban - Du an
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# [Q01] Tra cuu danh sach tat ca Phong ban kem Truong phong va Ngan sach
+# ----------------------------------------------------------------------------
+{
+  q01_departments(func: type(Department), orderasc: dept_code) {
+    uid
+    dept_code
+    dept_name
+    location
+    budget
+    established_year
+    managed_by {
+      emp_code
+      full_name
+      title
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q02] Tim kiem Nhan vien theo Ho ten (Full-text / Term search)
+# Minh hoa tim thanh vien nhom: Nguyen Pham Duy Luan va Do Van Minh
+# ----------------------------------------------------------------------------
+{
+  find_luan(func: allofterms(full_name, "Nguyễn Phạm Duy Luân")) {
+    uid
+    emp_code
+    full_name
+    title
+    email
+    salary
+    belongs_to_dept { dept_name }
+  }
+  find_minh(func: allofterms(full_name, "Đỗ Văn Minh")) {
+    uid
+    emp_code
+    full_name
+    title
+    email
+    salary
+    belongs_to_dept { dept_name }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q03] Liet ke danh sach Nhan vien thuoc Phong Ky Thuat Phan Mem (DEPT02)
+# Su dung canh nguoc ~belongs_to_dept
+# ----------------------------------------------------------------------------
+{
+  dept02_staff(func: eq(dept_code, "DEPT02")) {
+    dept_code
+    dept_name
+    location
+    total_staff: count(~belongs_to_dept)
+    staff_list: ~belongs_to_dept (orderasc: level, first: 15) {
+      emp_code
+      full_name
+      title
+      level
+      salary
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q04] Tra cuu cac Du an dang hoat dong (Active) co do uu tien Critical
+# ----------------------------------------------------------------------------
+{
+  critical_active_projects(func: eq(proj_status, "Active"), orderdesc: proj_budget)
+    @filter(eq(priority, "Critical")) {
+    uid
+    proj_code
+    proj_name
+    proj_status
+    priority
+    proj_budget
+    owned_by_dept { dept_name }
+    led_by { emp_code full_name }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q05] Ho so 360 do cua mot Nhan vien (EMP002 - Nguyen Pham Duy Luan)
+# Kem thuoc tinh tren canh (@facets)
+# ----------------------------------------------------------------------------
+{
+  employee_360(func: eq(emp_code, "EMP002")) {
+    uid
+    emp_code
+    full_name
+    title
+    email
+    phone
+    level
+    salary
+    belongs_to_dept { dept_code dept_name }
+    reports_to { emp_code full_name title }
+    has_role { role_code role_name permissions }
+    has_skill @facets(proficiency, years) {
+      skill_code
+      skill_name
+      skill_category
+    }
+    works_on @facets(role_in_project, hours_per_week) {
+      proj_code
+      proj_name
+      priority
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q06] Loc va phan trang Nhan vien co muc luong >= 45 trieu VND
+# ----------------------------------------------------------------------------
+{
+  high_earners(func: type(Employee), orderdesc: salary, first: 10, offset: 0)
+    @filter(ge(salary, 45000000)) {
+    emp_code
+    full_name
+    title
+    level
+    salary
+    belongs_to_dept { dept_name }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q07] Danh muc Ky nang va dem so luong Nhan vien + Du an yeu cau ky nang do
+# ----------------------------------------------------------------------------
+{
+  skills_catalog(func: type(Skill), orderasc: skill_code) {
+    skill_code
+    skill_name
+    skill_category
+    employee_count: count(~has_skill)
+    project_demand_count: count(~requires_skill)
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q08] Tim cac Quan ly & Tech Lead (level <= 3) gia nhap tu 2017 den 2020
+# ----------------------------------------------------------------------------
+{
+  senior_leaders(func: le(level, 3), orderasc: hire_date)
+    @filter(ge(hire_date, "2017-01-01") AND le(hire_date, "2020-12-31")) {
+    emp_code
+    full_name
+    title
+    level
+    hire_date
+    belongs_to_dept { dept_name }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q09] Chi tiet Du an PRJ01 (Enterprise Knowledge Graph) va danh sach thanh vien
+# ----------------------------------------------------------------------------
+{
+  project_detail(func: eq(proj_code, "PRJ01")) {
+    proj_code
+    proj_name
+    proj_status
+    priority
+    proj_budget
+    owned_by_dept { dept_code dept_name }
+    led_by { emp_code full_name title }
+    requires_skill @facets(mandatory) {
+      skill_code
+      skill_name
+    }
+    members: ~works_on @facets(role_in_project, hours_per_week) {
+      emp_code
+      full_name
+      title
+      belongs_to_dept { dept_code }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [Q10] Tra cuu cap duoi truc tiep (~reports_to) cua CEO (EMP001) va EMP002
+# ----------------------------------------------------------------------------
+{
+  direct_reports(func: eq(emp_code, "EMP001", "EMP002")) {
+    emp_code
+    full_name
+    title
+    subordinates_count: count(~reports_to)
+    subordinates: ~reports_to (orderasc: emp_code) {
+      emp_code
+      full_name
+      title
+      level
+    }
+  }
+}
+

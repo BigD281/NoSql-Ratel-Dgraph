@@ -1,0 +1,3948 @@
+{
+  "basic": {
+    "Q01": {
+      "title": "Tra cuu danh sach tat ca Phong ban kem Truong phong va Ngan sach",
+      "dql": "{\n  q01_departments(func: type(Department), orderasc: dept_code) {\n    uid\n    dept_code\n    dept_name\n    location\n    budget\n    established_year\n    managed_by {\n      emp_code\n      full_name\n      title\n    }\n  }\n}",
+      "row_counts": {
+        "q01_departments": 8
+      },
+      "sample_data": {
+        "q01_departments": [
+          {
+            "uid": "0x4e3c",
+            "dept_code": "DEPT01",
+            "dept_name": "Ban Giám Đốc Điều Hành",
+            "location": "Tầng 15 - Hà Nội",
+            "budget": 15000000000.0,
+            "established_year": 2016,
+            "managed_by": {
+              "emp_code": "EMP001",
+              "full_name": "Trần Quang Khải",
+              "title": "Tổng Giám Đốc (CEO)"
+            }
+          },
+          {
+            "uid": "0x4ea1",
+            "dept_code": "DEPT02",
+            "dept_name": "Phòng Kỹ Thuật Phần Mềm",
+            "location": "Tầng 12 - TP.HCM",
+            "budget": 8500000000.0,
+            "established_year": 2017,
+            "managed_by": {
+              "emp_code": "EMP002",
+              "full_name": "Nguyễn Phạm Duy Luân",
+              "title": "Giám Đốc Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "uid": "0x4e2b",
+            "dept_code": "DEPT03",
+            "dept_name": "Phòng Khoa Học Dữ Liệu & AI",
+            "location": "Tầng 14 - TP.HCM",
+            "budget": 9200000000.0,
+            "established_year": 2018,
+            "managed_by": {
+              "emp_code": "EMP003",
+              "full_name": "Đỗ Văn Minh",
+              "title": "Giám Đốc Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "uid": "0x4e2c",
+            "dept_code": "DEPT04",
+            "dept_name": "Phòng Hạ Tầng & Điện Toán Đám Mây",
+            "location": "Tầng 10 - Hà Nội",
+            "budget": 7800000000.0,
+            "established_year": 2017,
+            "managed_by": {
+              "emp_code": "EMP004",
+              "full_name": "Lê Hoàng Nam",
+              "title": "Trưởng Phòng Hạ Tầng & Cloud"
+            }
+          },
+          {
+            "uid": "0x4e76",
+            "dept_code": "DEPT05",
+            "dept_name": "Phòng An Ninh Mạng (SecOps)",
+            "location": "Tầng 11 - Hà Nội",
+            "budget": 6400000000.0,
+            "established_year": 2019,
+            "managed_by": {
+              "emp_code": "EMP005",
+              "full_name": "Phạm Thu Hà",
+              "title": "Trưởng Phòng An Ninh Mạng"
+            }
+          },
+          {
+            "uid": "0x4e6b",
+            "dept_code": "DEPT06",
+            "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX",
+            "location": "Tầng 9 - TP.HCM",
+            "budget": 4500000000.0,
+            "established_year": 2018,
+            "managed_by": {
+              "emp_code": "EMP006",
+              "full_name": "Võ Ngọc Ánh",
+              "title": "Trưởng Phòng Sản Phẩm & UI/UX"
+            }
+          },
+          {
+            "uid": "0x4e38",
+            "dept_code": "DEPT07",
+            "dept_name": "Phòng Phát Triển Kinh Doanh & Giải Pháp",
+            "location": "Tầng 8 - Đà Nẵng",
+            "budget": 5600000000.0,
+            "established_year": 2019,
+            "managed_by": {
+              "emp_code": "EMP007",
+              "full_name": "Đặng Quốc Tuấn",
+              "title": "Trưởng Phòng Kinh Doanh Giải Pháp"
+            }
+          },
+          {
+            "uid": "0x4e6d",
+            "dept_code": "DEPT08",
+            "dept_name": "Phòng Quản Trị Nguồn Nhân Lực",
+            "location": "Tầng 7 - TP.HCM",
+            "budget": 3800000000.0,
+            "established_year": 2016,
+            "managed_by": {
+              "emp_code": "EMP008",
+              "full_name": "Bùi Thanh Trúc",
+              "title": "Trưởng Phòng Quản Trị Nhân Sự"
+            }
+          }
+        ]
+      }
+    },
+    "Q02": {
+      "title": "Tim kiem Nhan vien theo Ho ten (Full-text / Term search)",
+      "dql": "{\n  find_luan(func: allofterms(full_name, \"Nguyễn Phạm Duy Luân\")) {\n    uid\n    emp_code\n    full_name\n    title\n    email\n    salary\n    belongs_to_dept { dept_name }\n  }\n  find_minh(func: allofterms(full_name, \"Đỗ Văn Minh\")) {\n    uid\n    emp_code\n    full_name\n    title\n    email\n    salary\n    belongs_to_dept { dept_name }\n  }\n}",
+      "row_counts": {
+        "find_luan": 2,
+        "find_minh": 2
+      },
+      "sample_data": {
+        "find_luan": [
+          {
+            "uid": "0x4e58",
+            "full_name": "Nguyễn Phạm Duy Luân (Admin)"
+          },
+          {
+            "uid": "0x4e94",
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "email": "emp002@enterprise-graph.vn",
+            "salary": 68000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          }
+        ],
+        "find_minh": [
+          {
+            "uid": "0x4e25",
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "email": "emp003@enterprise-graph.vn",
+            "salary": 68000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "uid": "0x4e75",
+            "full_name": "Đỗ Văn Minh (Manager)"
+          }
+        ]
+      }
+    },
+    "Q03": {
+      "title": "Liet ke danh sach Nhan vien thuoc Phong Ky Thuat Phan Mem (DEPT02)",
+      "dql": "{\n  dept02_staff(func: eq(dept_code, \"DEPT02\")) {\n    dept_code\n    dept_name\n    location\n    total_staff: count(~belongs_to_dept)\n    staff_list: ~belongs_to_dept (orderasc: level, first: 15) {\n      emp_code\n      full_name\n      title\n      level\n      salary\n    }\n  }\n}",
+      "row_counts": {
+        "dept02_staff": 1
+      },
+      "sample_data": {
+        "dept02_staff": [
+          {
+            "dept_code": "DEPT02",
+            "dept_name": "Phòng Kỹ Thuật Phần Mềm",
+            "location": "Tầng 12 - TP.HCM",
+            "total_staff": 20,
+            "staff_list": [
+              {
+                "emp_code": "EMP002",
+                "full_name": "Nguyễn Phạm Duy Luân",
+                "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+                "level": 2,
+                "salary": 68000000.0
+              },
+              {
+                "emp_code": "EMP009",
+                "full_name": "Hoàng Minh Đức",
+                "title": "Tech Lead Backend & Graph",
+                "level": 3,
+                "salary": 48000000.0
+              },
+              {
+                "emp_code": "EMP015",
+                "full_name": "Nguyễn Thị Minh Khai",
+                "title": "Tech Lead Frontend & Web Graph",
+                "level": 3,
+                "salary": 41000000.0
+              },
+              {
+                "emp_code": "EMP019",
+                "full_name": "Trần Hưng Đạo",
+                "title": "Tech Lead Hệ Thống Phân Tán",
+                "level": 3,
+                "salary": 43000000.0
+              },
+              {
+                "emp_code": "EMP036",
+                "full_name": "Hoàng Minh Tú",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 4,
+                "salary": 26000000.0
+              },
+              {
+                "emp_code": "EMP024",
+                "full_name": "Võ Bảo Quân",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 4,
+                "salary": 26000000.0
+              },
+              {
+                "emp_code": "EMP027",
+                "full_name": "Đỗ Thanh Giang",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 4,
+                "salary": 31000000.0
+              },
+              {
+                "emp_code": "EMP030",
+                "full_name": "Dương Văn Thắng",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 4,
+                "salary": 27000000.0
+              },
+              {
+                "emp_code": "EMP033",
+                "full_name": "Trần Thu Khôi",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 4,
+                "salary": 31000000.0
+              },
+              {
+                "emp_code": "EMP034",
+                "full_name": "Lê Bảo Nhung",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 16000000.0
+              },
+              {
+                "emp_code": "EMP026",
+                "full_name": "Bùi Minh Vinh",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 16000000.0
+              },
+              {
+                "emp_code": "EMP029",
+                "full_name": "Ngô Bảo Phúc",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 20000000.0
+              },
+              {
+                "emp_code": "EMP023",
+                "full_name": "Vũ Thu My",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 24000000.0
+              },
+              {
+                "emp_code": "EMP031",
+                "full_name": "Lý Minh Uyên",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 21000000.0
+              },
+              {
+                "emp_code": "EMP028",
+                "full_name": "Hồ Thu Long",
+                "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                "level": 5,
+                "salary": 15000000.0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Q04": {
+      "title": "Tra cuu cac Du an dang hoat dong (Active) co do uu tien Critical",
+      "dql": "{\n  critical_active_projects(func: eq(proj_status, \"Active\"), orderdesc: proj_budget)\n    @filter(eq(priority, \"Critical\")) {\n    uid\n    proj_code\n    proj_name\n    proj_status\n    priority\n    proj_budget\n    owned_by_dept { dept_name }\n    led_by { emp_code full_name }\n  }\n}",
+      "row_counts": {
+        "critical_active_projects": 5
+      },
+      "sample_data": {
+        "critical_active_projects": [
+          {
+            "uid": "0x4e72",
+            "proj_code": "PRJ02",
+            "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 5100000000.0,
+            "owned_by_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "led_by": {
+              "emp_code": "EMP003",
+              "full_name": "Đỗ Văn Minh"
+            }
+          },
+          {
+            "uid": "0x4e71",
+            "proj_code": "PRJ12",
+            "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 4600000000.0,
+            "owned_by_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "led_by": {
+              "emp_code": "EMP009",
+              "full_name": "Hoàng Minh Đức"
+            }
+          },
+          {
+            "uid": "0x4e35",
+            "proj_code": "PRJ01",
+            "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 4200000000.0,
+            "owned_by_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "led_by": {
+              "emp_code": "EMP002",
+              "full_name": "Nguyễn Phạm Duy Luân"
+            }
+          },
+          {
+            "uid": "0x4e4a",
+            "proj_code": "PRJ05",
+            "proj_name": "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 3900000000.0,
+            "owned_by_dept": {
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "led_by": {
+              "emp_code": "EMP005",
+              "full_name": "Phạm Thu Hà"
+            }
+          },
+          {
+            "uid": "0x4e3e",
+            "proj_code": "PRJ15",
+            "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 1800000000.0,
+            "owned_by_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "led_by": {
+              "emp_code": "EMP002",
+              "full_name": "Nguyễn Phạm Duy Luân"
+            }
+          }
+        ]
+      }
+    },
+    "Q05": {
+      "title": "Ho so 360 do cua mot Nhan vien (EMP002 - Nguyen Pham Duy Luan)",
+      "dql": "{\n  employee_360(func: eq(emp_code, \"EMP002\")) {\n    uid\n    emp_code\n    full_name\n    title\n    email\n    phone\n    level\n    salary\n    belongs_to_dept { dept_code dept_name }\n    reports_to { emp_code full_name title }\n    has_role { role_code role_name permissions }\n    has_skill @facets(proficiency, years) {\n      skill_code\n      skill_name\n      skill_category\n    }\n    works_on @facets(role_in_project, hours_per_week) {\n      proj_code\n      proj_name\n      priority\n    }\n  }\n}",
+      "row_counts": {
+        "employee_360": 1
+      },
+      "sample_data": {
+        "employee_360": [
+          {
+            "uid": "0x4e94",
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "email": "emp002@enterprise-graph.vn",
+            "phone": "0902100274",
+            "level": 2,
+            "salary": 68000000.0,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "reports_to": {
+              "emp_code": "EMP001",
+              "full_name": "Trần Quang Khải",
+              "title": "Tổng Giám Đốc (CEO)"
+            },
+            "has_role": {
+              "role_code": "ROLE_MGR",
+              "role_name": "Trưởng Phòng Ban (Department Head)",
+              "permissions": [
+                "run_analytics",
+                "view_salary",
+                "assign_project",
+                "manage_dept"
+              ]
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "skill_category": "Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "skill_category": "Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "skill_category": "Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "skill_category": "Database",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "priority": "Critical",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              },
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "priority": "Critical",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical",
+                "works_on|hours_per_week": 15,
+                "works_on|role_in_project": "Graph Architect"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Q06": {
+      "title": "Loc va phan trang Nhan vien co muc luong >= 45 trieu VND",
+      "dql": "{\n  high_earners(func: type(Employee), orderdesc: salary, first: 10, offset: 0)\n    @filter(ge(salary, 45000000)) {\n    emp_code\n    full_name\n    title\n    level\n    salary\n    belongs_to_dept { dept_name }\n  }\n}",
+      "row_counts": {
+        "high_earners": 10
+      },
+      "sample_data": {
+        "high_earners": [
+          {
+            "emp_code": "EMP001",
+            "full_name": "Trần Quang Khải",
+            "title": "Tổng Giám Đốc (CEO)",
+            "level": 1,
+            "salary": 95000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Ban Giám Đốc Điều Hành"
+            }
+          },
+          {
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "level": 2,
+            "salary": 68000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "level": 2,
+            "salary": 68000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP005",
+            "full_name": "Phạm Thu Hà",
+            "title": "Trưởng Phòng An Ninh Mạng",
+            "level": 2,
+            "salary": 64000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            }
+          },
+          {
+            "emp_code": "EMP004",
+            "full_name": "Lê Hoàng Nam",
+            "title": "Trưởng Phòng Hạ Tầng & Cloud",
+            "level": 2,
+            "salary": 62000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Hạ Tầng & Điện Toán Đám Mây"
+            }
+          },
+          {
+            "emp_code": "EMP007",
+            "full_name": "Đặng Quốc Tuấn",
+            "title": "Trưởng Phòng Kinh Doanh Giải Pháp",
+            "level": 2,
+            "salary": 58000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Phát Triển Kinh Doanh & Giải Pháp"
+            }
+          },
+          {
+            "emp_code": "EMP006",
+            "full_name": "Võ Ngọc Ánh",
+            "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+            "level": 2,
+            "salary": 55000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            }
+          },
+          {
+            "emp_code": "EMP008",
+            "full_name": "Bùi Thanh Trúc",
+            "title": "Trưởng Phòng Quản Trị Nhân Sự",
+            "level": 2,
+            "salary": 52000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Quản Trị Nguồn Nhân Lực"
+            }
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "level": 3,
+            "salary": 48000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP022",
+            "full_name": "Lê Quý Đôn",
+            "title": "Tech Lead Khai Phá Đồ Thị",
+            "level": 3,
+            "salary": 45000000.0,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          }
+        ]
+      }
+    },
+    "Q07": {
+      "title": "Danh muc Ky nang va dem so luong Nhan vien + Du an yeu cau ky nang do",
+      "dql": "{\n  skills_catalog(func: type(Skill), orderasc: skill_code) {\n    skill_code\n    skill_name\n    skill_category\n    employee_count: count(~has_skill)\n    project_demand_count: count(~requires_skill)\n  }\n}",
+      "row_counts": {
+        "skills_catalog": 16
+      },
+      "sample_data": {
+        "skills_catalog": [
+          {
+            "skill_code": "SK01",
+            "skill_name": "Dgraph & GraphQL",
+            "skill_category": "Database",
+            "employee_count": 29,
+            "project_demand_count": 6
+          },
+          {
+            "skill_code": "SK02",
+            "skill_name": "Python Backend",
+            "skill_category": "Backend",
+            "employee_count": 28,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK03",
+            "skill_name": "Golang Microservices",
+            "skill_category": "Backend",
+            "employee_count": 20,
+            "project_demand_count": 5
+          },
+          {
+            "skill_code": "SK04",
+            "skill_name": "React & TypeScript",
+            "skill_category": "Frontend",
+            "employee_count": 18,
+            "project_demand_count": 4
+          },
+          {
+            "skill_code": "SK05",
+            "skill_name": "Machine Learning & NLP",
+            "skill_category": "Data & AI",
+            "employee_count": 6,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK06",
+            "skill_name": "Big Data & Spark",
+            "skill_category": "Data & AI",
+            "employee_count": 11,
+            "project_demand_count": 2
+          },
+          {
+            "skill_code": "SK07",
+            "skill_name": "Kubernetes & Cloud Architecture",
+            "skill_category": "Infrastructure",
+            "employee_count": 18,
+            "project_demand_count": 4
+          },
+          {
+            "skill_code": "SK08",
+            "skill_name": "CI/CD & DevOps Automation",
+            "skill_category": "Infrastructure",
+            "employee_count": 7,
+            "project_demand_count": 2
+          },
+          {
+            "skill_code": "SK09",
+            "skill_name": "Application Security & Pentest",
+            "skill_category": "Security",
+            "employee_count": 7,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK10",
+            "skill_name": "Zero Trust Network Security",
+            "skill_category": "Security",
+            "employee_count": 16,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK11",
+            "skill_name": "UI/UX Design System",
+            "skill_category": "Product",
+            "employee_count": 8,
+            "project_demand_count": 2
+          },
+          {
+            "skill_code": "SK12",
+            "skill_name": "Product Management & Agile",
+            "skill_category": "Product",
+            "employee_count": 22,
+            "project_demand_count": 2
+          },
+          {
+            "skill_code": "SK13",
+            "skill_name": "Enterprise Solution Consulting",
+            "skill_category": "Business",
+            "employee_count": 11,
+            "project_demand_count": 2
+          },
+          {
+            "skill_code": "SK14",
+            "skill_name": "Data Visualization & BI",
+            "skill_category": "Data & AI",
+            "employee_count": 26,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK15",
+            "skill_name": "Distributed Systems Architecture",
+            "skill_category": "Backend",
+            "employee_count": 13,
+            "project_demand_count": 3
+          },
+          {
+            "skill_code": "SK16",
+            "skill_name": "HR Analytics & Talent Ops",
+            "skill_category": "Operations",
+            "employee_count": 6,
+            "project_demand_count": 1
+          }
+        ]
+      }
+    },
+    "Q08": {
+      "title": "Tim cac Quan ly & Tech Lead (level <= 3) gia nhap tu 2017 den 2020",
+      "dql": "{\n  senior_leaders(func: le(level, 3), orderasc: hire_date)\n    @filter(ge(hire_date, \"2017-01-01\") AND le(hire_date, \"2020-12-31\")) {\n    emp_code\n    full_name\n    title\n    level\n    hire_date\n    belongs_to_dept { dept_name }\n  }\n}",
+      "row_counts": {
+        "senior_leaders": 15
+      },
+      "sample_data": {
+        "senior_leaders": [
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "level": 2,
+            "hire_date": "2017-03-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP004",
+            "full_name": "Lê Hoàng Nam",
+            "title": "Trưởng Phòng Hạ Tầng & Cloud",
+            "level": 2,
+            "hire_date": "2017-06-20T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Hạ Tầng & Điện Toán Đám Mây"
+            }
+          },
+          {
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "level": 2,
+            "hire_date": "2018-02-01T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "emp_code": "EMP006",
+            "full_name": "Võ Ngọc Ánh",
+            "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+            "level": 2,
+            "hire_date": "2018-05-12T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            }
+          },
+          {
+            "emp_code": "EMP005",
+            "full_name": "Phạm Thu Hà",
+            "title": "Trưởng Phòng An Ninh Mạng",
+            "level": 2,
+            "hire_date": "2019-01-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            }
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "level": 3,
+            "hire_date": "2019-01-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP019",
+            "full_name": "Trần Hưng Đạo",
+            "title": "Tech Lead Hệ Thống Phân Tán",
+            "level": 3,
+            "hire_date": "2019-02-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP007",
+            "full_name": "Đặng Quốc Tuấn",
+            "title": "Trưởng Phòng Kinh Doanh Giải Pháp",
+            "level": 2,
+            "hire_date": "2019-03-01T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Phát Triển Kinh Doanh & Giải Pháp"
+            }
+          },
+          {
+            "emp_code": "EMP013",
+            "full_name": "Phan Đình Phùng",
+            "title": "Tech Lead Bảo Mật Ứng Dụng",
+            "level": 3,
+            "hire_date": "2019-04-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            }
+          },
+          {
+            "emp_code": "EMP020",
+            "full_name": "Nguyễn Bỉnh Khiêm",
+            "title": "Tech Lead Hạ Tầng Đám Mây",
+            "level": 3,
+            "hire_date": "2019-06-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Hạ Tầng & Điện Toán Đám Mây"
+            }
+          },
+          {
+            "emp_code": "EMP022",
+            "full_name": "Lê Quý Đôn",
+            "title": "Tech Lead Khai Phá Đồ Thị",
+            "level": 3,
+            "hire_date": "2019-07-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "emp_code": "EMP011",
+            "full_name": "Trịnh Đình Trọng",
+            "title": "Tech Lead Kỹ Thuật Dữ Liệu Lớn",
+            "level": 3,
+            "hire_date": "2019-09-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "emp_code": "EMP014",
+            "full_name": "Vũ Trọng Phụng",
+            "title": "Trưởng Nhóm Phân Tích Chiến Lược",
+            "level": 3,
+            "hire_date": "2019-09-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Ban Giám Đốc Điều Hành"
+            }
+          },
+          {
+            "emp_code": "EMP018",
+            "full_name": "Lương Thế Vinh",
+            "title": "Trưởng Nhóm Phân Tích Nhân Sự",
+            "level": 3,
+            "hire_date": "2020-04-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Quản Trị Nguồn Nhân Lực"
+            }
+          },
+          {
+            "emp_code": "EMP010",
+            "full_name": "Ngô Bảo Châu",
+            "title": "Tech Lead Trí Tuệ Nhân Tạo",
+            "level": 3,
+            "hire_date": "2020-04-15T00:00:00Z",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          }
+        ]
+      }
+    },
+    "Q09": {
+      "title": "Chi tiet Du an PRJ01 (Enterprise Knowledge Graph) va danh sach thanh vien",
+      "dql": "{\n  project_detail(func: eq(proj_code, \"PRJ01\")) {\n    proj_code\n    proj_name\n    proj_status\n    priority\n    proj_budget\n    owned_by_dept { dept_code dept_name }\n    led_by { emp_code full_name title }\n    requires_skill @facets(mandatory) {\n      skill_code\n      skill_name\n    }\n    members: ~works_on @facets(role_in_project, hours_per_week) {\n      emp_code\n      full_name\n      title\n      belongs_to_dept { dept_code }\n    }\n  }\n}",
+      "row_counts": {
+        "project_detail": 1
+      },
+      "sample_data": {
+        "project_detail": [
+          {
+            "proj_code": "PRJ01",
+            "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+            "proj_status": "Active",
+            "priority": "Critical",
+            "proj_budget": 4200000000.0,
+            "owned_by_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "led_by": {
+              "emp_code": "EMP002",
+              "full_name": "Nguyễn Phạm Duy Luân",
+              "title": "Giám Đốc Kỹ Thuật Phần Mềm"
+            },
+            "requires_skill": [
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "requires_skill|mandatory": true
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "requires_skill|mandatory": true
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "requires_skill|mandatory": true
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "requires_skill|mandatory": true
+              }
+            ],
+            "members": [
+              {
+                "emp_code": "EMP003",
+                "full_name": "Đỗ Văn Minh",
+                "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT03"
+                },
+                "members|hours_per_week": 15,
+                "members|role_in_project": "AI Co-Lead"
+              },
+              {
+                "emp_code": "EMP036",
+                "full_name": "Hoàng Minh Tú",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT02"
+                },
+                "members|hours_per_week": 20,
+                "members|role_in_project": "Core Member"
+              },
+              {
+                "emp_code": "EMP011",
+                "full_name": "Trịnh Đình Trọng",
+                "title": "Tech Lead Kỹ Thuật Dữ Liệu Lớn",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT03"
+                },
+                "members|hours_per_week": 15,
+                "members|role_in_project": "Cross-Dept Specialist"
+              },
+              {
+                "emp_code": "EMP030",
+                "full_name": "Dương Văn Thắng",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT02"
+                },
+                "members|hours_per_week": 25,
+                "members|role_in_project": "Core Member"
+              },
+              {
+                "emp_code": "EMP076",
+                "full_name": "Hồ Minh Nam",
+                "title": "Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT08"
+                },
+                "members|hours_per_week": 20,
+                "members|role_in_project": "Cross-Dept Specialist"
+              },
+              {
+                "emp_code": "EMP064",
+                "full_name": "Nguyễn Bảo Giang",
+                "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT05"
+                },
+                "members|hours_per_week": 25,
+                "members|role_in_project": "Cross-Dept Specialist"
+              },
+              {
+                "emp_code": "EMP002",
+                "full_name": "Nguyễn Phạm Duy Luân",
+                "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT02"
+                },
+                "members|hours_per_week": 25,
+                "members|role_in_project": "Project Lead"
+              },
+              {
+                "emp_code": "EMP019",
+                "full_name": "Trần Hưng Đạo",
+                "title": "Tech Lead Hệ Thống Phân Tán",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT02"
+                },
+                "members|hours_per_week": 20,
+                "members|role_in_project": "Core Member"
+              },
+              {
+                "emp_code": "EMP033",
+                "full_name": "Trần Thu Khôi",
+                "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                "belongs_to_dept": {
+                  "dept_code": "DEPT02"
+                },
+                "members|hours_per_week": 20,
+                "members|role_in_project": "Core Member"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Q10": {
+      "title": "Tra cuu cap duoi truc tiep (~reports_to) cua CEO (EMP001) va EMP002",
+      "dql": "{\n  direct_reports(func: eq(emp_code, \"EMP001\", \"EMP002\")) {\n    emp_code\n    full_name\n    title\n    subordinates_count: count(~reports_to)\n    subordinates: ~reports_to (orderasc: emp_code) {\n      emp_code\n      full_name\n      title\n      level\n    }\n  }\n}",
+      "row_counts": {
+        "direct_reports": 2
+      },
+      "sample_data": {
+        "direct_reports": [
+          {
+            "emp_code": "EMP001",
+            "full_name": "Trần Quang Khải",
+            "title": "Tổng Giám Đốc (CEO)",
+            "subordinates_count": 8,
+            "subordinates": [
+              {
+                "emp_code": "EMP002",
+                "full_name": "Nguyễn Phạm Duy Luân",
+                "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP003",
+                "full_name": "Đỗ Văn Minh",
+                "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP004",
+                "full_name": "Lê Hoàng Nam",
+                "title": "Trưởng Phòng Hạ Tầng & Cloud",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP005",
+                "full_name": "Phạm Thu Hà",
+                "title": "Trưởng Phòng An Ninh Mạng",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP006",
+                "full_name": "Võ Ngọc Ánh",
+                "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP007",
+                "full_name": "Đặng Quốc Tuấn",
+                "title": "Trưởng Phòng Kinh Doanh Giải Pháp",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP008",
+                "full_name": "Bùi Thanh Trúc",
+                "title": "Trưởng Phòng Quản Trị Nhân Sự",
+                "level": 2
+              },
+              {
+                "emp_code": "EMP014",
+                "full_name": "Vũ Trọng Phụng",
+                "title": "Trưởng Nhóm Phân Tích Chiến Lược",
+                "level": 3
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "subordinates_count": 3,
+            "subordinates": [
+              {
+                "emp_code": "EMP009",
+                "full_name": "Hoàng Minh Đức",
+                "title": "Tech Lead Backend & Graph",
+                "level": 3
+              },
+              {
+                "emp_code": "EMP015",
+                "full_name": "Nguyễn Thị Minh Khai",
+                "title": "Tech Lead Frontend & Web Graph",
+                "level": 3
+              },
+              {
+                "emp_code": "EMP019",
+                "full_name": "Trần Hưng Đạo",
+                "title": "Tech Lead Hệ Thống Phân Tán",
+                "level": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "advanced": {
+    "A01": {
+      "title": "Truy van De quy (@recurse): So do phan cap to chuc (Org-Chart)",
+      "dql": "{\n  org_chart_recurse(func: eq(emp_code, \"EMP001\")) @recurse(depth: 5, loop: false) {\n    uid\n    emp_code\n    full_name\n    title\n    level\n    ~reports_to\n  }\n}",
+      "row_counts": {
+        "org_chart_recurse": 1
+      },
+      "sample_data": {
+        "org_chart_recurse": [
+          {
+            "uid": "0x4e37",
+            "emp_code": "EMP001",
+            "full_name": "Trần Quang Khải",
+            "title": "Tổng Giám Đốc (CEO)",
+            "level": 1,
+            "~reports_to": [
+              {
+                "uid": "0x4e25",
+                "emp_code": "EMP003",
+                "full_name": "Đỗ Văn Minh",
+                "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e44",
+                    "emp_code": "EMP010",
+                    "full_name": "Ngô Bảo Châu",
+                    "title": "Tech Lead Trí Tuệ Nhân Tạo",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e63",
+                        "emp_code": "EMP047",
+                        "full_name": "Lý Thanh Việt",
+                        "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e74",
+                        "emp_code": "EMP041",
+                        "full_name": "Đặng Minh Trinh",
+                        "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e7c",
+                        "emp_code": "EMP044",
+                        "full_name": "Hồ Bảo Mai",
+                        "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e98",
+                        "emp_code": "EMP050",
+                        "full_name": "Lê Văn Oanh",
+                        "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 5
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "0x4e51",
+                    "emp_code": "EMP022",
+                    "full_name": "Lê Quý Đôn",
+                    "title": "Tech Lead Khai Phá Đồ Thị",
+                    "level": 3
+                  },
+                  {
+                    "uid": "0x4e56",
+                    "emp_code": "EMP011",
+                    "full_name": "Trịnh Đình Trọng",
+                    "title": "Tech Lead Kỹ Thuật Dữ Liệu Lớn",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e30",
+                        "emp_code": "EMP045",
+                        "full_name": "Ngô Văn Phương",
+                        "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e79",
+                            "emp_code": "EMP046",
+                            "full_name": "Dương Minh Thịnh",
+                            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e4b",
+                        "emp_code": "EMP042",
+                        "full_name": "Bùi Thanh Vy",
+                        "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e29",
+                            "emp_code": "EMP043",
+                            "full_name": "Đỗ Thu Hải",
+                            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e57",
+                        "emp_code": "EMP039",
+                        "full_name": "Vũ Bảo Nam",
+                        "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e6f",
+                            "emp_code": "EMP040",
+                            "full_name": "Võ Văn Quỳnh",
+                            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e8c",
+                        "emp_code": "EMP048",
+                        "full_name": "Nguyễn Thu Dũng",
+                        "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e3b",
+                            "emp_code": "EMP049",
+                            "full_name": "Trần Bảo Linh",
+                            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+                            "level": 5
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e2d",
+                "emp_code": "EMP014",
+                "full_name": "Vũ Trọng Phụng",
+                "title": "Trưởng Nhóm Phân Tích Chiến Lược",
+                "level": 3,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e89",
+                    "emp_code": "EMP080",
+                    "full_name": "Nguyễn Văn Hải",
+                    "title": "Chuyên Viên Phân Tích Chiến Lược",
+                    "level": 5
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e47",
+                "emp_code": "EMP007",
+                "full_name": "Đặng Quốc Tuấn",
+                "title": "Trưởng Phòng Kinh Doanh Giải Pháp",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e8f",
+                    "emp_code": "EMP017",
+                    "full_name": "Đoàn Thị Điểm",
+                    "title": "Trưởng Nhóm Tư Vấn Giải Pháp B2B",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e82",
+                        "emp_code": "EMP072",
+                        "full_name": "Võ Thanh Tâm",
+                        "title": "Senior Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e96",
+                            "emp_code": "EMP073",
+                            "full_name": "Đặng Thu Tú",
+                            "title": "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e8d",
+                        "emp_code": "EMP074",
+                        "full_name": "Bùi Bảo An",
+                        "title": "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4ea0",
+                        "emp_code": "EMP071",
+                        "full_name": "Vũ Minh Nhung",
+                        "title": "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp",
+                        "level": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e4d",
+                "emp_code": "EMP008",
+                "full_name": "Bùi Thanh Trúc",
+                "title": "Trưởng Phòng Quản Trị Nhân Sự",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e2e",
+                    "emp_code": "EMP018",
+                    "full_name": "Lương Thế Vinh",
+                    "title": "Trưởng Nhóm Phân Tích Nhân Sự",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e49",
+                        "emp_code": "EMP075",
+                        "full_name": "Đỗ Văn Hùng",
+                        "title": "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e80",
+                            "emp_code": "EMP076",
+                            "full_name": "Hồ Minh Nam",
+                            "title": "Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e54",
+                        "emp_code": "EMP078",
+                        "full_name": "Dương Thu Trinh",
+                        "title": "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e46",
+                            "emp_code": "EMP079",
+                            "full_name": "Lý Bảo Vy",
+                            "title": "Chuyên Viên Phân Tích Chiến Lược",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e83",
+                        "emp_code": "EMP077",
+                        "full_name": "Ngô Thanh Quỳnh",
+                        "title": "Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+                        "level": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e65",
+                "emp_code": "EMP005",
+                "full_name": "Phạm Thu Hà",
+                "title": "Trưởng Phòng An Ninh Mạng",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e4f",
+                    "emp_code": "EMP013",
+                    "full_name": "Phan Đình Phùng",
+                    "title": "Tech Lead Bảo Mật Ứng Dụng",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e36",
+                        "emp_code": "EMP063",
+                        "full_name": "Lý Thu Vinh",
+                        "title": "Senior Chuyên Viên An Ninh Mạng (Security Analyst)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e92",
+                            "emp_code": "EMP064",
+                            "full_name": "Nguyễn Bảo Giang",
+                            "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e69",
+                        "emp_code": "EMP059",
+                        "full_name": "Đỗ Bảo Hiếu",
+                        "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+                        "level": 5
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "0x4e90",
+                    "emp_code": "EMP021",
+                    "full_name": "Chu Văn An",
+                    "title": "Tech Lead Điều Tra An Ninh Số",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e53",
+                        "emp_code": "EMP060",
+                        "full_name": "Hồ Văn My",
+                        "title": "Senior Chuyên Viên An Ninh Mạng (Security Analyst)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e64",
+                            "emp_code": "EMP061",
+                            "full_name": "Ngô Minh Quân",
+                            "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e9a",
+                        "emp_code": "EMP062",
+                        "full_name": "Dương Thanh Trang",
+                        "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+                        "level": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e6a",
+                "emp_code": "EMP004",
+                "full_name": "Lê Hoàng Nam",
+                "title": "Trưởng Phòng Hạ Tầng & Cloud",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e7a",
+                    "emp_code": "EMP020",
+                    "full_name": "Nguyễn Bỉnh Khiêm",
+                    "title": "Tech Lead Hạ Tầng Đám Mây",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e31",
+                        "emp_code": "EMP054",
+                        "full_name": "Phan Bảo Huy",
+                        "title": "Senior Kỹ Sư Hệ Thống Cloud & SRE",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e5f",
+                            "emp_code": "EMP055",
+                            "full_name": "Vũ Văn Nga",
+                            "title": "Kỹ Sư Hệ Thống Cloud & SRE",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e52",
+                        "emp_code": "EMP056",
+                        "full_name": "Võ Minh Sơn",
+                        "title": "Kỹ Sư Hệ Thống Cloud & SRE",
+                        "level": 5
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "0x4ea2",
+                    "emp_code": "EMP012",
+                    "full_name": "Lý Công Uẩn",
+                    "title": "Tech Lead DevOps & Kubernetes",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e87",
+                        "emp_code": "EMP053",
+                        "full_name": "Huỳnh Thu Bình",
+                        "title": "Kỹ Sư Hệ Thống Cloud & SRE",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e88",
+                        "emp_code": "EMP057",
+                        "full_name": "Đặng Thanh Trung",
+                        "title": "Senior Kỹ Sư Hệ Thống Cloud & SRE",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e99",
+                            "emp_code": "EMP058",
+                            "full_name": "Bùi Thu Yến",
+                            "title": "Kỹ Sư Hệ Thống Cloud & SRE",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e91",
+                        "emp_code": "EMP051",
+                        "full_name": "Phạm Minh Thảo",
+                        "title": "Senior Kỹ Sư Hệ Thống Cloud & SRE",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e40",
+                            "emp_code": "EMP052",
+                            "full_name": "Hoàng Thanh Tùng",
+                            "title": "Kỹ Sư Hệ Thống Cloud & SRE",
+                            "level": 5
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e8a",
+                "emp_code": "EMP006",
+                "full_name": "Võ Ngọc Ánh",
+                "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e5e",
+                    "emp_code": "EMP016",
+                    "full_name": "Hồ Xuân Hương",
+                    "title": "Trưởng Nhóm Thiết Kế Trải Nghiệm",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e7d",
+                        "emp_code": "EMP065",
+                        "full_name": "Trần Văn Long",
+                        "title": "Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e81",
+                        "emp_code": "EMP068",
+                        "full_name": "Hoàng Thu Uyên",
+                        "title": "Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e93",
+                        "emp_code": "EMP066",
+                        "full_name": "Lê Minh Phúc",
+                        "title": "Senior Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e27",
+                            "emp_code": "EMP067",
+                            "full_name": "Phạm Thanh Thắng",
+                            "title": "Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e97",
+                        "emp_code": "EMP069",
+                        "full_name": "Huỳnh Bảo Cường",
+                        "title": "Senior Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e60",
+                            "emp_code": "EMP070",
+                            "full_name": "Phan Văn Khôi",
+                            "title": "Chuyên Viên Tư Vấn Giải Pháp Doanh Nghiệp",
+                            "level": 5
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "uid": "0x4e94",
+                "emp_code": "EMP002",
+                "full_name": "Nguyễn Phạm Duy Luân",
+                "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+                "level": 2,
+                "~reports_to": [
+                  {
+                    "uid": "0x4e42",
+                    "emp_code": "EMP009",
+                    "full_name": "Hoàng Minh Đức",
+                    "title": "Tech Lead Backend & Graph",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e2f",
+                        "emp_code": "EMP026",
+                        "full_name": "Bùi Minh Vinh",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e3f",
+                        "emp_code": "EMP029",
+                        "full_name": "Ngô Bảo Phúc",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e4c",
+                        "emp_code": "EMP023",
+                        "full_name": "Vũ Thu My",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e6c",
+                        "emp_code": "EMP038",
+                        "full_name": "Phan Thu Hùng",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e6e",
+                        "emp_code": "EMP032",
+                        "full_name": "Nguyễn Thanh Cường",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e78",
+                        "emp_code": "EMP035",
+                        "full_name": "Phạm Văn Tâm",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "0x4e50",
+                    "emp_code": "EMP015",
+                    "full_name": "Nguyễn Thị Minh Khai",
+                    "title": "Tech Lead Frontend & Web Graph",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e3a",
+                        "emp_code": "EMP036",
+                        "full_name": "Hoàng Minh Tú",
+                        "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 4,
+                        "~reports_to": [
+                          {
+                            "uid": "0x4e73",
+                            "emp_code": "EMP037",
+                            "full_name": "Huỳnh Thanh An",
+                            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                            "level": 5
+                          }
+                        ]
+                      },
+                      {
+                        "uid": "0x4e5c",
+                        "emp_code": "EMP024",
+                        "full_name": "Võ Bảo Quân",
+                        "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 4
+                      },
+                      {
+                        "uid": "0x4e5d",
+                        "emp_code": "EMP027",
+                        "full_name": "Đỗ Thanh Giang",
+                        "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 4
+                      },
+                      {
+                        "uid": "0x4e7b",
+                        "emp_code": "EMP030",
+                        "full_name": "Dương Văn Thắng",
+                        "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 4
+                      },
+                      {
+                        "uid": "0x4e9f",
+                        "emp_code": "EMP033",
+                        "full_name": "Trần Thu Khôi",
+                        "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 4
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "0x4e9c",
+                    "emp_code": "EMP019",
+                    "full_name": "Trần Hưng Đạo",
+                    "title": "Tech Lead Hệ Thống Phân Tán",
+                    "level": 3,
+                    "~reports_to": [
+                      {
+                        "uid": "0x4e26",
+                        "emp_code": "EMP034",
+                        "full_name": "Lê Bảo Nhung",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e62",
+                        "emp_code": "EMP031",
+                        "full_name": "Lý Minh Uyên",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e68",
+                        "emp_code": "EMP028",
+                        "full_name": "Hồ Thu Long",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      },
+                      {
+                        "uid": "0x4e9e",
+                        "emp_code": "EMP025",
+                        "full_name": "Đặng Văn Trang",
+                        "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+                        "level": 5
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A02": {
+      "title": "Tim duong di ngan nhat (Shortest Path) giua 2 Nhan vien khac Phong ban",
+      "dql": "{\n  A as var(func: eq(emp_code, \"EMP002\"))\n  B as var(func: eq(emp_code, \"EMP021\"))\n\n   path as shortest(from: uid(A), to: uid(B), numpaths: 2) {\n    collaborated_with\n  }\n\n  shortest_connection(func: uid(path)) {\n    uid\n    emp_code\n    full_name\n    title\n    belongs_to_dept {\n      dept_code\n      dept_name\n    }\n  }\n}",
+      "row_counts": {
+        "shortest_connection": 3,
+        "_path_": 2
+      },
+      "sample_data": {
+        "shortest_connection": [
+          {
+            "uid": "0x4e94",
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "uid": "0x4e9c",
+            "emp_code": "EMP019",
+            "full_name": "Trần Hưng Đạo",
+            "title": "Tech Lead Hệ Thống Phân Tán",
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "uid": "0x4e90",
+            "emp_code": "EMP021",
+            "full_name": "Chu Văn An",
+            "title": "Tech Lead Điều Tra An Ninh Số",
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            }
+          }
+        ],
+        "_path_": [
+          {
+            "collaborated_with": {
+              "collaborated_with": {
+                "uid": "0x4e90"
+              },
+              "uid": "0x4e9c"
+            },
+            "uid": "0x4e94",
+            "_weight_": 2.0
+          },
+          {
+            "collaborated_with": {
+              "collaborated_with": {
+                "collaborated_with": {
+                  "uid": "0x4e90"
+                },
+                "uid": "0x4e9c"
+              },
+              "uid": "0x4e9f"
+            },
+            "uid": "0x4e94",
+            "_weight_": 3.0
+          }
+        ]
+      }
+    },
+    "A03": {
+      "title": "Chi thi @cascade: Tim Nhan vien VUA co ky nang Dgraph (SK01)",
+      "dql": "{\n  dgraph_critical_experts(func: type(Employee)) @cascade {\n    emp_code\n    full_name\n    title\n    belongs_to_dept {\n      dept_name\n    }\n    has_skill @filter(eq(skill_code, \"SK01\")) {\n      skill_code\n      skill_name\n    }\n    works_on @filter(eq(priority, \"Critical\") AND eq(proj_status, \"Active\")) {\n      proj_code\n      proj_name\n      priority\n    }\n  }\n}",
+      "row_counts": {
+        "dgraph_critical_experts": 12
+      },
+      "sample_data": {
+        "dgraph_critical_experts": [
+          {
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "priority": "Critical"
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP034",
+            "full_name": "Lê Bảo Nhung",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP049",
+            "full_name": "Trần Bảo Linh",
+            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP029",
+            "full_name": "Ngô Bảo Phúc",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ05",
+                "proj_name": "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "priority": "Critical"
+              },
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP042",
+            "full_name": "Bùi Thanh Vy",
+            "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP039",
+            "full_name": "Vũ Bảo Nam",
+            "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP031",
+            "full_name": "Lý Minh Uyên",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP047",
+            "full_name": "Lý Thanh Việt",
+            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP041",
+            "full_name": "Đặng Minh Trinh",
+            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "priority": "Critical"
+              },
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "priority": "Critical"
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "priority": "Critical"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP033",
+            "full_name": "Trần Thu Khôi",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL"
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "priority": "Critical"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A04": {
+      "title": "Giao/Hieu tap bien UID (Smart Project Staffing Recommendation)",
+      "dql": "{\n  var(func: eq(proj_code, \"PRJ02\")) {\n    req_sk as requires_skill\n    current_members as ~works_on\n  }\n\n  var(func: uid(req_sk)) {\n    candidates as ~has_skill @filter(NOT uid(current_members)) {\n      matched_skills_count as count(has_skill @filter(uid(req_sk)))\n    }\n  }\n\n  recommended_candidates(func: uid(candidates), orderdesc: val(matched_skills_count), first: 10) {\n    emp_code\n    full_name\n    title\n    matched_skills: val(matched_skills_count)\n    belongs_to_dept { dept_code dept_name }\n    has_skill @filter(uid(req_sk)) @facets(proficiency) {\n      skill_code\n      skill_name\n    }\n  }\n}",
+      "row_counts": {
+        "recommended_candidates": 10
+      },
+      "sample_data": {
+        "recommended_candidates": [
+          {
+            "emp_code": "EMP010",
+            "full_name": "Ngô Bảo Châu",
+            "title": "Tech Lead Trí Tuệ Nhân Tạo",
+            "matched_skills": 2,
+            "belongs_to_dept": {
+              "dept_code": "DEPT03",
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK05",
+                "skill_name": "Machine Learning & NLP",
+                "has_skill|proficiency": 5
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP021",
+            "full_name": "Chu Văn An",
+            "title": "Tech Lead Điều Tra An Ninh Số",
+            "matched_skills": 2,
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 5
+              },
+              {
+                "skill_code": "SK06",
+                "skill_name": "Big Data & Spark",
+                "has_skill|proficiency": 5
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP047",
+            "full_name": "Lý Thanh Việt",
+            "title": "Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "matched_skills": 2,
+            "belongs_to_dept": {
+              "dept_code": "DEPT03",
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK06",
+                "skill_name": "Big Data & Spark",
+                "has_skill|proficiency": 3
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 4
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP022",
+            "full_name": "Lê Quý Đôn",
+            "title": "Tech Lead Khai Phá Đồ Thị",
+            "matched_skills": 2,
+            "belongs_to_dept": {
+              "dept_code": "DEPT03",
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK05",
+                "skill_name": "Machine Learning & NLP",
+                "has_skill|proficiency": 5
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP034",
+            "full_name": "Lê Bảo Nhung",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 4
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP029",
+            "full_name": "Ngô Bảo Phúc",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 3
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP063",
+            "full_name": "Lý Thu Vinh",
+            "title": "Senior Chuyên Viên An Ninh Mạng (Security Analyst)",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 4
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP023",
+            "full_name": "Vũ Thu My",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 4
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP013",
+            "full_name": "Phan Đình Phùng",
+            "title": "Tech Lead Bảo Mật Ứng Dụng",
+            "matched_skills": 1,
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 5
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A05": {
+      "title": "Phat hien \"Nhan su Cau noi Lien Phong Ban\" (Cross-Department Bridges)",
+      "dql": "{\n  var(func: type(Employee)) {\n    proj_cnt as count(works_on)\n    collab_cnt as count(collaborated_with)\n    bridge_score as math(proj_cnt * 3 + collab_cnt)\n  }\n\n  cross_silo_bridges(func: uid(bridge_score), orderdesc: val(bridge_score), first: 10)\n    @filter(ge(val(proj_cnt), 2)) {\n    emp_code\n    full_name\n    title\n    project_count: val(proj_cnt)\n    collaborator_count: val(collab_cnt)\n    bridge_index: val(bridge_score)\n    belongs_to_dept { dept_code dept_name }\n    works_on {\n      proj_code\n      proj_name\n      owned_by_dept { dept_code }\n    }\n  }\n}",
+      "row_counts": {
+        "cross_silo_bridges": 10
+      },
+      "sample_data": {
+        "cross_silo_bridges": [
+          {
+            "emp_code": "EMP035",
+            "full_name": "Phạm Văn Tâm",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "project_count": 3,
+            "collaborator_count": 15,
+            "bridge_index": 24,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ14",
+                "proj_name": "Bảng Điều Khiển Phân Tích Chiến Lược CEO (Executive BI Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT01"
+                }
+              },
+              {
+                "proj_code": "PRJ04",
+                "proj_name": "Hạ Tầng Đám Mây Đa Vùng Tự Động Hóa (Multi-Cloud Mesh)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT04"
+                }
+              },
+              {
+                "proj_code": "PRJ03",
+                "proj_name": "Trợ Lý AI Phân Tích Nghiệp vụ Nội Bộ (Enterprise Copilot)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP030",
+            "full_name": "Dương Văn Thắng",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "project_count": 3,
+            "collaborator_count": 15,
+            "bridge_index": 24,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              },
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP033",
+            "full_name": "Trần Thu Khôi",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "project_count": 3,
+            "collaborator_count": 14,
+            "bridge_index": 23,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              },
+              {
+                "proj_code": "PRJ08",
+                "proj_name": "Bộ Khung Giao Diện Thiết Kế Thống Nhất (Unified Design System)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT06"
+                }
+              },
+              {
+                "proj_code": "PRJ04",
+                "proj_name": "Hạ Tầng Đám Mây Đa Vùng Tự Động Hóa (Multi-Cloud Mesh)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT04"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP067",
+            "full_name": "Phạm Thanh Thắng",
+            "title": "Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+            "project_count": 3,
+            "collaborator_count": 14,
+            "bridge_index": 23,
+            "belongs_to_dept": {
+              "dept_code": "DEPT06",
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ11",
+                "proj_name": "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT04"
+                }
+              },
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ08",
+                "proj_name": "Bộ Khung Giao Diện Thiết Kế Thống Nhất (Unified Design System)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT06"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP036",
+            "full_name": "Hoàng Minh Tú",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "project_count": 3,
+            "collaborator_count": 14,
+            "bridge_index": 23,
+            "belongs_to_dept": {
+              "dept_code": "DEPT02",
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              },
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              },
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP075",
+            "full_name": "Đỗ Văn Hùng",
+            "title": "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+            "project_count": 3,
+            "collaborator_count": 13,
+            "bridge_index": 22,
+            "belongs_to_dept": {
+              "dept_code": "DEPT08",
+              "dept_name": "Phòng Quản Trị Nguồn Nhân Lực"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT08"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP064",
+            "full_name": "Nguyễn Bảo Giang",
+            "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+            "project_count": 3,
+            "collaborator_count": 13,
+            "bridge_index": 22,
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT02"
+                }
+              },
+              {
+                "proj_code": "PRJ05",
+                "proj_name": "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              },
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP006",
+            "full_name": "Võ Ngọc Ánh",
+            "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+            "project_count": 3,
+            "collaborator_count": 13,
+            "bridge_index": 22,
+            "belongs_to_dept": {
+              "dept_code": "DEPT06",
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ11",
+                "proj_name": "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT04"
+                }
+              },
+              {
+                "proj_code": "PRJ08",
+                "proj_name": "Bộ Khung Giao Diện Thiết Kế Thống Nhất (Unified Design System)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT06"
+                }
+              },
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP042",
+            "full_name": "Bùi Thanh Vy",
+            "title": "Senior Kỹ Sư Dữ Liệu & AI (Data/AI Engineer)",
+            "project_count": 3,
+            "collaborator_count": 11,
+            "bridge_index": 20,
+            "belongs_to_dept": {
+              "dept_code": "DEPT03",
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              },
+              {
+                "proj_code": "PRJ03",
+                "proj_name": "Trợ Lý AI Phân Tích Nghiệp vụ Nội Bộ (Enterprise Copilot)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT03"
+                }
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP062",
+            "full_name": "Dương Thanh Trang",
+            "title": "Chuyên Viên An Ninh Mạng (Security Analyst)",
+            "project_count": 3,
+            "collaborator_count": 11,
+            "bridge_index": 20,
+            "belongs_to_dept": {
+              "dept_code": "DEPT05",
+              "dept_name": "Phòng An Ninh Mạng (SecOps)"
+            },
+            "works_on": [
+              {
+                "proj_code": "PRJ05",
+                "proj_name": "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              },
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT08"
+                }
+              },
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "owned_by_dept": {
+                  "dept_code": "DEPT05"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A06": {
+      "title": "Thong ke Gom nhom (@groupby) & Aggregation theo Phong ban",
+      "dql": "{\n  dept_analytics(func: type(Department), orderasc: dept_code) {\n    dept_code\n    dept_name\n    budget\n    staff_count: count(~belongs_to_dept)\n    owned_projects_count: count(~owned_by_dept)\n    ~belongs_to_dept {\n      s as salary\n    }\n    total_monthly_salary: sum(val(s))\n    avg_monthly_salary: avg(val(s))\n    max_salary: max(val(s))\n  }\n}",
+      "row_counts": {
+        "dept_analytics": 8
+      },
+      "sample_data": {
+        "dept_analytics": [
+          {
+            "dept_code": "DEPT01",
+            "dept_name": "Ban Giám Đốc Điều Hành",
+            "budget": 15000000000.0,
+            "staff_count": 4,
+            "owned_projects_count": 1,
+            "~belongs_to_dept": [
+              {
+                "salary": 41000000.0
+              },
+              {
+                "salary": 95000000.0
+              },
+              {
+                "salary": 24000000.0
+              },
+              {
+                "salary": 23000000.0
+              }
+            ],
+            "total_monthly_salary": 183000000.0,
+            "avg_monthly_salary": 45750000.0,
+            "max_salary": 95000000.0
+          },
+          {
+            "dept_code": "DEPT02",
+            "dept_name": "Phòng Kỹ Thuật Phần Mềm",
+            "budget": 8500000000.0,
+            "staff_count": 20,
+            "owned_projects_count": 4,
+            "~belongs_to_dept": [
+              {
+                "salary": 16000000.0
+              },
+              {
+                "salary": 16000000.0
+              },
+              {
+                "salary": 26000000.0
+              },
+              {
+                "salary": 20000000.0
+              },
+              {
+                "salary": 48000000.0
+              },
+              {
+                "salary": 24000000.0
+              },
+              {
+                "salary": 41000000.0
+              },
+              {
+                "salary": 26000000.0
+              },
+              {
+                "salary": 31000000.0
+              },
+              {
+                "salary": 21000000.0
+              },
+              {
+                "salary": 15000000.0
+              },
+              {
+                "salary": 15000000.0
+              },
+              {
+                "salary": 15000000.0
+              },
+              {
+                "salary": 20000000.0
+              },
+              {
+                "salary": 21000000.0
+              },
+              {
+                "salary": 27000000.0
+              },
+              {
+                "salary": 68000000.0
+              },
+              {
+                "salary": 43000000.0
+              },
+              {
+                "salary": 20000000.0
+              },
+              {
+                "salary": 31000000.0
+              }
+            ],
+            "total_monthly_salary": 544000000.0,
+            "avg_monthly_salary": 27200000.0,
+            "max_salary": 68000000.0
+          },
+          {
+            "dept_code": "DEPT03",
+            "dept_name": "Phòng Khoa Học Dữ Liệu & AI",
+            "budget": 9200000000.0,
+            "staff_count": 16,
+            "owned_projects_count": 3,
+            "~belongs_to_dept": [
+              {
+                "salary": 68000000.0
+              },
+              {
+                "salary": 15000000.0
+              },
+              {
+                "salary": 26000000.0
+              },
+              {
+                "salary": 18000000.0
+              },
+              {
+                "salary": 42000000.0
+              },
+              {
+                "salary": 33000000.0
+              },
+              {
+                "salary": 45000000.0
+              },
+              {
+                "salary": 40000000.0
+              },
+              {
+                "salary": 34000000.0
+              },
+              {
+                "salary": 16000000.0
+              },
+              {
+                "salary": 22000000.0
+              },
+              {
+                "salary": 23000000.0
+              },
+              {
+                "salary": 17000000.0
+              },
+              {
+                "salary": 16000000.0
+              },
+              {
+                "salary": 36000000.0
+              },
+              {
+                "salary": 17000000.0
+              }
+            ],
+            "total_monthly_salary": 468000000.0,
+            "avg_monthly_salary": 29250000.0,
+            "max_salary": 68000000.0
+          },
+          {
+            "dept_code": "DEPT04",
+            "dept_name": "Phòng Hạ Tầng & Điện Toán Đám Mây",
+            "budget": 7800000000.0,
+            "staff_count": 11,
+            "owned_projects_count": 2,
+            "~belongs_to_dept": [
+              {
+                "salary": 36000000.0
+              },
+              {
+                "salary": 21000000.0
+              },
+              {
+                "salary": 24000000.0
+              },
+              {
+                "salary": 18000000.0
+              },
+              {
+                "salary": 62000000.0
+              },
+              {
+                "salary": 44000000.0
+              },
+              {
+                "salary": 21000000.0
+              },
+              {
+                "salary": 27000000.0
+              },
+              {
+                "salary": 25000000.0
+              },
+              {
+                "salary": 24000000.0
+              },
+              {
+                "salary": 39000000.0
+              }
+            ],
+            "total_monthly_salary": 341000000.0,
+            "avg_monthly_salary": 31000000.0,
+            "max_salary": 62000000.0
+          },
+          {
+            "dept_code": "DEPT05",
+            "dept_name": "Phòng An Ninh Mạng (SecOps)",
+            "budget": 6400000000.0,
+            "staff_count": 9,
+            "owned_projects_count": 2,
+            "~belongs_to_dept": [
+              {
+                "salary": 32000000.0
+              },
+              {
+                "salary": 38000000.0
+              },
+              {
+                "salary": 35000000.0
+              },
+              {
+                "salary": 22000000.0
+              },
+              {
+                "salary": 64000000.0
+              },
+              {
+                "salary": 19000000.0
+              },
+              {
+                "salary": 43000000.0
+              },
+              {
+                "salary": 16000000.0
+              },
+              {
+                "salary": 17000000.0
+              }
+            ],
+            "total_monthly_salary": 286000000.0,
+            "avg_monthly_salary": 31777777.777778,
+            "max_salary": 64000000.0
+          },
+          {
+            "dept_code": "DEPT06",
+            "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX",
+            "budget": 4500000000.0,
+            "staff_count": 7,
+            "owned_projects_count": 1,
+            "~belongs_to_dept": [
+              {
+                "salary": 20000000.0
+              },
+              {
+                "salary": 45000000.0
+              },
+              {
+                "salary": 19000000.0
+              },
+              {
+                "salary": 23000000.0
+              },
+              {
+                "salary": 55000000.0
+              },
+              {
+                "salary": 29000000.0
+              },
+              {
+                "salary": 30000000.0
+              }
+            ],
+            "total_monthly_salary": 221000000.0,
+            "avg_monthly_salary": 31571428.571429,
+            "max_salary": 55000000.0
+          },
+          {
+            "dept_code": "DEPT07",
+            "dept_name": "Phòng Phát Triển Kinh Doanh & Giải Pháp",
+            "budget": 5600000000.0,
+            "staff_count": 7,
+            "owned_projects_count": 1,
+            "~belongs_to_dept": [
+              {
+                "salary": 58000000.0
+              },
+              {
+                "salary": 19000000.0
+              },
+              {
+                "salary": 31000000.0
+              },
+              {
+                "salary": 18000000.0
+              },
+              {
+                "salary": 40000000.0
+              },
+              {
+                "salary": 17000000.0
+              },
+              {
+                "salary": 20000000.0
+              }
+            ],
+            "total_monthly_salary": 203000000.0,
+            "avg_monthly_salary": 29000000.0,
+            "max_salary": 58000000.0
+          },
+          {
+            "dept_code": "DEPT08",
+            "dept_name": "Phòng Quản Trị Nguồn Nhân Lực",
+            "budget": 3800000000.0,
+            "staff_count": 6,
+            "owned_projects_count": 1,
+            "~belongs_to_dept": [
+              {
+                "salary": 42000000.0
+              },
+              {
+                "salary": 35000000.0
+              },
+              {
+                "salary": 52000000.0
+              },
+              {
+                "salary": 34000000.0
+              },
+              {
+                "salary": 20000000.0
+              },
+              {
+                "salary": 16000000.0
+              }
+            ],
+            "total_monthly_salary": 199000000.0,
+            "avg_monthly_salary": 33166666.666667,
+            "max_salary": 52000000.0
+          }
+        ]
+      }
+    },
+    "A07": {
+      "title": "Phan tich Rui ro Du an phu thuoc it nguoi (Bus Factor Analysis)",
+      "dql": "{\n  var(func: type(Project)) @filter(eq(proj_status, \"Active\")) {\n    member_cnt as count(~works_on)\n  }\n\n  high_risk_projects(func: uid(member_cnt), orderasc: val(member_cnt))\n    @filter(le(val(member_cnt), 5)) {\n    proj_code\n    proj_name\n    priority\n    proj_budget\n    bus_factor_members: val(member_cnt)\n    led_by { emp_code full_name }\n    ~works_on @facets(role_in_project, hours_per_week) {\n      emp_code\n      full_name\n      title\n    }\n  }\n}",
+      "row_counts": {
+        "high_risk_projects": 1
+      },
+      "sample_data": {
+        "high_risk_projects": [
+          {
+            "proj_code": "PRJ15",
+            "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+            "priority": "Critical",
+            "proj_budget": 1800000000.0,
+            "bus_factor_members": 2,
+            "led_by": {
+              "emp_code": "EMP002",
+              "full_name": "Nguyễn Phạm Duy Luân"
+            },
+            "~works_on": [
+              {
+                "emp_code": "EMP009",
+                "full_name": "Hoàng Minh Đức",
+                "title": "Tech Lead Backend & Graph",
+                "~works_on|hours_per_week": 20,
+                "~works_on|role_in_project": "Core Architect"
+              },
+              {
+                "emp_code": "EMP002",
+                "full_name": "Nguyễn Phạm Duy Luân",
+                "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+                "~works_on|hours_per_week": 25,
+                "~works_on|role_in_project": "Project Lead"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A08": {
+      "title": "Phan tich Tac dong khi Nhan su Chu chot Nghi viec (Impact Analysis)",
+      "dql": "{\n  impact_analysis_emp002(func: eq(emp_code, \"EMP002\")) {\n    emp_code\n    full_name\n    title\n    affected_departments: ~managed_by {\n      dept_code\n      dept_name\n      total_staff: count(~belongs_to_dept)\n    }\n    affected_led_projects: ~led_by {\n      proj_code\n      proj_name\n      priority\n      downstream_dependent_projects: ~depends_on_project {\n        proj_code\n        proj_name\n        priority\n      }\n    }\n    direct_subordinates: ~reports_to {\n      emp_code\n      full_name\n      title\n      second_level_subordinates: ~reports_to {\n        emp_code\n        full_name\n        title\n      }\n    }\n  }\n}",
+      "row_counts": {
+        "impact_analysis_emp002": 1
+      },
+      "sample_data": {
+        "impact_analysis_emp002": [
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "affected_departments": [
+              {
+                "dept_code": "DEPT02",
+                "dept_name": "Phòng Kỹ Thuật Phần Mềm",
+                "total_staff": 20
+              }
+            ],
+            "affected_led_projects": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "priority": "Critical",
+                "downstream_dependent_projects": [
+                  {
+                    "proj_code": "PRJ14",
+                    "proj_name": "Bảng Điều Khiển Phân Tích Chiến Lược CEO (Executive BI Graph)",
+                    "priority": "Medium"
+                  },
+                  {
+                    "proj_code": "PRJ15",
+                    "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                    "priority": "Critical"
+                  },
+                  {
+                    "proj_code": "PRJ07",
+                    "proj_name": "Hệ Thống Gợi Ý Sản Phẩm Cá Nhân Hóa Đa Kênh (Graph Recommender)",
+                    "priority": "High"
+                  },
+                  {
+                    "proj_code": "PRJ02",
+                    "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                    "priority": "Critical"
+                  },
+                  {
+                    "proj_code": "PRJ06",
+                    "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                    "priority": "High"
+                  },
+                  {
+                    "proj_code": "PRJ03",
+                    "proj_name": "Trợ Lý AI Phân Tích Nghiệp vụ Nội Bộ (Enterprise Copilot)",
+                    "priority": "High"
+                  }
+                ]
+              },
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "priority": "Critical"
+              }
+            ],
+            "direct_subordinates": [
+              {
+                "emp_code": "EMP009",
+                "full_name": "Hoàng Minh Đức",
+                "title": "Tech Lead Backend & Graph",
+                "second_level_subordinates": [
+                  {
+                    "emp_code": "EMP026",
+                    "full_name": "Bùi Minh Vinh",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP029",
+                    "full_name": "Ngô Bảo Phúc",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP023",
+                    "full_name": "Vũ Thu My",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP038",
+                    "full_name": "Phan Thu Hùng",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP032",
+                    "full_name": "Nguyễn Thanh Cường",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP035",
+                    "full_name": "Phạm Văn Tâm",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  }
+                ]
+              },
+              {
+                "emp_code": "EMP015",
+                "full_name": "Nguyễn Thị Minh Khai",
+                "title": "Tech Lead Frontend & Web Graph",
+                "second_level_subordinates": [
+                  {
+                    "emp_code": "EMP036",
+                    "full_name": "Hoàng Minh Tú",
+                    "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP024",
+                    "full_name": "Võ Bảo Quân",
+                    "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP027",
+                    "full_name": "Đỗ Thanh Giang",
+                    "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP030",
+                    "full_name": "Dương Văn Thắng",
+                    "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP033",
+                    "full_name": "Trần Thu Khôi",
+                    "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)"
+                  }
+                ]
+              },
+              {
+                "emp_code": "EMP019",
+                "full_name": "Trần Hưng Đạo",
+                "title": "Tech Lead Hệ Thống Phân Tán",
+                "second_level_subordinates": [
+                  {
+                    "emp_code": "EMP034",
+                    "full_name": "Lê Bảo Nhung",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP031",
+                    "full_name": "Lý Minh Uyên",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP028",
+                    "full_name": "Hồ Thu Long",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  },
+                  {
+                    "emp_code": "EMP025",
+                    "full_name": "Đặng Văn Trang",
+                    "title": "Kỹ Sư Phần Mềm (Software Engineer)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A09": {
+      "title": "Loc tren Thuoc tinh Canh (@facets filter)",
+      "dql": "{\n  high_commitment_experts(func: type(Employee)) @cascade {\n    emp_code\n    full_name\n    title\n    has_skill @facets(ge(proficiency, 5)) @facets(proficiency, years) {\n      skill_code\n      skill_name\n    }\n    works_on @facets(ge(hours_per_week, 20)) @facets(role_in_project, hours_per_week) {\n      proj_code\n      proj_name\n    }\n  }\n}",
+      "row_counts": {
+        "high_commitment_experts": 16
+      },
+      "sample_data": {
+        "high_commitment_experts": [
+          {
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "has_skill": [
+              {
+                "skill_code": "SK06",
+                "skill_name": "Big Data & Spark",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK05",
+                "skill_name": "Machine Learning & NLP",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Core Member"
+              },
+              {
+                "proj_code": "PRJ02",
+                "proj_name": "Nền Tảng Phát Hiện Gian Lận Giao Dịch Thời Gian Thực (Fraud Graph)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP014",
+            "full_name": "Vũ Trọng Phụng",
+            "title": "Trưởng Nhóm Phân Tích Chiến Lược",
+            "has_skill": [
+              {
+                "skill_code": "SK13",
+                "skill_name": "Enterprise Solution Consulting",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ11",
+                "proj_name": "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Cross-Dept Specialist"
+              },
+              {
+                "proj_code": "PRJ14",
+                "proj_name": "Bảng Điều Khiển Phân Tích Chiến Lược CEO (Executive BI Graph)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP018",
+            "full_name": "Lương Thế Vinh",
+            "title": "Trưởng Nhóm Phân Tích Nhân Sự",
+            "has_skill": [
+              {
+                "skill_code": "SK16",
+                "skill_name": "HR Analytics & Talent Ops",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Core Member"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "has_skill": [
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "works_on|hours_per_week": 20,
+                "works_on|role_in_project": "Core Architect"
+              },
+              {
+                "proj_code": "PRJ07",
+                "proj_name": "Hệ Thống Gợi Ý Sản Phẩm Cá Nhân Hóa Đa Kênh (Graph Recommender)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              },
+              {
+                "proj_code": "PRJ12",
+                "proj_name": "Kiến Trúc Vi Dịch Vụ Cốt Lõi Thế Hệ Mới (Core Go Mesh)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP010",
+            "full_name": "Ngô Bảo Châu",
+            "title": "Tech Lead Trí Tuệ Nhân Tạo",
+            "has_skill": [
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK05",
+                "skill_name": "Machine Learning & NLP",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ03",
+                "proj_name": "Trợ Lý AI Phân Tích Nghiệp vụ Nội Bộ (Enterprise Copilot)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP007",
+            "full_name": "Đặng Quốc Tuấn",
+            "title": "Trưởng Phòng Kinh Doanh Giải Pháp",
+            "has_skill": [
+              {
+                "skill_code": "SK13",
+                "skill_name": "Enterprise Solution Consulting",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK12",
+                "skill_name": "Product Management & Agile",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ10",
+                "proj_name": "Cổng Giao Tiếp Khách Hàng Doanh Nghiệp B2B (B2B Solution Hub)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP008",
+            "full_name": "Bùi Thanh Trúc",
+            "title": "Trưởng Phòng Quản Trị Nhân Sự",
+            "has_skill": [
+              {
+                "skill_code": "SK12",
+                "skill_name": "Product Management & Agile",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK16",
+                "skill_name": "HR Analytics & Talent Ops",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP013",
+            "full_name": "Phan Đình Phùng",
+            "title": "Tech Lead Bảo Mật Ứng Dụng",
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK10",
+                "skill_name": "Zero Trust Network Security",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP011",
+            "full_name": "Trịnh Đình Trọng",
+            "title": "Tech Lead Kỹ Thuật Dữ Liệu Lớn",
+            "has_skill": [
+              {
+                "skill_code": "SK06",
+                "skill_name": "Big Data & Spark",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK14",
+                "skill_name": "Data Visualization & BI",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ09",
+                "proj_name": "Nền Tảng Tích Hợp Dữ Liệu Hồ (Real-time Data Lakehouse)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP005",
+            "full_name": "Phạm Thu Hà",
+            "title": "Trưởng Phòng An Ninh Mạng",
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK07",
+                "skill_name": "Kubernetes & Cloud Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK10",
+                "skill_name": "Zero Trust Network Security",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ05",
+                "proj_name": "Trung Tâm Giám Sát Bảo Mật Zero-Trust (Zero-Trust SOC)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP004",
+            "full_name": "Lê Hoàng Nam",
+            "title": "Trưởng Phòng Hạ Tầng & Cloud",
+            "has_skill": [
+              {
+                "skill_code": "SK07",
+                "skill_name": "Kubernetes & Cloud Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK08",
+                "skill_name": "CI/CD & DevOps Automation",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ04",
+                "proj_name": "Hạ Tầng Đám Mây Đa Vùng Tự Động Hóa (Multi-Cloud Mesh)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP006",
+            "full_name": "Võ Ngọc Ánh",
+            "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+            "has_skill": [
+              {
+                "skill_code": "SK04",
+                "skill_name": "React & TypeScript",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK11",
+                "skill_name": "UI/UX Design System",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK12",
+                "skill_name": "Product Management & Agile",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ11",
+                "proj_name": "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)",
+                "works_on|hours_per_week": 20,
+                "works_on|role_in_project": "Cross-Dept Specialist"
+              },
+              {
+                "proj_code": "PRJ08",
+                "proj_name": "Bộ Khung Giao Diện Thiết Kế Thống Nhất (Unified Design System)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              },
+              {
+                "proj_code": "PRJ13",
+                "proj_name": "Hệ Thống Mã Hóa & Định Danh Tập Trung (IAM Shield)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Cross-Dept Specialist"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP021",
+            "full_name": "Chu Văn An",
+            "title": "Tech Lead Điều Tra An Ninh Số",
+            "has_skill": [
+              {
+                "skill_code": "SK09",
+                "skill_name": "Application Security & Pentest",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK10",
+                "skill_name": "Zero Trust Network Security",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK06",
+                "skill_name": "Big Data & Spark",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Cross-Dept Specialist"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP002",
+            "full_name": "Nguyễn Phạm Duy Luân",
+            "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+            "has_skill": [
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK02",
+                "skill_name": "Python Backend",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              },
+              {
+                "skill_code": "SK01",
+                "skill_name": "Dgraph & GraphQL",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 5
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              },
+              {
+                "proj_code": "PRJ15",
+                "proj_name": "Dự Án Thử Nghiệm Tối Ưu Truy Vấn Đồ Thị (DQL Performance Lab)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP019",
+            "full_name": "Trần Hưng Đạo",
+            "title": "Tech Lead Hệ Thống Phân Tán",
+            "has_skill": [
+              {
+                "skill_code": "SK07",
+                "skill_name": "Kubernetes & Cloud Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK15",
+                "skill_name": "Distributed Systems Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ01",
+                "proj_name": "Hệ Thống Đồ Thị Tri Thức Doanh Nghiệp (Enterprise Knowledge Graph)",
+                "works_on|hours_per_week": 20,
+                "works_on|role_in_project": "Core Member"
+              },
+              {
+                "proj_code": "PRJ06",
+                "proj_name": "Cổng Quản Trị Nhân Sự & Mạng Lưới Tổ Chức 360 (HR Graph Portal)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Cross-Dept Specialist"
+              }
+            ]
+          },
+          {
+            "emp_code": "EMP012",
+            "full_name": "Lý Công Uẩn",
+            "title": "Tech Lead DevOps & Kubernetes",
+            "has_skill": [
+              {
+                "skill_code": "SK07",
+                "skill_name": "Kubernetes & Cloud Architecture",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK08",
+                "skill_name": "CI/CD & DevOps Automation",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              },
+              {
+                "skill_code": "SK03",
+                "skill_name": "Golang Microservices",
+                "has_skill|proficiency": 5,
+                "has_skill|years": 4
+              }
+            ],
+            "works_on": [
+              {
+                "proj_code": "PRJ11",
+                "proj_name": "Hệ Thống Kiểm Thử & Triển Khai Tự Động (GitOps Pipeline)",
+                "works_on|hours_per_week": 25,
+                "works_on|role_in_project": "Project Lead"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "A10": {
+      "title": "Mo rong Lang gieng 2-hop (k-hop) & Xep hang Do Trung Tam Bac (Centrality)",
+      "dql": "{\n  var(func: type(Employee)) {\n    d_sub as count(~reports_to)\n    d_proj as count(works_on)\n    d_col as count(collaborated_with)\n    d_sk as count(has_skill)\n    centrality as math(d_sub * 4 + d_proj * 3 + d_col * 2 + d_sk)\n  }\n\n  top_central_employees(func: uid(centrality), orderdesc: val(centrality), first: 10) {\n    emp_code\n    full_name\n    title\n    level\n    centrality_score: val(centrality)\n    direct_reports: val(d_sub)\n    projects_joined: val(d_proj)\n    collaborators: val(d_col)\n    belongs_to_dept { dept_name }\n  }\n}",
+      "row_counts": {
+        "top_central_employees": 10
+      },
+      "sample_data": {
+        "top_central_employees": [
+          {
+            "emp_code": "EMP001",
+            "full_name": "Trần Quang Khải",
+            "title": "Tổng Giám Đốc (CEO)",
+            "level": 1,
+            "centrality_score": 48,
+            "direct_reports": 8,
+            "projects_joined": 1,
+            "collaborators": 5,
+            "belongs_to_dept": {
+              "dept_name": "Ban Giám Đốc Điều Hành"
+            }
+          },
+          {
+            "emp_code": "EMP009",
+            "full_name": "Hoàng Minh Đức",
+            "title": "Tech Lead Backend & Graph",
+            "level": 3,
+            "centrality_score": 48,
+            "direct_reports": 6,
+            "projects_joined": 3,
+            "collaborators": 6,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP019",
+            "full_name": "Trần Hưng Đạo",
+            "title": "Tech Lead Hệ Thống Phân Tán",
+            "level": 3,
+            "centrality_score": 47,
+            "direct_reports": 4,
+            "projects_joined": 2,
+            "collaborators": 11,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP036",
+            "full_name": "Hoàng Minh Tú",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "level": 4,
+            "centrality_score": 44,
+            "direct_reports": 1,
+            "projects_joined": 3,
+            "collaborators": 14,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP030",
+            "full_name": "Dương Văn Thắng",
+            "title": "Senior Kỹ Sư Phần Mềm (Software Engineer)",
+            "level": 4,
+            "centrality_score": 42,
+            "direct_reports": 0,
+            "projects_joined": 3,
+            "collaborators": 15,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP006",
+            "full_name": "Võ Ngọc Ánh",
+            "title": "Trưởng Phòng Sản Phẩm & UI/UX",
+            "level": 2,
+            "centrality_score": 42,
+            "direct_reports": 1,
+            "projects_joined": 3,
+            "collaborators": 13,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            }
+          },
+          {
+            "emp_code": "EMP003",
+            "full_name": "Đỗ Văn Minh",
+            "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+            "level": 2,
+            "centrality_score": 42,
+            "direct_reports": 3,
+            "projects_joined": 3,
+            "collaborators": 8,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Khoa Học Dữ Liệu & AI"
+            }
+          },
+          {
+            "emp_code": "EMP075",
+            "full_name": "Đỗ Văn Hùng",
+            "title": "Senior Chuyên Viên Quản Trị Nhân Sự & Đào Tạo",
+            "level": 4,
+            "centrality_score": 42,
+            "direct_reports": 1,
+            "projects_joined": 3,
+            "collaborators": 13,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Quản Trị Nguồn Nhân Lực"
+            }
+          },
+          {
+            "emp_code": "EMP035",
+            "full_name": "Phạm Văn Tâm",
+            "title": "Kỹ Sư Phần Mềm (Software Engineer)",
+            "level": 5,
+            "centrality_score": 42,
+            "direct_reports": 0,
+            "projects_joined": 3,
+            "collaborators": 15,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Kỹ Thuật Phần Mềm"
+            }
+          },
+          {
+            "emp_code": "EMP067",
+            "full_name": "Phạm Thanh Thắng",
+            "title": "Chuyên Viên Thiết Kế Sản Phẩm UI/UX",
+            "level": 5,
+            "centrality_score": 40,
+            "direct_reports": 0,
+            "projects_joined": 3,
+            "collaborators": 14,
+            "belongs_to_dept": {
+              "dept_name": "Phòng Thiết Kế Sản Phẩm & UI/UX"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

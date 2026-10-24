@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hệ thống Quản lý Nhân sự, Phòng ban & Dự án</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --success: #15803d;
+      --danger: #b91c1c;
+      --warning: #b45309;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #2563eb;
+    }
+    .brand h1 { font-size: 18px; font-weight: 700; }
+    .brand p { font-size: 12px; color: #94a3b8; }
+    .status-bar { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      display: inline-block;
+    }
+    .badge-ok { background: #dcfce7; color: #166534; }
+    .badge-role { background: #dbeafe; color: #1e40af; }
+    .badge-crit { background: #fee2e2; color: #991b1b; }
+    .nav-tabs {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .nav-btn {
+      padding: 12px 18px;
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+    .nav-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      background: #eff6ff;
+    }
+    main { max-width: 1420px; margin: 18px auto; padding: 0 20px 40px; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 4px solid var(--primary);
+    }
+    .kpi-card h4 { font-size: 12px; text-transform: uppercase; color: var(--muted); }
+    .kpi-card .num { font-size: 28px; font-weight: 700; margin-top: 4px; color: var(--text); }
+    .kpi-card .sub { font-size: 12px; color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 18px; }
+    .grid-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #cy {
+      width: 100%;
+      height: 460px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    th { background: #f1f5f9; font-weight: 600; color: #334155; }
+    tr:hover { background: #f8fafc; }
+    .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-bottom: 10px; }
+    label { font-size: 12px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 4px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    textarea { font-family: Consolas, monospace; font-size: 12.5px; }
+    .btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-sm { padding: 4px 10px; font-size: 12px; }
+    .btn-success { background: var(--success); }
+    .btn-danger { background: var(--danger); }
+    .btn-secondary { background: #475569; }
+    .pre-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      max-height: 360px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+    .legend { display: flex; gap: 10px; font-size: 12px; align-items: center; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: none;
+      z-index: 999;
+      border-left: 4px solid #22c55e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>HỆ THỐNG QUẢN LÝ MẠNG LƯỚI NHÂN SỰ, PHÒNG BAN & DỰ ÁN</h1>
+      <p>Ứng dụng quản trị cơ sở dữ liệu đồ thị Dgraph</p>
+    </div>
+    <div class="status-bar">
+      <span id="dgraphStatus" class="badge badge-ok">● Đã kết nối Dgraph</span>
+      <span id="currentUserBadge" class="badge badge-role">👤 Nguyễn Phạm Duy Luân (admin)</span>
+      <a href="http://localhost:8000/?local" target="_blank" class="btn btn-sm btn-secondary" style="text-decoration:none;">Mở Ratel GUI ↗</a>
+    </div>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="nav-btn active" onclick="switchTab('tab-dashboard', this)">Tổng quan & Sơ đồ mạng lưới</button>
+    <button class="nav-btn" onclick="switchTab('tab-business', this)">Phân tích Quan hệ & Dự án</button>
+    <button class="nav-btn" onclick="switchTab('tab-crud', this)">Quản lý Dữ liệu & Sao lưu</button>
+    <button class="nav-btn" onclick="switchTab('tab-dql', this)">Truy vấn DQL</button>
+    <button class="nav-btn" onclick="switchTab('tab-users', this)">Tài khoản & Phân quyền</button>
+  </nav>
+
+  <main>
+    <!-- TAB 1: DASHBOARD & VISUALIZER -->
+    <section id="tab-dashboard" class="tab-pane active">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h4>Nhân viên</h4>
+          <div class="num" id="kpiEmp">80</div>
+          <div class="sub">Đang làm việc trong hệ thống</div>
+        </div>
+        <div class="kpi-card" style="border-left-color:#7c3aed;">
+          <h4>Phòng ban</h4>
+          <div class="num" id="kpiDept">8</div>
+          <div class="sub">Các bộ phận chuyên môn</div>
+        </div>
+        <div class="kpi-card" style="border-left-color:#d97706;">
+          <h4>Dự án</h4>
+          <div class="num" id="kpiProj">15</div>
+          <div class="sub">Dự án nội bộ & liên phòng ban</div>
+        </div>
+        <div class="kpi-card" style="border-left-color:#15803d;">
+          <h4>Kỹ năng chuyên môn</h4>
+          <div class="num" id="kpiSkill">16</div>
+          <div class="sub">Danh mục năng lực nhân sự</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>
+            <span>Sơ đồ Mạng lưới Quan hệ</span>
+            <div class="legend">
+              <span><i class="dot" style="background:#2563eb;"></i>Nhân viên</span>
+              <span><i class="dot" style="background:#7c3aed;"></i>Phòng ban</span>
+              <span><i class="dot" style="background:#d97706;"></i>Dự án</span>
+              <select id="graphLimitSelect" onchange="loadGraphVisualization()" style="width:145px; padding:3px 6px; font-size:12px;">
+                <option value="15">Hiển thị gọn (15 NV)</option>
+                <option value="24" selected>Tiêu chuẩn (24 NV)</option>
+                <option value="50">Mở rộng (50 NV)</option>
+              </select>
+              <button class="btn btn-sm btn-secondary" onclick="loadGraphVisualization()">Làm mới</button>
+            </div>
+          </h3>
+          <div id="cy"></div>
+        </div>
+
+        <div class="card">
+          <h3>Thông tin Chi tiết & Thống kê Phòng ban</h3>
+          <div id="nodeInspector" style="background:#f1f5f9; padding:10px; border-radius:6px; margin-bottom:12px; font-size:13px;">
+            💡 Chọn một nút bất kỳ trên sơ đồ bên trái để xem thông tin chi tiết.
+          </div>
+          <div style="max-height:335px; overflow:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã</th>
+                  <th>Phòng ban</th>
+                  <th>Trưởng phòng</th>
+                  <th>Nhân sự</th>
+                  <th>Dự án</th>
+                  <th>Lương TB (VNĐ)</th>
+                </tr>
+              </thead>
+              <tbody id="deptStatsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: BUSINESS GRAPH ANALYTICS -->
+    <section id="tab-business" class="tab-pane">
+      <div class="grid-equal">
+        <div class="card">
+          <h3>Tra cứu Sơ đồ Cấp dưới theo Quản lý</h3>
+          <div class="form-row">
+            <div>
+              <label>Chọn Quản lý:</label>
+              <select id="orgRootSelect" onchange="runOrgChart()">
+                <option value="EMP001">EMP001 — Trần Quang Khải (Tổng Giám Đốc)</option>
+                <option value="EMP002" selected>EMP002 — Nguyễn Phạm Duy Luân (GĐ Kỹ Thuật Phần Mềm)</option>
+                <option value="EMP003">EMP003 — Đỗ Văn Minh (GĐ Khoa Học Dữ Liệu & AI)</option>
+                <option value="EMP004">EMP004 — Lê Hoàng Nam (TP Hạ Tầng & Cloud)</option>
+              </select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn" onclick="runOrgChart()">Xem Cây Quản Lý</button>
+            </div>
+          </div>
+          <div id="orgChartOutput" class="pre-box"></div>
+        </div>
+
+        <div class="card">
+          <h3>Tìm Đường Kết Nối Ngắn Nhất giữa 2 Nhân viên</h3>
+          <div class="form-row">
+            <div>
+              <label>Từ Nhân viên A:</label>
+              <select id="spFromSelect"></select>
+            </div>
+            <div>
+              <label>Đến Nhân viên B:</label>
+              <select id="spToSelect"></select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn" onclick="runShortestPath()">Tìm Kết Nối</button>
+            </div>
+          </div>
+          <div id="shortestPathOutput" class="pre-box"></div>
+        </div>
+      </div>
+
+      <div class="grid-equal">
+        <div class="card">
+          <h3>Gợi ý Nhân sự Phù hợp cho Dự án</h3>
+          <div class="form-row">
+            <div>
+              <label>Chọn Dự án:</label>
+              <select id="staffProjSelect" onchange="runStaffRecommendation()"></select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn btn-success" onclick="runStaffRecommendation()">Gợi ý Ứng Viên</button>
+            </div>
+          </div>
+          <div id="staffRecOutput" style="max-height:280px; overflow:auto;"></div>
+        </div>
+
+        <div class="card">
+          <h3>Đánh giá Tác động khi Nhân sự Nghỉ việc & Dự án Thiếu người</h3>
+          <div class="form-row">
+            <div>
+              <label>Chọn Nhân sự cần kiểm tra:</label>
+              <select id="impactEmpSelect" onchange="runImpactAnalysis()">
+                <option value="EMP002">EMP002 — Nguyễn Phạm Duy Luân</option>
+                <option value="EMP003">EMP003 — Đỗ Văn Minh</option>
+                <option value="EMP004">EMP004 — Lê Hoàng Nam</option>
+                <option value="EMP009">EMP009 — Hoàng Minh Đức</option>
+              </select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn btn-danger" onclick="runImpactAnalysis()">Phân Tích</button>
+            </div>
+          </div>
+          <div id="impactOutput" class="pre-box" style="max-height:280px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: CRUD & IMPORT/EXPORT/BACKUP -->
+    <section id="tab-crud" class="tab-pane">
+      <div class="grid-equal">
+        <!-- ADD/UPDATE EMPLOYEE -->
+        <div class="card">
+          <h3>Thêm mới / Cập nhật Nhân viên</h3>
+          <div class="form-row">
+            <div><label>Mã nhân viên</label><input id="fEmpCode" placeholder="VD: EMP081" value="EMP081" /></div>
+            <div><label>Họ và tên</label><input id="fEmpName" placeholder="VD: Lê Văn Thành" value="Lê Văn Thành" /></div>
+            <div><label>Chức danh</label><input id="fEmpTitle" value="Kỹ Sư Phần Mềm" /></div>
+          </div>
+          <div class="form-row">
+            <div><label>Cấp bậc (1-5)</label><input id="fEmpLevel" type="number" value="4" /></div>
+            <div><label>Mức lương (VNĐ)</label><input id="fEmpSalary" type="number" value="32000000" /></div>
+            <div><label>Phòng ban</label><select id="fEmpDept"></select></div>
+            <div><label>Người quản lý</label><select id="fEmpMgr"></select></div>
+          </div>
+          <input type="hidden" id="fEmpUid" value="" />
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-success" onclick="saveEmployee()">Lưu Nhân viên</button>
+            <button class="btn btn-secondary" onclick="clearEmployeeForm()">Làm mới</button>
+          </div>
+        </div>
+
+        <!-- ADD/DELETE GRAPH EDGE -->
+        <div class="card">
+          <h3>Cập nhật Quan hệ Công việc & Kỹ năng</h3>
+          <div class="form-row">
+            <div><label>Nhân viên</label><select id="edgeSource"></select></div>
+            <div>
+              <label>Loại quan hệ</label>
+              <select id="edgePredicate">
+                <option value="works_on">Tham gia Dự án (works_on)</option>
+                <option value="has_skill">Sở hữu Kỹ năng (has_skill)</option>
+                <option value="collaborated_with">Cộng tác cùng (collaborated_with)</option>
+                <option value="reports_to">Báo cáo cho (reports_to)</option>
+              </select>
+            </div>
+            <div><label>Đối tượng liên kết</label><select id="edgeTarget"></select></div>
+          </div>
+          <div class="form-row">
+            <div><label>Thuộc tính phụ (Tùy chọn)</label><input id="edgeFacetKey" value="hours_per_week" /></div>
+            <div><label>Giá trị</label><input id="edgeFacetVal" value="20" /></div>
+            <div style="display:flex; align-items:flex-end; gap:6px;">
+              <button class="btn" onclick="mutateEdge('set')">+ Gán liên kết</button>
+              <button class="btn btn-danger" onclick="mutateEdge('delete')">- Xóa liên kết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPORT / EXPORT / BACKUP / RESTORE CARD -->
+      <div class="card">
+        <h3>Nhập / Xuất Dữ liệu (Import / Export) & Sao lưu Khôi phục (Backup / Restore)</h3>
+        <div class="grid-equal" style="margin-bottom:0;">
+          <div>
+            <label>Import dữ liệu từ tệp (.rdf hoặc .json) trên máy tính:</label>
+            <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px;">
+              <input type="file" id="importFileInput" accept=".rdf,.json,.txt" style="flex:1;" />
+              <button class="btn" onclick="handleImportFile()">📥 Import File vào CSDL</button>
+            </div>
+            <label>Hoặc dán nhanh dữ liệu RDF N-Quads / JSON để Import:</label>
+            <div style="display:flex; gap:8px;">
+              <input id="quickImportText" value='<_:new1> <dgraph.type> "Skill" . <_:new1> <skill_code> "SK17" . <_:new1> <skill_name> "Graph Data Science" .' />
+              <button class="btn btn-secondary" onclick="handleQuickImport()" style="white-space:nowrap;">Nạp nhanh</button>
+            </div>
+          </div>
+          <div>
+            <label>Xuất dữ liệu (Export) & Sao lưu / Phục hồi (Backup & Restore):</label>
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:6px;">
+              <button class="btn btn-success" onclick="triggerExport('rdf')">📤 Export RDF (.rdf.gz)</button>
+              <button class="btn btn-success" onclick="triggerExport('json')">📤 Export JSON (.json.gz)</button>
+              <button class="btn btn-secondary" onclick="triggerResetSeed()">🔄 Restore (Khôi phục từ Bản sao lưu)</button>
+            </div>
+            <div id="backupStatusBox" style="margin-top:10px; font-size:12.5px; color:var(--muted);">
+              Sẵn sàng thực hiện Import / Export / Backup / Restore.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span>Danh sách Nhân sự</span>
+          <input id="empSearchInput" placeholder="Tìm theo mã, họ tên, phòng ban..." oninput="renderEmployeesTable()" style="width:280px;" />
+        </h3>
+        <div style="max-height:360px; overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>UID</th>
+                <th>Mã NV</th>
+                <th>Họ và tên</th>
+                <th>Chức danh</th>
+                <th>Cấp</th>
+                <th>Phòng ban</th>
+                <th>Quản lý trực tiếp</th>
+                <th>Lương (VNĐ)</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="empTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: DQL RUNNER -->
+    <section id="tab-dql" class="tab-pane">
+      <div class="grid-equal">
+        <div class="card">
+          <h3>Trình soạn thảo & Thực thi Truy vấn DQL</h3>
+          <div class="form-row">
+            <div>
+              <label>Chọn truy vấn mẫu:</label>
+              <select id="sampleQuerySelect" onchange="loadSelectedSampleQuery()"></select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn" onclick="executeCustomDql()">▶ Chạy Truy Vấn</button>
+            </div>
+          </div>
+          <label>Nội dung câu lệnh DQL:</label>
+          <textarea id="dqlEditor" rows="15"></textarea>
+        </div>
+
+        <div class="card">
+          <h3>Kết quả Trả về</h3>
+          <div id="dqlResultBox" class="pre-box" style="max-height:430px; height:430px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: USER MANAGEMENT & RBAC -->
+    <section id="tab-users" class="tab-pane">
+      <div class="grid-equal">
+        <div class="card">
+          <h3>Đăng nhập & Chuyển đổi Vai trò Người dùng</h3>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">
+            Hệ thống phân quyền gồm 3 vai trò:
+            <b>admin</b> (Toàn quyền quản trị & sao lưu),
+            <b>manager</b> (Quản lý nhân sự & dự án),
+            <b>employee</b> (Chỉ xem & tra cứu).
+          </p>
+          <div class="form-row">
+            <div><label>Tài khoản</label><input id="loginUsername" value="admin" /></div>
+            <div><label>Mật khẩu</label><input id="loginPassword" type="password" value="admin123" /></div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn" onclick="doLogin()">Đăng nhập</button>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+            <button class="btn btn-sm btn-secondary" onclick="quickLogin('admin','admin123')">Chuyển sang: Admin (Nguyễn Phạm Duy Luân)</button>
+            <button class="btn btn-sm btn-secondary" onclick="quickLogin('manager','manager123')">Chuyển sang: Manager (Đỗ Văn Minh)</button>
+            <button class="btn btn-sm btn-secondary" onclick="quickLogin('employee','emp123')">Chuyển sang: Employee (Chỉ xem)</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quản lý Tài khoản Người dùng</h3>
+          <div class="form-row">
+            <div><label>Tên đăng nhập</label><input id="uUsername" placeholder="VD: user_moi" /></div>
+            <div><label>Họ và tên</label><input id="uFullName" placeholder="VD: Nguyễn Văn A" /></div>
+          </div>
+          <div class="form-row">
+            <div><label>Mật khẩu</label><input id="uPassword" value="123456" /></div>
+            <div>
+              <label>Vai trò</label>
+              <select id="uRole">
+                <option value="admin">admin (Quản trị hệ thống)</option>
+                <option value="manager">manager (Quản lý)</option>
+                <option value="employee">employee (Nhân viên)</option>
+              </select>
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button class="btn btn-success" onclick="saveAppUser()">Thêm Tài Khoản</button>
+            </div>
+          </div>
+          <table style="margin-top:12px;">
+            <thead>
+              <tr><th>UID</th><th>Tài khoản</th><th>Họ và tên</th><th>Vai trò</th><th>Nhân sự liên kết</th><th>Xóa</th></tr>
+            </thead>
+            <tbody id="userTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    let STATE = {
+      currentUser: { username: "admin", full_name: "Nguyễn Phạm Duy Luân (Admin)", user_role: "admin" },
+      departments: [],
+      projects: [],
+      employees: [],
+      skills: [],
+      users: [],
+      queriesCatalog: { basic: {}, advanced: {} },
+      cy: null
+    };
+
+    function showToast(msg, isErr = false) {
+      const t = document.getElementById("toast");
+      t.style.borderLeftColor = isErr ? "#ef4444" : "#22c55e";
+      t.textContent = msg;
+      t.style.display = "block";
+      setTimeout(() => { t.style.display = "none"; }, 3500);
+    }
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll(".tab-pane").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".nav-btn").forEach(el => el.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+      btn.classList.add("active");
+      if (tabId === "tab-dashboard" && STATE.cy) {
+        setTimeout(() => STATE.cy.resize(), 50);
+      }
+    }
+
+    function requireWritePermission() {
+      if (STATE.currentUser.user_role === "employee") {
+        showToast("Tài khoản 'employee' chỉ có quyền xem, không có quyền thay đổi dữ liệu!", true);
+        return false;
+      }
+      return true;
+    }
+
+    async function loadDashboardData() {
+      const res = await fetch("/api/dashboard");
+      const data = await res.json();
+      STATE.departments = data.departments || [];
+      STATE.projects = data.projects || [];
+      STATE.employees = data.employees || [];
+      STATE.skills = data.skills || [];
+      STATE.users = data.users || [];
+
+      document.getElementById("kpiEmp").textContent = (data.emp_cnt && data.emp_cnt[0]) ? data.emp_cnt[0].total : STATE.employees.length;
+      document.getElementById("kpiDept").textContent = (data.dept_cnt && data.dept_cnt[0]) ? data.dept_cnt[0].total : STATE.departments.length;
+      document.getElementById("kpiProj").textContent = (data.proj_cnt && data.proj_cnt[0]) ? data.proj_cnt[0].total : STATE.projects.length;
+      document.getElementById("kpiSkill").textContent = (data.skill_cnt && data.skill_cnt[0]) ? data.skill_cnt[0].total : STATE.skills.length;
+
+      const deptBody = document.getElementById("deptStatsBody");
+      deptBody.innerHTML = STATE.departments.map(d => `
+        <tr>
+          <td><b>${d.dept_code}</b></td>
+          <td>${d.dept_name}</td>
+          <td>${d.managed_by ? d.managed_by.full_name : "-"}</td>
+          <td>${d.staff_count || 0}</td>
+          <td>${d.project_count || 0}</td>
+          <td>${Math.round(d.avg_salary || 0).toLocaleString("vi-VN")}</td>
+        </tr>
+      `).join("");
+
+      populateSelectDropdowns();
+      renderEmployeesTable();
+      renderUsersTable();
+    }
+
+    function populateSelectDropdowns() {
+      const empOpts = STATE.employees.map(e => `<option value="${e.emp_code}">${e.emp_code} — ${e.full_name}</option>`).join("");
+      document.getElementById("spFromSelect").innerHTML = empOpts;
+      document.getElementById("spToSelect").innerHTML = empOpts;
+      if (STATE.employees.length > 20) {
+        document.getElementById("spFromSelect").value = "EMP002";
+        document.getElementById("spToSelect").value = "EMP021";
+      }
+
+      document.getElementById("staffProjSelect").innerHTML = STATE.projects.map(p =>
+        `<option value="${p.proj_code}">${p.proj_code} — ${p.proj_name}</option>`
+      ).join("");
+      document.getElementById("staffProjSelect").value = "PRJ02";
+
+      document.getElementById("fEmpDept").innerHTML = STATE.departments.map(d =>
+        `<option value="${d.uid}">${d.dept_code} — ${d.dept_name}</option>`
+      ).join("");
+
+      document.getElementById("fEmpMgr").innerHTML = STATE.employees.filter(e => e.level <= 3).map(e =>
+        `<option value="${e.uid}">${e.emp_code} — ${e.full_name}</option>`
+      ).join("");
+
+      document.getElementById("edgeSource").innerHTML = STATE.employees.map(e =>
+        `<option value="${e.uid}">${e.emp_code} — ${e.full_name}</option>`
+      ).join("");
+
+      const targetOpts = [
+        ...STATE.projects.map(p => `<option value="${p.uid}">[Dự án] ${p.proj_code} — ${p.proj_name}</option>`),
+        ...STATE.skills.map(s => `<option value="${s.uid}">[Kỹ năng] ${s.skill_code} — ${s.skill_name}</option>`),
+        ...STATE.employees.map(e => `<option value="${e.uid}">[Nhân viên] ${e.emp_code} — ${e.full_name}</option>`)
+      ];
+      document.getElementById("edgeTarget").innerHTML = targetOpts.join("");
+    }
+
+    async function loadGraphVisualization() {
+      const limit = document.getElementById("graphLimitSelect") ? document.getElementById("graphLimitSelect").value : 24;
+      const res = await fetch(`/api/graph-data?limit=${limit}`);
+      const data = await res.json();
+      const elements = [];
+      const seenNodes = new Set();
+
+      (data.departments || []).forEach(d => {
+        seenNodes.add(d.uid);
+        elements.push({
+          data: { id: d.uid, label: d.dept_code, type: "Department", raw: d }
+        });
+      });
+
+      (data.projects || []).forEach(p => {
+        seenNodes.add(p.uid);
+        elements.push({
+          data: { id: p.uid, label: p.proj_code, type: "Project", raw: p }
+        });
+        if (p.owned_by_dept && seenNodes.has(p.owned_by_dept.uid)) {
+          elements.push({ data: { source: p.uid, target: p.owned_by_dept.uid } });
+        }
+      });
+
+      (data.employees || []).forEach(e => {
+        seenNodes.add(e.uid);
+        elements.push({
+          data: { id: e.uid, label: e.full_name.split(" ").slice(-2).join(" "), type: "Employee", raw: e }
+        });
+      });
+
+      (data.employees || []).forEach(e => {
+        if (e.belongs_to_dept && seenNodes.has(e.belongs_to_dept.uid)) {
+          elements.push({ data: { source: e.uid, target: e.belongs_to_dept.uid } });
+        }
+        if (e.reports_to && seenNodes.has(e.reports_to.uid)) {
+          elements.push({ data: { source: e.uid, target: e.reports_to.uid } });
+        }
+        (e.works_on || []).slice(0, 1).forEach(p => {
+          if (seenNodes.has(p.uid)) {
+            elements.push({ data: { source: e.uid, target: p.uid } });
+          }
+        });
+      });
+
+      STATE.cy = cytoscape({
+        container: document.getElementById("cy"),
+        elements: elements,
+        style: [
+          {
+            selector: "node",
+            style: {
+              "label": "data(label)",
+              "font-size": "10px",
+              "text-valign": "center",
+              "text-halign": "center",
+              "color": "#fff",
+              "text-outline-width": 1.5,
+              "text-outline-color": "#0f172a",
+              "width": 40,
+              "height": 40
+            }
+          },
+          { selector: 'node[type="Employee"]', style: { "background-color": "#2563eb" } },
+          { selector: 'node[type="Department"]', style: { "background-color": "#7c3aed", "width": 50, "height": 50, "shape": "round-rectangle" } },
+          { selector: 'node[type="Project"]', style: { "background-color": "#d97706", "width": 44, "height": 44, "shape": "hexagon" } },
+          {
+            selector: "edge",
+            style: {
+              "width": 1.5,
+              "line-color": "#cbd5e1",
+              "target-arrow-color": "#94a3b8",
+              "target-arrow-shape": "triangle",
+              "curve-style": "bezier"
+            }
+          }
+        ],
+        layout: { name: "cose", animate: false, padding: 24 }
+      });
+
+      STATE.cy.on("tap", "node", evt => {
+        const d = evt.target.data();
+        document.getElementById("nodeInspector").innerHTML = `
+          <b>Phân loại:</b> <span class="badge badge-role">${d.type}</span> | <b>UID:</b> <code>${d.id}</code><br/>
+          <b>Thông tin:</b> <code>${JSON.stringify(d.raw)}</code>
+        `;
+      });
+    }
+
+    function renderEmployeesTable() {
+      const q = (document.getElementById("empSearchInput").value || "").toLowerCase();
+      const filtered = STATE.employees.filter(e =>
+        e.emp_code.toLowerCase().includes(q) ||
+        e.full_name.toLowerCase().includes(q) ||
+        (e.belongs_to_dept && e.belongs_to_dept.dept_name.toLowerCase().includes(q))
+      );
+      document.getElementById("empTableBody").innerHTML = filtered.map(e => `
+        <tr>
+          <td><code>${e.uid}</code></td>
+          <td><b>${e.emp_code}</b></td>
+          <td>${e.full_name}</td>
+          <td>${e.title}</td>
+          <td>Cấp ${e.level}</td>
+          <td>${e.belongs_to_dept ? e.belongs_to_dept.dept_name : "-"}</td>
+          <td>${e.reports_to ? e.reports_to.full_name : "Ban Giám Đốc"}</td>
+          <td>${Number(e.salary || 0).toLocaleString("vi-VN")}</td>
+          <td>
+            <button class="btn btn-sm" onclick='editEmployee(${JSON.stringify(e)})'>Sửa</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteEmployee('${e.uid}','${e.emp_code}')">Xóa</button>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function editEmployee(e) {
+      document.getElementById("fEmpUid").value = e.uid;
+      document.getElementById("fEmpCode").value = e.emp_code;
+      document.getElementById("fEmpName").value = e.full_name;
+      document.getElementById("fEmpTitle").value = e.title;
+      document.getElementById("fEmpLevel").value = e.level;
+      document.getElementById("fEmpSalary").value = e.salary;
+      if (e.belongs_to_dept) document.getElementById("fEmpDept").value = e.belongs_to_dept.uid;
+      if (e.reports_to) document.getElementById("fEmpMgr").value = e.reports_to.uid;
+      showToast(`Đang chỉnh sửa nhân viên ${e.full_name}`);
+    }
+
+    function clearEmployeeForm() {
+      document.getElementById("fEmpUid").value = "";
+      document.getElementById("fEmpCode").value = "EMP081";
+      document.getElementById("fEmpName").value = "";
+    }
+
+    async function saveEmployee() {
+      if (!requireWritePermission()) return;
+      const body = {
+        uid: document.getElementById("fEmpUid").value || undefined,
+        emp_code: document.getElementById("fEmpCode").value.trim(),
+        full_name: document.getElementById("fEmpName").value.trim(),
+        title: document.getElementById("fEmpTitle").value.trim(),
+        level: Number(document.getElementById("fEmpLevel").value),
+        salary: Number(document.getElementById("fEmpSalary").value),
+        dept_uid: document.getElementById("fEmpDept").value,
+        reports_to_uid: document.getElementById("fEmpMgr").value
+      };
+      const res = await fetch("/api/employees/save", { method: "POST", body: JSON.stringify(body) });
+      const data = await res.json();
+      if (data.ok) {
+        showToast("Đã lưu thông tin nhân viên thành công!");
+        await loadDashboardData();
+      } else {
+        showToast("Lỗi: " + data.error, true);
+      }
+    }
+
+    async function deleteEmployee(uid, code) {
+      if (!requireWritePermission()) return;
+      const res = await fetch("/api/employees/delete", { method: "POST", body: JSON.stringify({ uid }) });
+      const data = await res.json();
+      if (data.ok) {
+        showToast(`Đã xóa nhân viên ${code}!`);
+        await loadDashboardData();
+      }
+    }
+
+    async function mutateEdge(action) {
+      if (!requireWritePermission()) return;
+      const body = {
+        source_uid: document.getElementById("edgeSource").value,
+        predicate: document.getElementById("edgePredicate").value,
+        target_uid: document.getElementById("edgeTarget").value,
+        facet_key: document.getElementById("edgeFacetKey").value,
+        facet_val: document.getElementById("edgeFacetVal").value,
+        action: action
+      };
+      const res = await fetch("/api/edges/mutate", { method: "POST", body: JSON.stringify(body) });
+      const data = await res.json();
+      if (data.ok) {
+        showToast("Đã cập nhật liên kết thành công!");
+        await loadDashboardData();
+      }
+    }
+
+    async function handleImportFile() {
+      if (!requireWritePermission()) return;
+      const fileInput = document.getElementById("importFileInput");
+      if (!fileInput.files || !fileInput.files.length) {
+        showToast("Vui lòng chọn một tệp .rdf hoặc .json để Import!", true);
+        return;
+      }
+      const file = fileInput.files[0];
+      const text = await file.text();
+      const fmt = file.name.toLowerCase().endsWith(".json") ? "json" : "rdf";
+      const res = await fetch("/api/admin/import-data", {
+        method: "POST",
+        body: JSON.stringify({ filename: file.name, format: fmt, content: text })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        document.getElementById("backupStatusBox").innerHTML = `✅ ${data.message}`;
+        showToast(data.message);
+        await loadDashboardData();
+        await loadGraphVisualization();
+      } else {
+        showToast("Lỗi Import: " + (data.error || "Không hợp lệ"), true);
+      }
+    }
+
+    async function handleQuickImport() {
+      if (!requireWritePermission()) return;
+      const content = document.getElementById("quickImportText").value.trim();
+      const fmt = content.startsWith("{") || content.startsWith("[") ? "json" : "rdf";
+      const res = await fetch("/api/admin/import-data", {
+        method: "POST",
+        body: JSON.stringify({ filename: "quick_import." + fmt, format: fmt, content })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        document.getElementById("backupStatusBox").innerHTML = `✅ ${data.message}`;
+        showToast(data.message);
+        await loadDashboardData();
+      } else {
+        showToast("Lỗi Import: " + data.error, true);
+      }
+    }
+
+    async function triggerExport(fmt) {
+      if (STATE.currentUser.user_role !== "admin") {
+        showToast("Chỉ tài khoản Admin mới có quyền Export / Backup CSDL!", true);
+        return;
+      }
+      const res = await fetch("/api/admin/export-backup", { method: "POST", body: JSON.stringify({ format: fmt }) });
+      const data = await res.json();
+      document.getElementById("backupStatusBox").innerHTML =
+        `✅ Đã Export (${fmt.toUpperCase()}) và sao lưu vào thư mục <code>${data.backup_folder}</code>`;
+      showToast(`Đã Export định dạng ${fmt.toUpperCase()} thành công!`);
+    }
+
+    async function triggerResetSeed() {
+      if (STATE.currentUser.user_role !== "admin") {
+        showToast("Chỉ tài khoản Admin mới có quyền Khôi phục CSDL!", true);
+        return;
+      }
+      const res = await fetch("/api/admin/reset-seed", { method: "POST", body: "{}" });
+      const data = await res.json();
+      if (data.ok) {
+        document.getElementById("backupStatusBox").innerHTML = `✅ ${data.message}`;
+        showToast(data.message);
+        await loadDashboardData();
+        await loadGraphVisualization();
+      }
+    }
+
+    // BUSINESS QUERIES
+    async function runOrgChart() {
+      const code = document.getElementById("orgRootSelect").value;
+      const res = await fetch(`/api/business/org-chart?emp_code=${code}`);
+      const data = await res.json();
+      document.getElementById("orgChartOutput").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function runShortestPath() {
+      const f = document.getElementById("spFromSelect").value || "EMP002";
+      const t = document.getElementById("spToSelect").value || "EMP021";
+      const res = await fetch(`/api/business/shortest-path?from=${f}&to=${t}`);
+      const data = await res.json();
+      const nodes = data.path_nodes || [];
+      const chain = nodes.map(n => `${n.emp_code} (${n.full_name})`).join("  ➔  ");
+      document.getElementById("shortestPathOutput").textContent =
+        `Chuỗi kết nối (${nodes.length} người):\n${chain || "Không tìm thấy đường kết nối"}\n\nChi tiết:\n` +
+        JSON.stringify(data, null, 2);
+    }
+
+    async function runStaffRecommendation() {
+      const p = document.getElementById("staffProjSelect").value || "PRJ02";
+      const res = await fetch(`/api/business/recommend-staff?proj_code=${p}`);
+      const data = await res.json();
+      const recs = data.recommendations || [];
+      document.getElementById("staffRecOutput").innerHTML = `
+        <table>
+          <thead><tr><th>Mã NV</th><th>Ứng viên</th><th>Phòng ban</th><th>Mức độ phù hợp</th><th>Kỹ năng đáp ứng</th></tr></thead>
+          <tbody>
+            ${recs.map(r => `
+              <tr>
+                <td><b>${r.emp_code}</b></td>
+                <td>${r.full_name}<br/><small style="color:#64748b">${r.title}</small></td>
+                <td>${r.belongs_to_dept ? r.belongs_to_dept.dept_name : ""}</td>
+                <td><span class="badge badge-ok">${r.matched_skills_count} kỹ năng</span></td>
+                <td>${(r.has_skill || []).map(s => s.skill_name).join(", ")}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    async function runImpactAnalysis() {
+      const code = document.getElementById("impactEmpSelect").value || "EMP002";
+      const res = await fetch(`/api/business/impact-analysis?emp_code=${code}`);
+      const data = await res.json();
+      document.getElementById("impactOutput").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function loadQueriesCatalog() {
+      const res = await fetch("/api/queries-catalog");
+      STATE.queriesCatalog = await res.json();
+      const sel = document.getElementById("sampleQuerySelect");
+      const opts = [];
+      Object.entries(STATE.queriesCatalog.basic || {}).forEach(([k, v]) => {
+        opts.push(`<option value="basic:${k}">[Cơ bản - ${k}] ${v.title}</option>`);
+      });
+      Object.entries(STATE.queriesCatalog.advanced || {}).forEach(([k, v]) => {
+        opts.push(`<option value="advanced:${k}">[Nâng cao - ${k}] ${v.title}</option>`);
+      });
+      sel.innerHTML = opts.join("");
+      loadSelectedSampleQuery();
+    }
+
+    function loadSelectedSampleQuery() {
+      const val = document.getElementById("sampleQuerySelect").value;
+      if (!val) return;
+      const [group, qid] = val.split(":");
+      const item = STATE.queriesCatalog[group][qid];
+      if (item) {
+        document.getElementById("dqlEditor").value = item.dql;
+        document.getElementById("dqlResultBox").textContent = JSON.stringify(item.sample_data, null, 2);
+      }
+    }
+
+    async function executeCustomDql() {
+      const dql = document.getElementById("dqlEditor").value;
+      const res = await fetch("/api/dql/execute", { method: "POST", body: JSON.stringify({ dql }) });
+      const data = await res.json();
+      document.getElementById("dqlResultBox").textContent = JSON.stringify(data.result, null, 2);
+      showToast("Đã thực thi truy vấn DQL!");
+    }
+
+    function renderUsersTable() {
+      document.getElementById("userTableBody").innerHTML = STATE.users.map(u => `
+        <tr>
+          <td><code>${u.uid}</code></td>
+          <td><b>${u.username}</b></td>
+          <td>${u.full_name}</td>
+          <td><span class="badge badge-role">${u.user_role}</span></td>
+          <td>${u.linked_employee ? u.linked_employee.full_name : "-"}</td>
+          <td><button class="btn btn-sm btn-danger" onclick="deleteUser('${u.uid}')">Xóa</button></td>
+        </tr>
+      `).join("");
+    }
+
+    async function doLogin() {
+      const username = document.getElementById("loginUsername").value;
+      const password = document.getElementById("loginPassword").value;
+      const res = await fetch("/api/login", { method: "POST", body: JSON.stringify({ username, password }) });
+      const data = await res.json();
+      if (data.ok) {
+        STATE.currentUser = data.user;
+        document.getElementById("currentUserBadge").textContent = `👤 ${data.user.full_name} (${data.user.user_role})`;
+        showToast(`Đã đăng nhập: ${data.user.full_name}`);
+      } else {
+        showToast(data.message || "Đăng nhập thất bại", true);
+      }
+    }
+
+    function quickLogin(u, p) {
+      document.getElementById("loginUsername").value = u;
+      document.getElementById("loginPassword").value = p;
+      doLogin();
+    }
+
+    async function saveAppUser() {
+      if (STATE.currentUser.user_role !== "admin") {
+        showToast("Chỉ Admin mới có quyền thêm/sửa tài khoản!", true);
+        return;
+      }
+      const body = {
+        username: document.getElementById("uUsername").value.trim(),
+        full_name: document.getElementById("uFullName").value.trim(),
+        password: document.getElementById("uPassword").value.trim(),
+        user_role: document.getElementById("uRole").value
+      };
+      const res = await fetch("/api/users/save", { method: "POST", body: JSON.stringify(body) });
+      const data = await res.json();
+      if (data.ok) {
+        showToast("Đã lưu tài khoản thành công!");
+        await loadDashboardData();
+      }
+    }
+
+    async function deleteUser(uid) {
+      if (STATE.currentUser.user_role !== "admin") {
+        showToast("Chỉ Admin mới có quyền xóa tài khoản!", true);
+        return;
+      }
+      await fetch("/api/users/delete", { method: "POST", body: JSON.stringify({ uid }) });
+      showToast("Đã xóa tài khoản!");
+      await loadDashboardData();
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      await loadDashboardData();
+      await loadGraphVisualization();
+      await loadQueriesCatalog();
+      await runOrgChart();
+      await runShortestPath();
+      await runStaffRecommendation();
+      await runImpactAnalysis();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+# ============================================================================
+# SCHEMA CO SO DU LIEU DO THI DGRAPH (DQL)
+# De tai: Quan ly mang luoi quan he giua Nhan vien, Phong ban va Du an
+# Phien ban Dgraph: v20.11.3
+# ============================================================================
+
+# --- 1. Thuoc tinh (Predicates) cua Nhan vien (Employee) ---
+emp_code: string @index(exact, term) @upsert .
+full_name: string @index(term, fulltext, trigram) .
+email: string @index(exact) @upsert .
+phone: string @index(exact) .
+title: string @index(term) .
+level: int @index(int) .
+hire_date: datetime @index(year) .
+salary: float @index(float) .
+status: string @index(exact) .
+
+# --- 2. Cac canh quan he (Edges) cua Nhan vien ---
+belongs_to_dept: uid @reverse .
+reports_to: uid @reverse .
+works_on: [uid] @reverse @count .
+has_skill: [uid] @reverse @count .
+has_role: uid @reverse .
+collaborated_with: [uid] @reverse @count .
+
+# --- 3. Thuoc tinh va canh cua Phong ban (Department) ---
+dept_code: string @index(exact) @upsert .
+dept_name: string @index(term, fulltext) .
+location: string @index(exact, term) .
+budget: float @index(float) .
+established_year: int @index(int) .
+managed_by: uid @reverse .
+
+# --- 4. Thuoc tinh va canh cua Du an (Project) ---
+proj_code: string @index(exact) @upsert .
+proj_name: string @index(term, fulltext) .
+proj_status: string @index(exact) .
+priority: string @index(exact) .
+proj_budget: float @index(float) .
+start_date: datetime @index(year) .
+end_date: datetime @index(year) .
+owned_by_dept: uid @reverse .
+led_by: uid @reverse .
+requires_skill: [uid] @reverse @count .
+depends_on_project: [uid] @reverse .
+
+# --- 5. Thuoc tinh cua Ky nang (Skill) ---
+skill_code: string @index(exact) @upsert .
+skill_name: string @index(exact, term) .
+skill_category: string @index(exact, term) .
+
+# --- 6. Thuoc tinh cua Vai tro & Tai khoan Ung dung (Role / AppUser) ---
+role_code: string @index(exact) @upsert .
+role_name: string @index(exact, term) .
+permissions: [string] @index(exact) .
+
+username: string @index(exact) @upsert .
+password_hash: string .
+user_role: string @index(exact) .
+linked_employee: uid .
+
+# --- DINH NGHIA KIEU DINH (TYPES) TRONG DGRAPH ---
+type Employee {
+    emp_code
+    full_name
+    email
+    phone
+    title
+    level
+    hire_date
+    salary
+    status
+    belongs_to_dept
+    reports_to
+    works_on
+    has_skill
+    has_role
+    collaborated_with
+}
+
+type Department {
+    dept_code
+    dept_name
+    location
+    budget
+    established_year
+    managed_by
+}
+
+type Project {
+    proj_code
+    proj_name
+    proj_status
+    priority
+    proj_budget
+    start_date
+    end_date
+    owned_by_dept
+    led_by
+    requires_skill
+    depends_on_project
+}
+
+type Skill {
+    skill_code
+    skill_name
+    skill_category
+}
+
+type Role {
+    role_code
+    role_name
+    permissions
+}
+
+type AppUser {
+    username
+    password_hash
+    full_name
+    user_role
+    linked_employee
+}
+

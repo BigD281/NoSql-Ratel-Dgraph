@@ -1,0 +1,128 @@
+{
+  "departments_count": 8,
+  "skills_count": 16,
+  "roles_count": 5,
+  "projects_count": 15,
+  "employees_count": 80,
+  "app_users_count": 3,
+  "rdf_triples_count": 2356,
+  "sample_departments": [
+    {
+      "uid": "_:dept1",
+      "dept_code": "DEPT01",
+      "dept_name": "Ban Giám Đốc Điều Hành",
+      "location": "Tầng 15 - Hà Nội",
+      "budget": 15000000000.0,
+      "established_year": 2016,
+      "mgr_emp": "_:emp1"
+    },
+    {
+      "uid": "_:dept2",
+      "dept_code": "DEPT02",
+      "dept_name": "Phòng Kỹ Thuật Phần Mềm",
+      "location": "Tầng 12 - TP.HCM",
+      "budget": 8500000000.0,
+      "established_year": 2017,
+      "mgr_emp": "_:emp2"
+    },
+    {
+      "uid": "_:dept3",
+      "dept_code": "DEPT03",
+      "dept_name": "Phòng Khoa Học Dữ Liệu & AI",
+      "location": "Tầng 14 - TP.HCM",
+      "budget": 9200000000.0,
+      "established_year": 2018,
+      "mgr_emp": "_:emp3"
+    }
+  ],
+  "sample_employees": [
+    {
+      "uid": "_:emp1",
+      "emp_code": "EMP001",
+      "full_name": "Trần Quang Khải",
+      "title": "Tổng Giám Đốc (CEO)",
+      "level": 1,
+      "dept": "_:dept1",
+      "role": "_:role1",
+      "reports_to": null,
+      "salary": 95000000.0,
+      "hire_date": "2016-01-10T00:00:00Z",
+      "skills": [
+        "_:skill12",
+        "_:skill13",
+        "_:skill15"
+      ]
+    },
+    {
+      "uid": "_:emp2",
+      "emp_code": "EMP002",
+      "full_name": "Nguyễn Phạm Duy Luân",
+      "title": "Giám Đốc Kỹ Thuật Phần Mềm",
+      "level": 2,
+      "dept": "_:dept2",
+      "role": "_:role2",
+      "reports_to": "_:emp1",
+      "salary": 68000000.0,
+      "hire_date": "2017-03-15T00:00:00Z",
+      "skills": [
+        "_:skill1",
+        "_:skill2",
+        "_:skill3",
+        "_:skill15"
+      ]
+    },
+    {
+      "uid": "_:emp3",
+      "emp_code": "EMP003",
+      "full_name": "Đỗ Văn Minh",
+      "title": "Giám Đốc Khoa Học Dữ Liệu & AI",
+      "level": 2,
+      "dept": "_:dept3",
+      "role": "_:role2",
+      "reports_to": "_:emp1",
+      "salary": 68000000.0,
+      "hire_date": "2018-02-01T00:00:00Z",
+      "skills": [
+        "_:skill1",
+        "_:skill2",
+        "_:skill5",
+        "_:skill6",
+        "_:skill14"
+      ]
+    },
+    {
+      "uid": "_:emp4",
+      "emp_code": "EMP004",
+      "full_name": "Lê Hoàng Nam",
+      "title": "Trưởng Phòng Hạ Tầng & Cloud",
+      "level": 2,
+      "dept": "_:dept4",
+      "role": "_:role2",
+      "reports_to": "_:emp1",
+      "salary": 62000000.0,
+      "hire_date": "2017-06-20T00:00:00Z",
+      "skills": [
+        "_:skill7",
+        "_:skill8",
+        "_:skill15"
+      ]
+    },
+    {
+      "uid": "_:emp5",
+      "emp_code": "EMP005",
+      "full_name": "Phạm Thu Hà",
+      "title": "Trưởng Phòng An Ninh Mạng",
+      "level": 2,
+      "dept": "_:dept5",
+      "role": "_:role2",
+      "reports_to": "_:emp1",
+      "salary": 64000000.0,
+      "hire_date": "2019-01-15T00:00:00Z",
+      "skills": [
+        "_:skill9",
+        "_:skill10",
+        "_:skill7"
+      ]
+    }
+  ]
+}

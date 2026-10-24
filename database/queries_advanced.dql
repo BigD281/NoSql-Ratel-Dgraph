@@ -1,0 +1,260 @@
+# ============================================================================
+# BO 10 TRUY VAN NANG CAO TREN DGRAPH RATEL (DQL)
+# De tai: Quan ly mang luoi quan he Nhan vien - Phong ban - Du an
+# Bao gom: @recurse, shortest, @cascade, var intersection, @groupby,
+#          @facets filter, Bus Factor analysis, Impact analysis, k-hop centrality
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# [A01] Truy van De quy (@recurse): So do phan cap to chuc (Org-Chart)
+# Xuat phat tu Tong Giam Doc (EMP001) xuong toan bo cac tang quan ly
+# ----------------------------------------------------------------------------
+{
+  org_chart_recurse(func: eq(emp_code, "EMP001")) @recurse(depth: 5, loop: false) {
+    uid
+    emp_code
+    full_name
+    title
+    level
+    ~reports_to
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A02] Tim duong di ngan nhat (Shortest Path) giua 2 Nhan vien khac Phong ban
+# Tu EMP023 (Phong Ky Thuat) den EMP028 (Phong Du Lieu & AI / An Ninh)
+# ----------------------------------------------------------------------------
+{
+  A as var(func: eq(emp_code, "EMP002"))
+  B as var(func: eq(emp_code, "EMP021"))
+
+   path as shortest(from: uid(A), to: uid(B), numpaths: 2) {
+    collaborated_with
+  }
+
+  shortest_connection(func: uid(path)) {
+    uid
+    emp_code
+    full_name
+    title
+    belongs_to_dept {
+      dept_code
+      dept_name
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A03] Chi thi @cascade: Tim Nhan vien VUA co ky nang Dgraph (SK01)
+#       VUA dang tham gia Du an co do uu tien Critical
+# ----------------------------------------------------------------------------
+{
+  dgraph_critical_experts(func: type(Employee)) @cascade {
+    emp_code
+    full_name
+    title
+    belongs_to_dept {
+      dept_name
+    }
+    has_skill @filter(eq(skill_code, "SK01")) {
+      skill_code
+      skill_name
+    }
+    works_on @filter(eq(priority, "Critical") AND eq(proj_status, "Active")) {
+      proj_code
+      proj_name
+      priority
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A04] Giao/Hieu tap bien UID (Smart Project Staffing Recommendation)
+# Goi y ung vien cho Du an PRJ02 (Fraud Graph):
+#   - Co ky nang ma PRJ02 yeu cau
+#   - NHUNG chua tham gia PRJ02 (!uid(current_members))
+# ----------------------------------------------------------------------------
+{
+  var(func: eq(proj_code, "PRJ02")) {
+    req_sk as requires_skill
+    current_members as ~works_on
+  }
+
+  var(func: uid(req_sk)) {
+    candidates as ~has_skill @filter(NOT uid(current_members)) {
+      matched_skills_count as count(has_skill @filter(uid(req_sk)))
+    }
+  }
+
+  recommended_candidates(func: uid(candidates), orderdesc: val(matched_skills_count), first: 10) {
+    emp_code
+    full_name
+    title
+    matched_skills: val(matched_skills_count)
+    belongs_to_dept { dept_code dept_name }
+    has_skill @filter(uid(req_sk)) @facets(proficiency) {
+      skill_code
+      skill_name
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A05] Phat hien "Nhan su Cau noi Lien Phong Ban" (Cross-Department Bridges)
+# Tim nhan vien tham gia nhieu du an va lam viec voi nhieu dong nghiep lien phong
+# ----------------------------------------------------------------------------
+{
+  var(func: type(Employee)) {
+    proj_cnt as count(works_on)
+    collab_cnt as count(collaborated_with)
+    bridge_score as math(proj_cnt * 3 + collab_cnt)
+  }
+
+  cross_silo_bridges(func: uid(bridge_score), orderdesc: val(bridge_score), first: 10)
+    @filter(ge(val(proj_cnt), 2)) {
+    emp_code
+    full_name
+    title
+    project_count: val(proj_cnt)
+    collaborator_count: val(collab_cnt)
+    bridge_index: val(bridge_score)
+    belongs_to_dept { dept_code dept_name }
+    works_on {
+      proj_code
+      proj_name
+      owned_by_dept { dept_code }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A06] Thong ke Gom nhom (@groupby) & Aggregation theo Phong ban
+# Tinh so luong nhan su, tong quy luong, luong trung binh va so du an chu quan
+# ----------------------------------------------------------------------------
+{
+  dept_analytics(func: type(Department), orderasc: dept_code) {
+    dept_code
+    dept_name
+    budget
+    staff_count: count(~belongs_to_dept)
+    owned_projects_count: count(~owned_by_dept)
+    ~belongs_to_dept {
+      s as salary
+    }
+    total_monthly_salary: sum(val(s))
+    avg_monthly_salary: avg(val(s))
+    max_salary: max(val(s))
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A07] Phan tich Rui ro Du an phu thuoc it nguoi (Bus Factor Analysis)
+# Phat hien cac du an Active nhung co <= 3 thanh vien tham gia
+# ----------------------------------------------------------------------------
+{
+  var(func: type(Project)) @filter(eq(proj_status, "Active")) {
+    member_cnt as count(~works_on)
+  }
+
+  high_risk_projects(func: uid(member_cnt), orderasc: val(member_cnt))
+    @filter(le(val(member_cnt), 5)) {
+    proj_code
+    proj_name
+    priority
+    proj_budget
+    bus_factor_members: val(member_cnt)
+    led_by { emp_code full_name }
+    ~works_on @facets(role_in_project, hours_per_week) {
+      emp_code
+      full_name
+      title
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A08] Phan tich Tac dong khi Nhan su Chu chot Nghi viec (Impact Analysis)
+# Mo phong neu EMP002 (Nguyen Pham Duy Luan) nghi viec:
+#   1. Phong ban mat truong phong
+#   2. Du an mat Project Lead + Du an phu thuoc day chuyen (~depends_on_project)
+#   3. Nhan su cap duoi truc tiep & gian tiep (2-hop)
+# ----------------------------------------------------------------------------
+{
+  impact_analysis_emp002(func: eq(emp_code, "EMP002")) {
+    emp_code
+    full_name
+    title
+    affected_departments: ~managed_by {
+      dept_code
+      dept_name
+      total_staff: count(~belongs_to_dept)
+    }
+    affected_led_projects: ~led_by {
+      proj_code
+      proj_name
+      priority
+      downstream_dependent_projects: ~depends_on_project {
+        proj_code
+        proj_name
+        priority
+      }
+    }
+    direct_subordinates: ~reports_to {
+      emp_code
+      full_name
+      title
+      second_level_subordinates: ~reports_to {
+        emp_code
+        full_name
+        title
+      }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A09] Loc tren Thuoc tinh Canh (@facets filter)
+# Tim cac Chuyen gia co proficiency >= 5 tren ky nang va danh >= 20h/tuan cho du an
+# ----------------------------------------------------------------------------
+{
+  high_commitment_experts(func: type(Employee)) @cascade {
+    emp_code
+    full_name
+    title
+    has_skill @facets(ge(proficiency, 5)) @facets(proficiency, years) {
+      skill_code
+      skill_name
+    }
+    works_on @facets(ge(hours_per_week, 20)) @facets(role_in_project, hours_per_week) {
+      proj_code
+      proj_name
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------
+# [A10] Mo rong Lang gieng 2-hop (k-hop) & Xep hang Do Trung Tam Bac (Centrality)
+# Xep hang Top 10 Nhan su co do ket noi cao nhat toan doanh nghiep
+# ----------------------------------------------------------------------------
+{
+  var(func: type(Employee)) {
+    d_sub as count(~reports_to)
+    d_proj as count(works_on)
+    d_col as count(collaborated_with)
+    d_sk as count(has_skill)
+    centrality as math(d_sub * 4 + d_proj * 3 + d_col * 2 + d_sk)
+  }
+
+  top_central_employees(func: uid(centrality), orderdesc: val(centrality), first: 10) {
+    emp_code
+    full_name
+    title
+    level
+    centrality_score: val(centrality)
+    direct_reports: val(d_sub)
+    projects_joined: val(d_proj)
+    collaborators: val(d_col)
+    belongs_to_dept { dept_name }
+  }
+}
+
