@@ -25,19 +25,14 @@
 ## 3. Cấu trúc Thư mục Dự án
 
 ```text
-├── BaoCao_DoAn_Dgraph_Ratel_CapNhat.docx  # Báo cáo Word hoàn chỉnh (5 Chương + Phụ lục)
-├── Slide_ThuyetTrinh_Dgraph_Ratel.pptx    # Slide thuyết trình (18 Slide kèm Lời thoại)
 ├── README.md                              # Hướng dẫn dự án
-├── requirements.txt                       # Thư viện Python phụ trợ
 ├── .env                                   # Cấu hình cổng kết nối
 │
 ├── dgraph-bin\                            # Bộ nhị phân Windows gốc (dgraph.exe, dgraph-ratel.exe)
 ├── database\                              # Schema, dữ liệu mẫu RDF/JSON & 20 truy vấn DQL
 ├── app\                                   # Mã nguồn ứng dụng Web HR Graph 360 (Python + Cytoscape.js)
-├── scripts\                               # Các kịch bản tự động hóa (.bat / .py)
+├── scripts\                               # Các kịch bản tự động hóa (.bat )
 ├── backups\                               # Thư mục chứa các bản Export và sao lưu
-└── docs\
-    └── Bo_18_CauHoi_BaoVe.md              # 18 Câu hỏi và Đáp án bảo vệ đồ án
 ```
 
 ---
