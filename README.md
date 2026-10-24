@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ĐỒ ÁN MÔN HỆ QUẢN TRỊ CSDL NoSQL: DGRAPH & CÔNG CỤ GUI RATEL
 
 **Đề tài**: Tìm hiểu công cụ GUI **Ratel** quản trị CSDL đồ thị **Dgraph** và Xây dựng ứng dụng **"Hệ thống Quản lý Mạng lưới Quan hệ Nhân sự, Phòng ban & Dự án" (HR Graph 360)**
@@ -89,3 +90,6 @@ Truy cập ứng dụng tại: **`http://127.0.0.1:5000`**
 - **Mục 7**: 10 truy vấn cơ bản và 10 truy vấn nâng cao có kiểm chứng kết quả thực tế.
 - **Mục 8–9**: Kết nối ứng dụng qua HTTP API, demo đầy đủ 4 nhóm tính năng (User RBAC, CRUD+Backup, Nghiệp vụ đồ thị, Trực quan hóa).
 - **Mục 10**: Đầy đủ Báo cáo Word, Slide PowerPoint, Source code và Bộ 18 câu hỏi bảo vệ.
+=======
+# NoSql-Ratel-Dgraph-
+>>>>>>> 99a5dde0a50b63d3d6a658e42888af6a96e48383
